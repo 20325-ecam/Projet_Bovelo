@@ -10,7 +10,7 @@ Students at ECAM Brussels Engineering School :
 -Félix Tardif <20305@ecam.be>  
 -Sébastien de Pret Roose de Calesberg <20325@ecam.be>  
 -Andrea Ventura <20283@ecam.be>  
--Matthias LEONARD <20308@ecam.be>  
+-Matthias Léonard <20308@ecam.be>  
 
 <p align="center">  
   <a href="http://www.ecam.be">
