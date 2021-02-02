@@ -15,5 +15,5 @@ Students at ECAM Brussels Engineering School :
   <a href="http://www.ecam.be">
     <img src="Images/EcamLogo.jpg" alt="ECAM Brussels Engineering School" width="250">
   </a><br/> 
-  <b><a href="http://www.ecam.be">www.ecam.be</a></b>
+  <b><a href="https://www.ecam.be">www.ecam.be</a></b>
 </p>
