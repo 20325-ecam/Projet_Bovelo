@@ -3,7 +3,7 @@
 ## Glossary
 
 **-Bovélo**  
-A company wich order spare parts to assemble bicycles and re-sell them. They hired us to create a software solution for their business.
+A company wich orders bicycles components to assemble bicycles and sell them. They hired us to create a software solution for their business.
 
 **-Monteur / Mechanic**  
 A person working for Bovélo assembling bicycle with spare parts.  
@@ -12,15 +12,15 @@ A person working for Bovélo assembling bicycle with spare parts.
 Person working for Bovélo supervising the planning and assembly of new bicycles.
 
 **-Représentant / Representative**  
-A person working for Bovélo selling assembled bicycle to other stores for distribution to consumer.
+A person working for Bovélo selling assembled bicycles to other stores in order to distribute them to consumers.
 
 **-Magasin / Store**  
-A business buying bike from Bovélo to re-sell them to consumers.  
+A business buying bikes from Bovélo to re-sell them to consumers.  
 
 **-Consomateur / Consumer**  
 Person buying a bicycle from a representative.  
 
-## Contributor
+## Contributors
 
 Students at ECAM Brussels Engineering School :  
 -Dawid Krasowski <20194@ecam.be>  
