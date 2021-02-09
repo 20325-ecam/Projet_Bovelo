@@ -1,0 +1,9 @@
+D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjetBovelo\ProjectBovelo\bin\Debug\ProjectBovelo.exe.config
+D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjetBovelo\ProjectBovelo\bin\Debug\ProjectBovelo.exe
+D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjetBovelo\ProjectBovelo\bin\Debug\ProjectBovelo.pdb
+D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjetBovelo\ProjectBovelo\obj\Debug\ProjectBovelo.csprojAssemblyReference.cache
+D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjetBovelo\ProjectBovelo\obj\Debug\ProjectBovelo.Properties.Resources.resources
+D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjetBovelo\ProjectBovelo\obj\Debug\ProjectBovelo.csproj.GenerateResource.cache
+D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjetBovelo\ProjectBovelo\obj\Debug\ProjectBovelo.csproj.CoreCompileInputs.cache
+D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjetBovelo\ProjectBovelo\obj\Debug\ProjectBovelo.exe
+D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjetBovelo\ProjectBovelo\obj\Debug\ProjectBovelo.pdb
