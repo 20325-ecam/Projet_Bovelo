@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ProjectBovelo
 {
-    public partial class Form1 : Form
+    public partial class Front_page : Form
     {
-        public Form1()
+        public Front_page()
         {
             InitializeComponent();
         }
