@@ -13,6 +13,7 @@ namespace ProjectBovelo
 {
     public partial class Catalog : Form
     {
+        string name;
         public Catalog()
         {
             InitializeComponent();
@@ -36,6 +37,30 @@ namespace ProjectBovelo
             Form front_page = Application.OpenForms["Front_page"]; 
             front_page.Show();
             this.Close();
+        }
+
+        private void bp_order_city_Click(object sender, EventArgs e)
+        {
+            name = "City";
+            this.Hide();
+            Form order = new Order(name);
+            order.Show();
+        }
+
+        private void bp_order_explorer_Click(object sender, EventArgs e)
+        {
+            name = "Explorer";
+            this.Hide();
+            Form order = new Order(name);
+            order.Show();
+        }
+
+        private void bp_order_adventure_Click(object sender, EventArgs e)
+        {
+            name = "Adventure";
+            this.Hide();
+            Form order = new Order(name);
+            order.Show();
         }
     }
 }

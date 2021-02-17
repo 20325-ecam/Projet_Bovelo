@@ -30,31 +30,34 @@ namespace ProjectBovelo
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.button3 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.bp_quit = new System.Windows.Forms.Button();
             this.bp_return = new System.Windows.Forms.Button();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.bp_order_city = new System.Windows.Forms.Button();
+            this.bp_order_explorer = new System.Windows.Forms.Button();
+            this.bp_order_adventure = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.tableLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -65,9 +68,9 @@ namespace ProjectBovelo
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.button1, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.label1, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label2, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.button1, 1, 2);
             this.tableLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel1.Location = new System.Drawing.Point(13, 119);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
@@ -80,16 +83,17 @@ namespace ProjectBovelo
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1103, 318);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // button1
+            // pictureBox1
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.Location = new System.Drawing.Point(776, 266);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 28);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "More Info";
-            this.button1.UseVisualStyleBackColor = true;
+            this.pictureBox1.Image = global::ProjectBovelo.Properties.Resources.PinClipart_com_bicycle_clip_art_324480;
+            this.pictureBox1.Location = new System.Drawing.Point(2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.tableLayoutPanel1.SetRowSpan(this.pictureBox1, 3);
+            this.pictureBox1.Size = new System.Drawing.Size(548, 310);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -114,6 +118,17 @@ namespace ProjectBovelo
             this.label2.TabIndex = 3;
             this.label2.Text = "The City";
             // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button1.Location = new System.Drawing.Point(776, 266);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 28);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "More Info";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Outset;
@@ -134,6 +149,18 @@ namespace ProjectBovelo
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 71F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1103, 318);
             this.tableLayoutPanel2.TabIndex = 1;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::ProjectBovelo.Properties.Resources.BicyclePlaceholder;
+            this.pictureBox2.Location = new System.Drawing.Point(6, 6);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.tableLayoutPanel2.SetRowSpan(this.pictureBox2, 3);
+            this.pictureBox2.Size = new System.Drawing.Size(540, 306);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
             // 
             // button2
             // 
@@ -191,6 +218,18 @@ namespace ProjectBovelo
             this.tableLayoutPanel3.Size = new System.Drawing.Size(1103, 318);
             this.tableLayoutPanel3.TabIndex = 2;
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::ProjectBovelo.Properties.Resources.PinClipart_com_bike_clip_art_5216101;
+            this.pictureBox3.Location = new System.Drawing.Point(6, 6);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox3.Name = "pictureBox3";
+            this.tableLayoutPanel3.SetRowSpan(this.pictureBox3, 3);
+            this.pictureBox3.Size = new System.Drawing.Size(540, 306);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 0;
+            this.pictureBox3.TabStop = false;
+            // 
             // button3
             // 
             this.button3.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -235,52 +274,6 @@ namespace ProjectBovelo
             this.label7.TabIndex = 4;
             this.label7.Text = "Catalog";
             // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::ProjectBovelo.Properties.Resources.bicycle_40756_1280;
-            this.pictureBox4.Location = new System.Drawing.Point(1283, 12);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(165, 141);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 3;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::ProjectBovelo.Properties.Resources.PinClipart_com_bike_clip_art_5216101;
-            this.pictureBox3.Location = new System.Drawing.Point(6, 6);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox3.Name = "pictureBox3";
-            this.tableLayoutPanel3.SetRowSpan(this.pictureBox3, 3);
-            this.pictureBox3.Size = new System.Drawing.Size(540, 306);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 0;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::ProjectBovelo.Properties.Resources.BicyclePlaceholder;
-            this.pictureBox2.Location = new System.Drawing.Point(6, 6);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.tableLayoutPanel2.SetRowSpan(this.pictureBox2, 3);
-            this.pictureBox2.Size = new System.Drawing.Size(540, 306);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::ProjectBovelo.Properties.Resources.PinClipart_com_bicycle_clip_art_324480;
-            this.pictureBox1.Location = new System.Drawing.Point(2, 2);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.tableLayoutPanel1.SetRowSpan(this.pictureBox1, 3);
-            this.pictureBox1.Size = new System.Drawing.Size(548, 310);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // bp_quit
             // 
             this.bp_quit.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -305,11 +298,60 @@ namespace ProjectBovelo
             this.bp_return.UseVisualStyleBackColor = true;
             this.bp_return.Click += new System.EventHandler(this.bp_return_Click);
             // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::ProjectBovelo.Properties.Resources.bicycle_40756_1280;
+            this.pictureBox4.Location = new System.Drawing.Point(1283, 12);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(165, 141);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 3;
+            this.pictureBox4.TabStop = false;
+            // 
+            // bp_order_city
+            // 
+            this.bp_order_city.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bp_order_city.Location = new System.Drawing.Point(1138, 283);
+            this.bp_order_city.Margin = new System.Windows.Forms.Padding(4);
+            this.bp_order_city.Name = "bp_order_city";
+            this.bp_order_city.Size = new System.Drawing.Size(100, 28);
+            this.bp_order_city.TabIndex = 7;
+            this.bp_order_city.Text = "Order";
+            this.bp_order_city.UseVisualStyleBackColor = true;
+            this.bp_order_city.Click += new System.EventHandler(this.bp_order_city_Click);
+            // 
+            // bp_order_explorer
+            // 
+            this.bp_order_explorer.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bp_order_explorer.Location = new System.Drawing.Point(1138, 609);
+            this.bp_order_explorer.Margin = new System.Windows.Forms.Padding(4);
+            this.bp_order_explorer.Name = "bp_order_explorer";
+            this.bp_order_explorer.Size = new System.Drawing.Size(100, 28);
+            this.bp_order_explorer.TabIndex = 8;
+            this.bp_order_explorer.Text = "Order";
+            this.bp_order_explorer.UseVisualStyleBackColor = true;
+            this.bp_order_explorer.Click += new System.EventHandler(this.bp_order_explorer_Click);
+            // 
+            // bp_order_adventure
+            // 
+            this.bp_order_adventure.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bp_order_adventure.Location = new System.Drawing.Point(1138, 931);
+            this.bp_order_adventure.Margin = new System.Windows.Forms.Padding(4);
+            this.bp_order_adventure.Name = "bp_order_adventure";
+            this.bp_order_adventure.Size = new System.Drawing.Size(100, 28);
+            this.bp_order_adventure.TabIndex = 9;
+            this.bp_order_adventure.Text = "Order";
+            this.bp_order_adventure.UseVisualStyleBackColor = true;
+            this.bp_order_adventure.Click += new System.EventHandler(this.bp_order_adventure_Click);
+            // 
             // Catalog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1480, 1113);
+            this.Controls.Add(this.bp_order_adventure);
+            this.Controls.Add(this.bp_order_explorer);
+            this.Controls.Add(this.bp_order_city);
             this.Controls.Add(this.bp_return);
             this.Controls.Add(this.bp_quit);
             this.Controls.Add(this.label7);
@@ -322,14 +364,14 @@ namespace ProjectBovelo
             this.Text = "Form2";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -356,5 +398,8 @@ namespace ProjectBovelo
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button bp_quit;
         private System.Windows.Forms.Button bp_return;
+        private System.Windows.Forms.Button bp_order_city;
+        private System.Windows.Forms.Button bp_order_explorer;
+        private System.Windows.Forms.Button bp_order_adventure;
     }
 }
