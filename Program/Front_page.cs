@@ -16,5 +16,17 @@ namespace ProjectBovelo
         {
             InitializeComponent();
         }
+
+        public void bp_catalog_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form Catalog = new Catalog();
+            Catalog.Show();
+        }
+
+        private void bp_quit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
