@@ -42,9 +42,9 @@ namespace ProjectBovelo
         private void bp_order_city_Click(object sender, EventArgs e)
         {
             name = "City";
-            this.Hide();
+            //this.Hide();
             Form order = new Order(name);
-            order.Show();
+            order.ShowDialog();
         }
 
         private void bp_order_explorer_Click(object sender, EventArgs e)

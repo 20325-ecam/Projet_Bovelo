@@ -37,6 +37,7 @@ namespace ProjectBovelo
             this.bp_return = new System.Windows.Forms.Button();
             this.bp_quit = new System.Windows.Forms.Button();
             this.label_name = new System.Windows.Forms.Label();
+            this.domainUpDown1 = new System.Windows.Forms.DomainUpDown();
             this.SuspendLayout();
             // 
             // bp_order
@@ -88,6 +89,7 @@ namespace ProjectBovelo
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 24);
             this.comboBox2.TabIndex = 3;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // bp_return
             // 
@@ -119,15 +121,24 @@ namespace ProjectBovelo
             this.label_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_name.Location = new System.Drawing.Point(41, 24);
             this.label_name.Name = "label_name";
-            this.label_name.Size = new System.Drawing.Size(137, 58);
+            this.label_name.Size = new System.Drawing.Size(131, 55);
             this.label_name.TabIndex = 9;
             this.label_name.Text = "Type";
+            // 
+            // domainUpDown1
+            // 
+            this.domainUpDown1.Location = new System.Drawing.Point(115, 281);
+            this.domainUpDown1.Name = "domainUpDown1";
+            this.domainUpDown1.Size = new System.Drawing.Size(120, 22);
+            this.domainUpDown1.TabIndex = 10;
+            this.domainUpDown1.Text = "domainUpDown1";
             // 
             // Order
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(363, 450);
+            this.Controls.Add(this.domainUpDown1);
             this.Controls.Add(this.label_name);
             this.Controls.Add(this.bp_return);
             this.Controls.Add(this.bp_quit);
@@ -153,5 +164,6 @@ namespace ProjectBovelo
         private System.Windows.Forms.Button bp_return;
         private System.Windows.Forms.Button bp_quit;
         private System.Windows.Forms.Label label_name;
+        private System.Windows.Forms.DomainUpDown domainUpDown1;
     }
 }

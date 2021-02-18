@@ -12,10 +12,12 @@ namespace ProjectBovelo
 {
     public partial class Order : Form
     {
+        string name;
         public Order(string type)
         {
             InitializeComponent();
             label_name.Text = type;
+            name = type;
         }
 
         private void bp_return_Click(object sender, EventArgs e)
@@ -32,6 +34,11 @@ namespace ProjectBovelo
             Form front_page = Application.OpenForms["Front_page"];
             front_page.Close();
             this.Close();
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
