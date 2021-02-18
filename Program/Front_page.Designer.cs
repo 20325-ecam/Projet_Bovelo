@@ -54,7 +54,7 @@
             this.label1.Font = new System.Drawing.Font("MS Gothic", 25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(344, 42);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(150, 42);
+            this.label1.Size = new System.Drawing.Size(143, 40);
             this.label1.TabIndex = 2;
             this.label1.Text = "BoVélo";
             // 
@@ -102,7 +102,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.bp_catalog);
             this.Name = "Front_page";
-            this.Text = "Form1";
+            this.Text = "Front page";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

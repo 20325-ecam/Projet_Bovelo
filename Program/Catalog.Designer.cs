@@ -32,6 +32,7 @@ namespace ProjectBovelo
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.bp_order_city = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -47,7 +48,6 @@ namespace ProjectBovelo
             this.bp_quit = new System.Windows.Forms.Button();
             this.bp_return = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.bp_order_city = new System.Windows.Forms.Button();
             this.bp_order_explorer = new System.Windows.Forms.Button();
             this.bp_order_adventure = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
@@ -104,6 +104,18 @@ namespace ProjectBovelo
             this.label1.Size = new System.Drawing.Size(376, 20);
             this.label1.TabIndex = 2;
             this.label1.Text = "This is a wonderful description of a beautifull Bicycle.\r\n";
+            // 
+            // bp_order_city
+            // 
+            this.bp_order_city.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bp_order_city.Location = new System.Drawing.Point(776, 266);
+            this.bp_order_city.Margin = new System.Windows.Forms.Padding(4);
+            this.bp_order_city.Name = "bp_order_city";
+            this.bp_order_city.Size = new System.Drawing.Size(100, 28);
+            this.bp_order_city.TabIndex = 7;
+            this.bp_order_city.Text = "Order";
+            this.bp_order_city.UseVisualStyleBackColor = true;
+            this.bp_order_city.Click += new System.EventHandler(this.bp_order_city_Click);
             // 
             // label2
             // 
@@ -265,7 +277,7 @@ namespace ProjectBovelo
             // bp_quit
             // 
             this.bp_quit.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bp_quit.Location = new System.Drawing.Point(1339, 1084);
+            this.bp_quit.Location = new System.Drawing.Point(1319, 1108);
             this.bp_quit.Margin = new System.Windows.Forms.Padding(4);
             this.bp_quit.Name = "bp_quit";
             this.bp_quit.Size = new System.Drawing.Size(100, 28);
@@ -277,7 +289,7 @@ namespace ProjectBovelo
             // bp_return
             // 
             this.bp_return.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bp_return.Location = new System.Drawing.Point(1353, 975);
+            this.bp_return.Location = new System.Drawing.Point(1333, 999);
             this.bp_return.Margin = new System.Windows.Forms.Padding(4);
             this.bp_return.Name = "bp_return";
             this.bp_return.Size = new System.Drawing.Size(100, 28);
@@ -296,22 +308,10 @@ namespace ProjectBovelo
             this.pictureBox4.TabIndex = 3;
             this.pictureBox4.TabStop = false;
             // 
-            // bp_order_city
-            // 
-            this.bp_order_city.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bp_order_city.Location = new System.Drawing.Point(776, 266);
-            this.bp_order_city.Margin = new System.Windows.Forms.Padding(4);
-            this.bp_order_city.Name = "bp_order_city";
-            this.bp_order_city.Size = new System.Drawing.Size(100, 28);
-            this.bp_order_city.TabIndex = 7;
-            this.bp_order_city.Text = "Order";
-            this.bp_order_city.UseVisualStyleBackColor = true;
-            this.bp_order_city.Click += new System.EventHandler(this.bp_order_city_Click);
-            // 
             // bp_order_explorer
             // 
             this.bp_order_explorer.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bp_order_explorer.Location = new System.Drawing.Point(1129, 621);
+            this.bp_order_explorer.Location = new System.Drawing.Point(1109, 645);
             this.bp_order_explorer.Margin = new System.Windows.Forms.Padding(4);
             this.bp_order_explorer.Name = "bp_order_explorer";
             this.bp_order_explorer.Size = new System.Drawing.Size(100, 28);
@@ -323,7 +323,7 @@ namespace ProjectBovelo
             // bp_order_adventure
             // 
             this.bp_order_adventure.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bp_order_adventure.Location = new System.Drawing.Point(1129, 943);
+            this.bp_order_adventure.Location = new System.Drawing.Point(1109, 967);
             this.bp_order_adventure.Margin = new System.Windows.Forms.Padding(4);
             this.bp_order_adventure.Name = "bp_order_adventure";
             this.bp_order_adventure.Size = new System.Drawing.Size(100, 28);

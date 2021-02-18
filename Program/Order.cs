@@ -40,5 +40,12 @@ namespace ProjectBovelo
         {
             
         }
+
+        private void BP_basket_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form basket = new Basket();
+            basket.Show();
+        }
     }
 }

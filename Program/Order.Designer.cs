@@ -38,6 +38,7 @@ namespace ProjectBovelo
             this.bp_quit = new System.Windows.Forms.Button();
             this.label_name = new System.Windows.Forms.Label();
             this.domainUpDown1 = new System.Windows.Forms.DomainUpDown();
+            this.BP_basket = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // bp_order
@@ -133,11 +134,22 @@ namespace ProjectBovelo
             this.domainUpDown1.TabIndex = 10;
             this.domainUpDown1.Text = "domainUpDown1";
             // 
+            // BP_basket
+            // 
+            this.BP_basket.Location = new System.Drawing.Point(276, 12);
+            this.BP_basket.Name = "BP_basket";
+            this.BP_basket.Size = new System.Drawing.Size(75, 23);
+            this.BP_basket.TabIndex = 11;
+            this.BP_basket.Text = "Basket";
+            this.BP_basket.UseVisualStyleBackColor = true;
+            this.BP_basket.Click += new System.EventHandler(this.BP_basket_Click);
+            // 
             // Order
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(363, 450);
+            this.Controls.Add(this.BP_basket);
             this.Controls.Add(this.domainUpDown1);
             this.Controls.Add(this.label_name);
             this.Controls.Add(this.bp_return);
@@ -165,5 +177,6 @@ namespace ProjectBovelo
         private System.Windows.Forms.Button bp_quit;
         private System.Windows.Forms.Label label_name;
         private System.Windows.Forms.DomainUpDown domainUpDown1;
+        private System.Windows.Forms.Button BP_basket;
     }
 }
