@@ -29,29 +29,30 @@ namespace ProjectBovelo
         /// </summary>
         private void InitializeComponent()
         {
-            this.tb_id = new System.Windows.Forms.TextBox();
-            this.tb_password = new System.Windows.Forms.TextBox();
+            this.textBoxID = new System.Windows.Forms.TextBox();
+            this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.l_Login_staff = new System.Windows.Forms.Label();
             this.l_id = new System.Windows.Forms.Label();
             this.l_password = new System.Windows.Forms.Label();
             this.bp_login = new System.Windows.Forms.Button();
             this.bp_quit = new System.Windows.Forms.Button();
             this.cb_hide_password = new System.Windows.Forms.CheckBox();
+            this.labelErrorLogin = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // tb_id
+            // textBoxID
             // 
-            this.tb_id.Location = new System.Drawing.Point(302, 158);
-            this.tb_id.Name = "tb_id";
-            this.tb_id.Size = new System.Drawing.Size(164, 22);
-            this.tb_id.TabIndex = 0;
+            this.textBoxID.Location = new System.Drawing.Point(302, 158);
+            this.textBoxID.Name = "textBoxID";
+            this.textBoxID.Size = new System.Drawing.Size(164, 22);
+            this.textBoxID.TabIndex = 0;
             // 
-            // tb_password
+            // textBoxPassword
             // 
-            this.tb_password.Location = new System.Drawing.Point(302, 220);
-            this.tb_password.Name = "tb_password";
-            this.tb_password.Size = new System.Drawing.Size(164, 22);
-            this.tb_password.TabIndex = 1;
+            this.textBoxPassword.Location = new System.Drawing.Point(302, 220);
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.Size = new System.Drawing.Size(164, 22);
+            this.textBoxPassword.TabIndex = 1;
             // 
             // l_Login_staff
             // 
@@ -85,7 +86,7 @@ namespace ProjectBovelo
             // 
             this.bp_login.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bp_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bp_login.Location = new System.Drawing.Point(310, 261);
+            this.bp_login.Location = new System.Drawing.Point(302, 323);
             this.bp_login.Margin = new System.Windows.Forms.Padding(4);
             this.bp_login.Name = "bp_login";
             this.bp_login.Size = new System.Drawing.Size(147, 72);
@@ -117,19 +118,30 @@ namespace ProjectBovelo
             this.cb_hide_password.UseVisualStyleBackColor = true;
             this.cb_hide_password.CheckedChanged += new System.EventHandler(this.cb_hide_password_CheckedChanged);
             // 
+            // labelErrorLogin
+            // 
+            this.labelErrorLogin.AutoSize = true;
+            this.labelErrorLogin.Location = new System.Drawing.Point(354, 272);
+            this.labelErrorLogin.Name = "labelErrorLogin";
+            this.labelErrorLogin.Size = new System.Drawing.Size(110, 17);
+            this.labelErrorLogin.TabIndex = 10;
+            this.labelErrorLogin.Text = "LabelErrorLogin";
+            this.labelErrorLogin.Click += new System.EventHandler(this.labelErrorLogin_Click);
+            // 
             // Login_staff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.labelErrorLogin);
             this.Controls.Add(this.cb_hide_password);
             this.Controls.Add(this.bp_login);
             this.Controls.Add(this.bp_quit);
             this.Controls.Add(this.l_password);
             this.Controls.Add(this.l_id);
             this.Controls.Add(this.l_Login_staff);
-            this.Controls.Add(this.tb_password);
-            this.Controls.Add(this.tb_id);
+            this.Controls.Add(this.textBoxPassword);
+            this.Controls.Add(this.textBoxID);
             this.Name = "Login_staff";
             this.Text = "Login_staff";
             this.ResumeLayout(false);
@@ -139,13 +151,14 @@ namespace ProjectBovelo
 
         #endregion
 
-        private System.Windows.Forms.TextBox tb_id;
-        private System.Windows.Forms.TextBox tb_password;
+        private System.Windows.Forms.TextBox textBoxID;
+        private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.Label l_Login_staff;
         private System.Windows.Forms.Label l_id;
         private System.Windows.Forms.Label l_password;
         private System.Windows.Forms.Button bp_login;
         private System.Windows.Forms.Button bp_quit;
         private System.Windows.Forms.CheckBox cb_hide_password;
+        private System.Windows.Forms.Label labelErrorLogin;
     }
 }

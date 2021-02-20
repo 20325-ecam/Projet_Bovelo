@@ -1,6 +1,6 @@
 ﻿namespace ProjectBovelo
 {
-    partial class Front_page
+    partial class MenusSelectionPage
     {
         /// <summary>
         /// Required designer variable.
@@ -115,7 +115,7 @@
             this.bp_stock.Text = "Stock";
             this.bp_stock.UseVisualStyleBackColor = true;
             // 
-            // Front_page
+            // MenusSelectionPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -128,8 +128,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.bp_catalog);
-            this.Name = "Front_page";
-            this.Text = "Front page";
+            this.Name = "MenusSelectionPage";
+            this.Text = "MenusSelectionPage";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

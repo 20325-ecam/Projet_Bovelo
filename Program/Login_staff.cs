@@ -19,9 +19,30 @@ namespace ProjectBovelo
 
         private void bp_login_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            /*this.Hide();
             Form frontpage = new Front_page();
-            frontpage.Show();
+            frontpage.Show();*/
+            int userID;
+            string password;
+            try
+            {
+                userID = Int32.Parse(textBoxID.Text);
+                password = textBoxPassword.Text;
+                for (int i = 0; i < FakeDataBase.databaseUsers.Count; i++)
+                {
+                    if (FakeDataBase.databaseUsers[i].id == userID && FakeDataBase.databaseUsers[i].password == password)
+                    {
+                        MenusSelectionPage menusSelectionPage = new MenusSelectionPage();
+                        menusSelectionPage.Show();
+                        Hide();
+                    }
+                }
+                labelErrorLogin.Text = "Incorrect login or password";
+            }
+            catch (FormatException)
+            {
+                labelErrorLogin.Text = "Incorrect login or password";
+            }
         }
 
         private void bp_quit_Click(object sender, EventArgs e)
@@ -37,6 +58,11 @@ namespace ProjectBovelo
         }
 
         private void cb_hide_password_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelErrorLogin_Click(object sender, EventArgs e)
         {
 
         }

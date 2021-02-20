@@ -19,10 +19,7 @@ namespace ProjectBovelo
             InitializeComponent();
         }
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+        
 
         private void bp_quit_Click(object sender, EventArgs e)
         {
@@ -47,35 +44,60 @@ namespace ProjectBovelo
             this.Close();
         }
 
-        private void bp_order_city_Click(object sender, EventArgs e)
-        {
-            name = "City";
-            this.Hide();
-            Form order = new Order(name);
-            order.Show();
-        }
-
-        private void bp_order_explorer_Click(object sender, EventArgs e)
-        {
-            name = "Explorer";
-            this.Hide();
-            Form order = new Order(name);
-            order.Show();
-        }
-
-        private void bp_order_adventure_Click(object sender, EventArgs e)
-        {
-            name = "Adventure";
-            this.Hide();
-            Form order = new Order(name);
-            order.Show();
-        }
-
+       
         private void bp_client_Click(object sender, EventArgs e)
         {
             this.Hide();
             Form client = new Client_indentification();
             client.Show();
+        }
+
+        private void Catalog_Load(object sender, EventArgs e)
+        {
+            tableLayoutPanel1.RowCount = 3 * FakeDataBase.databaseAvailableBicycle.Count;
+            tableLayoutPanel1.ColumnCount = 3;
+
+            for (int i = 0; i < FakeDataBase.databaseAvailableBicycle.Count; i++)
+            {
+                Label labelName = new Label();
+                labelName.Text = FakeDataBase.databaseAvailableBicycle[i].name;
+                tableLayoutPanel1.SetRow(labelName, 3 * i);
+                tableLayoutPanel1.SetColumn(labelName, 1);
+                tableLayoutPanel1.Controls.Add(labelName);
+
+                Label labelDescription = new Label();
+                labelDescription.Text = FakeDataBase.databaseAvailableBicycle[i].description;
+                tableLayoutPanel1.SetRow(labelDescription, 3 * i + 1);
+                tableLayoutPanel1.SetColumn(labelDescription, 1);
+                tableLayoutPanel1.Controls.Add(labelDescription);
+
+                Label labelPrice = new Label();
+                labelPrice.Text = FakeDataBase.databaseAvailableBicycle[i].price.ToString() + "$";
+                tableLayoutPanel1.SetRow(labelPrice, 3 * i);
+                tableLayoutPanel1.SetColumn(labelPrice, 2);
+                tableLayoutPanel1.Controls.Add(labelPrice);
+
+                Button buttonOrder = new Button();
+                buttonOrder.Text = "Order";
+                tableLayoutPanel1.SetRow(buttonOrder, 3 * i + 2);
+                tableLayoutPanel1.SetColumn(buttonOrder, 1);
+                tableLayoutPanel1.SetColumnSpan(buttonOrder, 2);
+                buttonOrder.Click += new System.EventHandler(buttonOrder_Click);
+                tableLayoutPanel1.Controls.Add(buttonOrder);
+
+            }
+        }
+        private void buttonOrder_Click(object sender, EventArgs e)
+        {
+            name = "add name of the bike";
+            this.Hide();
+            Form order = new Order(name);
+            order.Show();
+        }
+
+        private void tableLayoutPanel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

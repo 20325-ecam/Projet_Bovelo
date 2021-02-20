@@ -126,6 +126,7 @@ namespace ProjectBovelo
             this.label_name.Size = new System.Drawing.Size(137, 58);
             this.label_name.TabIndex = 9;
             this.label_name.Text = "Type";
+            this.label_name.Click += new System.EventHandler(this.label_name_Click);
             // 
             // domainUpDown1
             // 

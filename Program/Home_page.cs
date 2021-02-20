@@ -17,12 +17,32 @@ namespace ProjectBovelo
             InitializeComponent();
         }
 
+        private void ShowBoveloUsersLoginPage()
+        {
+            Login_staff BoveloUsersLoginPage = new Login_staff();
+            BoveloUsersLoginPage.Show();
+            Hide();
+        }
+
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Form login_staff = new Login_staff();
-            login_staff.Show();
+            ShowBoveloUsersLoginPage();
 
+        }
+
+        private void l_clicktostart_Click(object sender, EventArgs e)
+        {
+            ShowBoveloUsersLoginPage();
+        }
+
+        private void Home_page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Home_page_Click(object sender, EventArgs e)
+        {
+            ShowBoveloUsersLoginPage();
         }
     }
 }

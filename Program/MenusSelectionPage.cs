@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ProjectBovelo
 {
-    public partial class Front_page : Form
+    public partial class MenusSelectionPage : Form
     {
-        public Front_page()
+        public MenusSelectionPage()
         {
             InitializeComponent();
         }

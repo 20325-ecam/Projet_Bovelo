@@ -29,12 +29,13 @@ namespace ProjectBovelo
 
         private void bp_quit_Click(object sender, EventArgs e)
         {
-            /*Form catalog = Application.OpenForms["Catalog"];
+            /*Form catalog = Application.OpenForms["Home_page"];
             catalog.Close();
+            this.Close();
             Form front_page = Application.OpenForms["Front_page"];
             front_page.Close();
-            this.Close();
             */
+            
             if (MessageBox.Show("Exit or no?",
                            "Bovélo",
                             MessageBoxButtons.YesNo,
@@ -57,6 +58,11 @@ namespace ProjectBovelo
             this.Hide();
             Form basket = new Basket();
             basket.Show();
+        }
+
+        private void label_name_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

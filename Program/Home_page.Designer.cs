@@ -54,6 +54,7 @@ namespace ProjectBovelo
             this.l_clicktostart.Size = new System.Drawing.Size(85, 17);
             this.l_clicktostart.TabIndex = 2;
             this.l_clicktostart.Text = "Click to start";
+            this.l_clicktostart.Click += new System.EventHandler(this.l_clicktostart_Click);
             // 
             // pictureBox1
             // 
@@ -76,6 +77,8 @@ namespace ProjectBovelo
             this.Controls.Add(this.L_homepage);
             this.Name = "Home_page";
             this.Text = "Home page";
+            this.Load += new System.EventHandler(this.Home_page_Load);
+            this.Click += new System.EventHandler(this.Home_page_Click);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
