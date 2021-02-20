@@ -44,7 +44,7 @@ namespace ProjectBovelo
             // 
             // bp_order
             // 
-            this.bp_order.Location = new System.Drawing.Point(67, 397);
+            this.bp_order.Location = new System.Drawing.Point(95, 381);
             this.bp_order.Name = "bp_order";
             this.bp_order.Size = new System.Drawing.Size(111, 41);
             this.bp_order.TabIndex = 0;

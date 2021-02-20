@@ -33,6 +33,8 @@
             this.bp_l_commands = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.bp_quit = new System.Windows.Forms.Button();
+            this.bp_planning = new System.Windows.Forms.Button();
+            this.bp_stock = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,7 +56,7 @@
             this.label1.Font = new System.Drawing.Font("MS Gothic", 25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(344, 42);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(143, 40);
+            this.label1.Size = new System.Drawing.Size(150, 42);
             this.label1.TabIndex = 2;
             this.label1.Text = "BoVélo";
             // 
@@ -83,7 +85,7 @@
             // 
             this.bp_quit.AutoSize = true;
             this.bp_quit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bp_quit.Location = new System.Drawing.Point(781, 403);
+            this.bp_quit.Location = new System.Drawing.Point(729, 547);
             this.bp_quit.Name = "bp_quit";
             this.bp_quit.Size = new System.Drawing.Size(86, 30);
             this.bp_quit.TabIndex = 4;
@@ -91,11 +93,36 @@
             this.bp_quit.UseVisualStyleBackColor = true;
             this.bp_quit.Click += new System.EventHandler(this.bp_quit_Click);
             // 
+            // bp_planning
+            // 
+            this.bp_planning.AutoSize = true;
+            this.bp_planning.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bp_planning.Location = new System.Drawing.Point(295, 392);
+            this.bp_planning.Name = "bp_planning";
+            this.bp_planning.Size = new System.Drawing.Size(254, 81);
+            this.bp_planning.TabIndex = 5;
+            this.bp_planning.Text = "Planning";
+            this.bp_planning.UseVisualStyleBackColor = true;
+            // 
+            // bp_stock
+            // 
+            this.bp_stock.AutoSize = true;
+            this.bp_stock.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bp_stock.Location = new System.Drawing.Point(295, 505);
+            this.bp_stock.Name = "bp_stock";
+            this.bp_stock.Size = new System.Drawing.Size(254, 81);
+            this.bp_stock.TabIndex = 6;
+            this.bp_stock.Text = "Stock";
+            this.bp_stock.UseVisualStyleBackColor = true;
+            // 
             // Front_page
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(879, 445);
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(879, 627);
+            this.Controls.Add(this.bp_stock);
+            this.Controls.Add(this.bp_planning);
             this.Controls.Add(this.bp_quit);
             this.Controls.Add(this.bp_l_commands);
             this.Controls.Add(this.label1);
@@ -116,6 +143,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button bp_l_commands;
         private System.Windows.Forms.Button bp_quit;
+        private System.Windows.Forms.Button bp_planning;
+        private System.Windows.Forms.Button bp_stock;
     }
 }
 

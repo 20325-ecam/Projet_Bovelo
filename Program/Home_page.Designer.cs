@@ -30,8 +30,8 @@ namespace ProjectBovelo
         private void InitializeComponent()
         {
             this.L_homepage = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.l_clicktostart = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,6 +46,15 @@ namespace ProjectBovelo
             this.L_homepage.TabIndex = 0;
             this.L_homepage.Text = "Home Page";
             // 
+            // l_clicktostart
+            // 
+            this.l_clicktostart.AutoSize = true;
+            this.l_clicktostart.Location = new System.Drawing.Point(345, 405);
+            this.l_clicktostart.Name = "l_clicktostart";
+            this.l_clicktostart.Size = new System.Drawing.Size(85, 17);
+            this.l_clicktostart.TabIndex = 2;
+            this.l_clicktostart.Text = "Click to start";
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::ProjectBovelo.Properties.Resources.bicycle_40756_1280;
@@ -55,15 +64,7 @@ namespace ProjectBovelo
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            // 
-            // l_clicktostart
-            // 
-            this.l_clicktostart.AutoSize = true;
-            this.l_clicktostart.Location = new System.Drawing.Point(345, 405);
-            this.l_clicktostart.Name = "l_clicktostart";
-            this.l_clicktostart.Size = new System.Drawing.Size(85, 17);
-            this.l_clicktostart.TabIndex = 2;
-            this.l_clicktostart.Text = "Click to start";
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // Home_page
             // 

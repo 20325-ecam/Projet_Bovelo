@@ -10,19 +10,11 @@ using System.Windows.Forms;
 
 namespace ProjectBovelo
 {
-    public partial class Home_page : Form
+    public partial class Client_indentification : Form
     {
-        public Home_page()
+        public Client_indentification()
         {
             InitializeComponent();
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Form login_staff = new Login_staff();
-            login_staff.Show();
-
         }
     }
 }

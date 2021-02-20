@@ -85,7 +85,7 @@ namespace ProjectBovelo
             // 
             this.bp_login.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bp_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bp_login.Location = new System.Drawing.Point(319, 273);
+            this.bp_login.Location = new System.Drawing.Point(310, 261);
             this.bp_login.Margin = new System.Windows.Forms.Padding(4);
             this.bp_login.Name = "bp_login";
             this.bp_login.Size = new System.Drawing.Size(147, 72);
