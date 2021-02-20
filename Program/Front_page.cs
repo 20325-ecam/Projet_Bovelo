@@ -26,7 +26,15 @@ namespace ProjectBovelo
 
         private void bp_quit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            //this.Close();
+            if (MessageBox.Show("Exit or no?",
+                           "Bovélo",
+                            MessageBoxButtons.YesNo,
+                            MessageBoxIcon.Information) == DialogResult.Yes)
+            {
+                this.Close();
+                Environment.Exit(1);
+            }
         }
     }
 }

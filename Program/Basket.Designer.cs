@@ -46,7 +46,7 @@ namespace ProjectBovelo
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(282, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(177, 55);
+            this.label1.Size = new System.Drawing.Size(184, 58);
             this.label1.TabIndex = 0;
             this.label1.Text = "Basket";
             // 
@@ -86,6 +86,7 @@ namespace ProjectBovelo
             this.bp_return.TabIndex = 4;
             this.bp_return.Text = "Return";
             this.bp_return.UseVisualStyleBackColor = true;
+            this.bp_return.Click += new System.EventHandler(this.bp_return_Click);
             // 
             // label2
             // 

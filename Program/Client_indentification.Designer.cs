@@ -91,6 +91,7 @@ namespace ProjectBovelo
             this.bp_return.TabIndex = 5;
             this.bp_return.Text = "Return";
             this.bp_return.UseVisualStyleBackColor = true;
+            this.bp_return.Click += new System.EventHandler(this.bp_return_Click);
             // 
             // bp_quit
             // 
@@ -100,6 +101,7 @@ namespace ProjectBovelo
             this.bp_quit.TabIndex = 6;
             this.bp_quit.Text = "Quit";
             this.bp_quit.UseVisualStyleBackColor = true;
+            this.bp_quit.Click += new System.EventHandler(this.bp_quit_Click);
             // 
             // Client_indentification
             // 

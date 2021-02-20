@@ -26,9 +26,17 @@ namespace ProjectBovelo
 
         private void bp_quit_Click(object sender, EventArgs e)
         {
-            Form front_page = Application.OpenForms["Front_page"]; 
-            front_page.Close();
-            this.Close();
+            //Form front_page = Application.OpenForms["Front_page"]; 
+            //front_page.Close();
+            //this.Close();
+            if (MessageBox.Show("Exit or no?",
+                           "My First Application",
+                            MessageBoxButtons.YesNo,
+                            MessageBoxIcon.Information) == DialogResult.Yes)
+            {
+                this.Close();
+                Environment.Exit(1);
+            }
 
         }
 
@@ -42,9 +50,9 @@ namespace ProjectBovelo
         private void bp_order_city_Click(object sender, EventArgs e)
         {
             name = "City";
-            //this.Hide();
+            this.Hide();
             Form order = new Order(name);
-            order.ShowDialog();
+            order.Show();
         }
 
         private void bp_order_explorer_Click(object sender, EventArgs e)
@@ -61,6 +69,13 @@ namespace ProjectBovelo
             this.Hide();
             Form order = new Order(name);
             order.Show();
+        }
+
+        private void bp_client_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form client = new Client_indentification();
+            client.Show();
         }
     }
 }

@@ -15,12 +15,19 @@ namespace ProjectBovelo
         public Basket()
         {
             InitializeComponent();
-            Detail.Text = "boujour";
         }
 
         private void Detail_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void bp_return_Click(object sender, EventArgs e)
+        {
+            //a voir en fonction de la page precedente ouverte 
+            Form catalog = Application.OpenForms["Catalog"];
+            catalog.Show();
+            this.Close();
         }
     }
 }

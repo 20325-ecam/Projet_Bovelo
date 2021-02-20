@@ -16,5 +16,24 @@ namespace ProjectBovelo
         {
             InitializeComponent();
         }
+
+        private void bp_return_Click(object sender, EventArgs e)
+        {
+            Form catalog = Application.OpenForms["Catalog"];
+            catalog.Show();
+            this.Close();
+        }
+
+        private void bp_quit_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Exit or no?",
+                           "Bovélo",
+                            MessageBoxButtons.YesNo,
+                            MessageBoxIcon.Information) == DialogResult.Yes)
+            {
+                this.Close();
+                Environment.Exit(1);
+            }
+        }
     }
 }

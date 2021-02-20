@@ -19,12 +19,21 @@ namespace ProjectBovelo
 
         private void bp_login_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            Form frontpage = new Front_page();
+            frontpage.Show();
         }
 
         private void bp_quit_Click(object sender, EventArgs e)
         {
-
+            if (MessageBox.Show("Exit or no?",
+                           "Bovélo",
+                            MessageBoxButtons.YesNo,
+                            MessageBoxIcon.Information) == DialogResult.Yes)
+            {
+                this.Close();
+                Environment.Exit(1);
+            }
         }
 
         private void cb_hide_password_CheckedChanged(object sender, EventArgs e)

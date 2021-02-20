@@ -29,11 +29,20 @@ namespace ProjectBovelo
 
         private void bp_quit_Click(object sender, EventArgs e)
         {
-            Form catalog = Application.OpenForms["Catalog"];
+            /*Form catalog = Application.OpenForms["Catalog"];
             catalog.Close();
             Form front_page = Application.OpenForms["Front_page"];
             front_page.Close();
             this.Close();
+            */
+            if (MessageBox.Show("Exit or no?",
+                           "Bovélo",
+                            MessageBoxButtons.YesNo,
+                            MessageBoxIcon.Information) == DialogResult.Yes)
+            {
+                this.Close();
+                Environment.Exit(1);
+            }
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
