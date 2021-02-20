@@ -83,6 +83,16 @@ namespace ProjectBovelo.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap index {
+            get {
+                object obj = ResourceManager.GetObject("index", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap PinClipart_com_bicycle_clip_art_324480 {
             get {
                 object obj = ResourceManager.GetObject("PinClipart.com_bicycle-clip-art_324480", resourceCulture);

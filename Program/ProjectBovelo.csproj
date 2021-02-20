@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Home_page.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home_page.Designer.cs">
+      <DependentUpon>Home_page.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login_staff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login_staff.Designer.cs">
+      <DependentUpon>Login_staff.cs</DependentUpon>
+    </Compile>
     <Compile Include="Order.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +89,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Catalog.resx">
       <DependentUpon>Catalog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home_page.resx">
+      <DependentUpon>Home_page.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login_staff.resx">
+      <DependentUpon>Login_staff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Order.resx">
       <DependentUpon>Order.cs</DependentUpon>
@@ -118,6 +136,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\PinClipart.com_bike-clip-art_5216101.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\index.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
