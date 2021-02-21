@@ -12,18 +12,40 @@ namespace ProjectBovelo
 {
     public partial class Login_staff : Form
     {
+        DBConnect DBConnection = new DBConnect();
+        
         public Login_staff()
         {
-            InitializeComponent();
+            InitializeComponent();           
         }
 
         private void bp_login_Click(object sender, EventArgs e)
         {
-            /*this.Hide();
-            Form frontpage = new Front_page();
-            frontpage.Show();*/
+
             int userID;
             string password;
+            try
+            {
+                userID = Int32.Parse(textBoxID.Text);
+                password = textBoxPassword.Text;
+                if (DBConnection.SelectUser(userID, password))
+                {
+                    MenusSelectionPage menusSelectionPage = new MenusSelectionPage();
+                    menusSelectionPage.Show();
+                    Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Incorrect login info");
+                }
+            }
+            catch (FormatException)
+            {
+                //labelErrorLogin.Text = "Incorrect login format";
+                MessageBox.Show("Incorrect login format");
+            }
+            
+            /*
             try
             {
                 userID = Int32.Parse(textBoxID.Text);
@@ -43,6 +65,7 @@ namespace ProjectBovelo
             {
                 labelErrorLogin.Text = "Incorrect login or password";
             }
+            */
         }
 
         private void bp_quit_Click(object sender, EventArgs e)

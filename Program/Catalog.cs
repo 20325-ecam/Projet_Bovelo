@@ -13,6 +13,7 @@ namespace ProjectBovelo
 {
     public partial class Catalog : Form
     {
+        DBConnect DBConnection = new DBConnect();
         string name;
         public Catalog()
         {
@@ -54,25 +55,34 @@ namespace ProjectBovelo
 
         private void Catalog_Load(object sender, EventArgs e)
         {
-            tableLayoutPanel1.RowCount = 3 * FakeDataBase.databaseAvailableBicycle.Count;
+            List<AvailableBicycle> availableBikeList = new List<AvailableBicycle>();
+            availableBikeList = DBConnection.SelectAvailableBikes();
+            tableLayoutPanel1.RowCount = 3 * availableBikeList.Count;
             tableLayoutPanel1.ColumnCount = 3;
 
-            for (int i = 0; i < FakeDataBase.databaseAvailableBicycle.Count; i++)
+            for (int i = 0; i < availableBikeList.Count; i++)
             {
                 Label labelName = new Label();
-                labelName.Text = FakeDataBase.databaseAvailableBicycle[i].name;
+                labelName.Text = availableBikeList[i].name;
+                labelName.AutoSize = true;
                 tableLayoutPanel1.SetRow(labelName, 3 * i);
                 tableLayoutPanel1.SetColumn(labelName, 1);
                 tableLayoutPanel1.Controls.Add(labelName);
 
-                Label labelDescription = new Label();
-                labelDescription.Text = FakeDataBase.databaseAvailableBicycle[i].description;
+                TextBox labelDescription = new TextBox();
+                labelDescription.Text = availableBikeList[i].description;
+                labelDescription.AutoSize = true;
+                labelDescription.ReadOnly = true;
+                labelDescription.Multiline = true;
+                labelDescription.BorderStyle = BorderStyle.None;
+                labelDescription.WordWrap = true;
+                labelDescription.Size = new Size(200, 80);
                 tableLayoutPanel1.SetRow(labelDescription, 3 * i + 1);
                 tableLayoutPanel1.SetColumn(labelDescription, 1);
                 tableLayoutPanel1.Controls.Add(labelDescription);
 
                 Label labelPrice = new Label();
-                labelPrice.Text = FakeDataBase.databaseAvailableBicycle[i].price.ToString() + "$";
+                labelPrice.Text = availableBikeList[i].price.ToString() + "$";
                 tableLayoutPanel1.SetRow(labelPrice, 3 * i);
                 tableLayoutPanel1.SetColumn(labelPrice, 2);
                 tableLayoutPanel1.Controls.Add(labelPrice);
@@ -83,8 +93,7 @@ namespace ProjectBovelo
                 tableLayoutPanel1.SetColumn(buttonOrder, 1);
                 tableLayoutPanel1.SetColumnSpan(buttonOrder, 2);
                 buttonOrder.Click += new System.EventHandler(buttonOrder_Click);
-                tableLayoutPanel1.Controls.Add(buttonOrder);
-
+                tableLayoutPanel1.Controls.Add(buttonOrder);               
             }
         }
         private void buttonOrder_Click(object sender, EventArgs e)
@@ -93,11 +102,6 @@ namespace ProjectBovelo
             this.Hide();
             Form order = new Order(name);
             order.Show();
-        }
-
-        private void tableLayoutPanel1_Paint_1(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }
