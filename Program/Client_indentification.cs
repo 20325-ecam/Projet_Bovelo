@@ -10,29 +10,38 @@ using System.Windows.Forms;
 
 namespace ProjectBovelo
 {
-    public partial class Client_indentification : Form
+    public partial class Client_indentification : BoveloBaseForm
     {
-        public Client_indentification()
+        List<Client> clientList;
+        public Client_indentification(BoveloUser user, Client client)
         {
+            this.user = user;
+            this.client = client;
             InitializeComponent();
-        }
+        }       
 
-        private void bp_return_Click(object sender, EventArgs e)
+        private void Client_indentification_Load(object sender, EventArgs e)
         {
-            Form catalog = Application.OpenForms["Catalog"];
-            catalog.Show();
-            this.Close();
-        }
-
-        private void bp_quit_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Exit or no?",
-                           "Bovélo",
-                            MessageBoxButtons.YesNo,
-                            MessageBoxIcon.Information) == DialogResult.Yes)
+            PageLayoutMaker.SetBasePageLayout(this);
+            PageLayoutMaker.CreateHeader(this, DBConnection.loadImage(1), user, client);
+            PageLayoutMaker.CreateQuitButton(this);
+            PageLayoutMaker.CreateReturnToCatalogButton(this);
+            clientList = DBConnection.SelectRegisteredClient();
+            for(int i = 0; i<clientList.Count; i++)
             {
+                //comboBoxClientSelection.Items.Add("(" + clientList[i].id + ") " + clientList[i].name + " - " + clientList[i].address);
+                comboBoxClientSelection.Items.Add(clientList[i]);
+            }
+        }
+
+        private void bp_select_Click(object sender, EventArgs e)
+        {
+            if(comboBoxClientSelection.SelectedItem != null)
+            {
+                client = (Client)comboBoxClientSelection.SelectedItem;
+                Catalog CatalogPage = new Catalog(user, client);
+                CatalogPage.Show();
                 this.Close();
-                Environment.Exit(1);
             }
         }
     }

@@ -11,51 +11,54 @@ using System.Windows.Forms;
 
 namespace ProjectBovelo
 {
-    public partial class Catalog : Form
-    {
-        DBConnect DBConnection = new DBConnect();
-        string name;
-        public Catalog()
+    public partial class Catalog : BoveloBaseForm
+    {              
+        List<AvailableBicycle> availableBikeList;
+        public Catalog(BoveloUser user, Client client)
         {
-            InitializeComponent();
-        }
-
-        
-
-        private void bp_quit_Click(object sender, EventArgs e)
-        {
-            //Form front_page = Application.OpenForms["Front_page"]; 
-            //front_page.Close();
-            //this.Close();
-            if (MessageBox.Show("Exit or no?",
-                           "My First Application",
-                            MessageBoxButtons.YesNo,
-                            MessageBoxIcon.Information) == DialogResult.Yes)
+            this.user = user;
+            if(client != null)
             {
-                this.Close();
-                Environment.Exit(1);
+                this.client = client;
             }
-
-        }
-
-        private void bp_return_Click(object sender, EventArgs e)
-        {
-            Form front_page = Application.OpenForms["Front_page"]; 
-            front_page.Show();
-            this.Close();
-        }
-
-       
-        private void bp_client_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Form client = new Client_indentification();
-            client.Show();
+            InitializeComponent();          
         }
 
         private void Catalog_Load(object sender, EventArgs e)
         {
-            List<AvailableBicycle> availableBikeList = new List<AvailableBicycle>();
+            PageLayoutMaker.SetBasePageLayout(this);
+            FillTableLayout();
+            PageLayoutMaker.CreateQuitButton(this);
+            PageLayoutMaker.CreateReturnToMenusButton(this);
+            PageLayoutMaker.CreateHeader(this, DBConnection.loadImage(1), user, client);          
+        }
+        private void buttonOrder_Click(object sender, EventArgs e)
+        {
+            Button pushedButton = (Button)sender;
+            AvailableBicycle bicycle;
+            if(client != null)
+            {
+                for (int i = 0; i < availableBikeList.Count; i++)
+                {
+                    if (availableBikeList[i].id.ToString() == pushedButton.Name)
+                    {
+                        bicycle = availableBikeList[i];
+                        Order order = new Order(bicycle, user, client);
+                        order.Show();
+                        this.Close();
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                Client_indentification clientIdentificationPage = new Client_indentification(user, client);
+                clientIdentificationPage.Show();
+                this.Close();
+            }               
+        }
+        private void FillTableLayout()
+        {
             availableBikeList = DBConnection.SelectAvailableBikes();
             tableLayoutPanel1.RowCount = 3 * availableBikeList.Count;
             tableLayoutPanel1.ColumnCount = 3;
@@ -89,19 +92,22 @@ namespace ProjectBovelo
 
                 Button buttonOrder = new Button();
                 buttonOrder.Text = "Order";
+                buttonOrder.Name = availableBikeList[i].id.ToString();
                 tableLayoutPanel1.SetRow(buttonOrder, 3 * i + 2);
                 tableLayoutPanel1.SetColumn(buttonOrder, 1);
                 tableLayoutPanel1.SetColumnSpan(buttonOrder, 2);
-                buttonOrder.Click += new System.EventHandler(buttonOrder_Click);
-                tableLayoutPanel1.Controls.Add(buttonOrder);               
+                buttonOrder.Click += new EventHandler(buttonOrder_Click);
+                tableLayoutPanel1.Controls.Add(buttonOrder);
+
+                PictureBox pictureBox = new PictureBox();
+                pictureBox.Image = DBConnection.loadImage(availableBikeList[i].imageId);
+                pictureBox.Size = new Size(280, 150);
+                pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+                tableLayoutPanel1.SetRow(pictureBox, 3 * i);
+                tableLayoutPanel1.SetColumn(pictureBox, 0);
+                tableLayoutPanel1.SetRowSpan(pictureBox, 3);
+                tableLayoutPanel1.Controls.Add(pictureBox);
             }
-        }
-        private void buttonOrder_Click(object sender, EventArgs e)
-        {
-            name = "add name of the bike";
-            this.Hide();
-            Form order = new Order(name);
-            order.Show();
         }
     }
 }
