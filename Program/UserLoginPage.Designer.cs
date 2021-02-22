@@ -1,7 +1,7 @@
 ﻿
 namespace ProjectBovelo
 {
-    partial class Login_staff
+    partial class UserLoginPage
     {
         /// <summary>
         /// Required designer variable.

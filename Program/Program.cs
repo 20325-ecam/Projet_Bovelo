@@ -16,7 +16,7 @@ namespace ProjectBovelo
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Home_page());
+            Application.Run(new HomePage());
         }
     }
 }

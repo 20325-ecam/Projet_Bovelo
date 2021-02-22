@@ -50,26 +50,32 @@
     <Compile Include="BoveloBaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CommandOverviewPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommandOverviewPage.Designer.cs">
+      <DependentUpon>CommandOverviewPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="PageLayoutMaker.cs" />
     <Compile Include="DBConnect.cs" />
-    <Compile Include="Client_indentification.cs">
+    <Compile Include="ClientIdentification.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Client_indentification.Designer.cs">
-      <DependentUpon>Client_indentification.cs</DependentUpon>
+    <Compile Include="ClientIdentification.Designer.cs">
+      <DependentUpon>ClientIdentification.cs</DependentUpon>
     </Compile>
     <Compile Include="DataBaseItems.cs" />
-    <Compile Include="Home_page.cs">
+    <Compile Include="HomePage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Home_page.Designer.cs">
-      <DependentUpon>Home_page.cs</DependentUpon>
+    <Compile Include="HomePage.Designer.cs">
+      <DependentUpon>HomePage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login_staff.cs">
+    <Compile Include="UserLoginPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login_staff.Designer.cs">
-      <DependentUpon>Login_staff.cs</DependentUpon>
+    <Compile Include="UserLoginPage.Designer.cs">
+      <DependentUpon>UserLoginPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Order.cs">
       <SubType>Form</SubType>
@@ -103,14 +109,17 @@
     <EmbeddedResource Include="Catalog.resx">
       <DependentUpon>Catalog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Client_indentification.resx">
-      <DependentUpon>Client_indentification.cs</DependentUpon>
+    <EmbeddedResource Include="ClientIdentification.resx">
+      <DependentUpon>ClientIdentification.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Home_page.resx">
-      <DependentUpon>Home_page.cs</DependentUpon>
+    <EmbeddedResource Include="CommandOverviewPage.resx">
+      <DependentUpon>CommandOverviewPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login_staff.resx">
-      <DependentUpon>Login_staff.cs</DependentUpon>
+    <EmbeddedResource Include="HomePage.resx">
+      <DependentUpon>HomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserLoginPage.resx">
+      <DependentUpon>UserLoginPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Order.resx">
       <DependentUpon>Order.cs</DependentUpon>

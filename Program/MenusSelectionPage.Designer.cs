@@ -70,6 +70,7 @@
             this.bp_l_commands.TabIndex = 3;
             this.bp_l_commands.Text = "List of commands";
             this.bp_l_commands.UseVisualStyleBackColor = true;
+            this.bp_l_commands.Click += new System.EventHandler(this.bp_l_commands_Click);
             // 
             // bp_planning
             // 

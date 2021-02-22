@@ -122,7 +122,7 @@ namespace ProjectBovelo
         {
             Control button = (Control)sender;
             BoveloBaseForm form = (BoveloBaseForm)button.Parent;
-            Login_staff LoginPage = new Login_staff();
+            UserLoginPage LoginPage = new UserLoginPage();
             LoginPage.Show();
             form.Close();
         }
@@ -131,7 +131,7 @@ namespace ProjectBovelo
         {
             Control button = (Control)sender;
             BoveloBaseForm form = (BoveloBaseForm)button.Parent;
-            Client_indentification clientIdentificationPage = new Client_indentification(form.user, form.client);
+            ClientIdentification clientIdentificationPage = new ClientIdentification(form.user, form.client);
             clientIdentificationPage.Show();
             form.Close();
         }

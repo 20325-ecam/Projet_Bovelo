@@ -52,7 +52,7 @@ namespace ProjectBovelo
             }
             else
             {
-                Client_indentification clientIdentificationPage = new Client_indentification(user, client);
+                ClientIdentification clientIdentificationPage = new ClientIdentification(user, client);
                 clientIdentificationPage.Show();
                 this.Close();
             }               

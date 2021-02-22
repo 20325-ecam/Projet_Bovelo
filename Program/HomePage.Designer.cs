@@ -1,7 +1,7 @@
 ﻿
 namespace ProjectBovelo
 {
-    partial class Home_page
+    partial class HomePage
     {
         /// <summary>
         /// Required designer variable.

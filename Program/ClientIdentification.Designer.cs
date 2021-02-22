@@ -1,7 +1,7 @@
 ﻿
 namespace ProjectBovelo
 {
-    partial class Client_indentification
+    partial class ClientIdentification
     {
         /// <summary>
         /// Required designer variable.

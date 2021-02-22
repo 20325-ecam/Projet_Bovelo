@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ProjectBovelo
 {
-    public partial class Login_staff : BoveloBaseForm
+    public partial class UserLoginPage : BoveloBaseForm
     {
-        public Login_staff()
+        public UserLoginPage()
         {            
             InitializeComponent();           
         }

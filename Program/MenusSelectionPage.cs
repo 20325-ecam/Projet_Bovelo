@@ -19,8 +19,8 @@ namespace ProjectBovelo
         }
 
         public void bp_catalog_Click(object sender, EventArgs e)
-        {          
-            Form Catalog = new Catalog(user, null);
+        {
+            Catalog Catalog = new Catalog(user, null);
             Catalog.Show();
             this.Close();
         }
@@ -32,6 +32,13 @@ namespace ProjectBovelo
             PageLayoutMaker.CreateLogoutUserButton(this);
             PageLayoutMaker.CreateHeader(this, DBConnection.loadImage(1), user);
             
+        }
+
+        private void bp_l_commands_Click(object sender, EventArgs e)
+        {
+            CommandOverviewPage commandOverviewPage = new CommandOverviewPage(user);
+            commandOverviewPage.Show();
+            this.Close();
         }
     }
 }

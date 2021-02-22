@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace ProjectBovelo
 {
-    public partial class Client_indentification : BoveloBaseForm
+    public partial class ClientIdentification : BoveloBaseForm
     {
         List<Client> clientList;
-        public Client_indentification(BoveloUser user, Client client)
+        public ClientIdentification(BoveloUser user, Client client)
         {
             this.user = user;
             this.client = client;

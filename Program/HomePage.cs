@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ProjectBovelo
 {
-    public partial class Home_page : BoveloBaseForm
+    public partial class HomePage : BoveloBaseForm
     {
-        public Home_page()
+        public HomePage()
         {
             InitializeComponent();
         }
@@ -25,7 +25,7 @@ namespace ProjectBovelo
 
         private void ShowBoveloUsersLoginPage(object sender, EventArgs e)
         {
-            Login_staff BoveloUsersLoginPage = new Login_staff();
+            UserLoginPage BoveloUsersLoginPage = new UserLoginPage();
             BoveloUsersLoginPage.Show();
             Hide();
         }       
