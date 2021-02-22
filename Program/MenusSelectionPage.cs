@@ -10,31 +10,35 @@ using System.Windows.Forms;
 
 namespace ProjectBovelo
 {
-    public partial class MenusSelectionPage : Form
+    public partial class MenusSelectionPage : BoveloBaseForm
     {
-        public MenusSelectionPage()
+        public MenusSelectionPage(BoveloUser user)
         {
+            this.user = user;          
             InitializeComponent();
         }
 
         public void bp_catalog_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Form Catalog = new Catalog();
+            Catalog Catalog = new Catalog(user, null);
             Catalog.Show();
+            this.Close();
         }
 
-        private void bp_quit_Click(object sender, EventArgs e)
+        private void MenusSelectionPage_Load(object sender, EventArgs e)
         {
-            //this.Close();
-            if (MessageBox.Show("Exit or no?",
-                           "Bovélo",
-                            MessageBoxButtons.YesNo,
-                            MessageBoxIcon.Information) == DialogResult.Yes)
-            {
-                this.Close();
-                Environment.Exit(1);
-            }
+            PageLayoutMaker.SetBasePageLayout(this);
+            PageLayoutMaker.CreateQuitButton(this);
+            PageLayoutMaker.CreateLogoutUserButton(this);
+            PageLayoutMaker.CreateHeader(this, DBConnection.loadImage(1), user);
+            
+        }
+
+        private void bp_l_commands_Click(object sender, EventArgs e)
+        {
+            CommandOverviewPage commandOverviewPage = new CommandOverviewPage(user);
+            commandOverviewPage.Show();
+            this.Close();
         }
     }
 }

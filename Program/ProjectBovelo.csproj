@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data, Version=8.0.22.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,24 +47,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Client_indentification.cs">
+    <Compile Include="BoveloBaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Client_indentification.Designer.cs">
-      <DependentUpon>Client_indentification.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FakeDataBase.cs" />
-    <Compile Include="Home_page.cs">
+    <Compile Include="CommandOverviewPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Home_page.Designer.cs">
-      <DependentUpon>Home_page.cs</DependentUpon>
+    <Compile Include="CommandOverviewPage.Designer.cs">
+      <DependentUpon>CommandOverviewPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login_staff.cs">
+    <Compile Include="PageLayoutMaker.cs" />
+    <Compile Include="DBConnect.cs" />
+    <Compile Include="ClientIdentification.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login_staff.Designer.cs">
-      <DependentUpon>Login_staff.cs</DependentUpon>
+    <Compile Include="ClientIdentification.Designer.cs">
+      <DependentUpon>ClientIdentification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataBaseItems.cs" />
+    <Compile Include="HomePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomePage.Designer.cs">
+      <DependentUpon>HomePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserLoginPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserLoginPage.Designer.cs">
+      <DependentUpon>UserLoginPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Order.cs">
       <SubType>Form</SubType>
@@ -83,28 +95,31 @@
     <Compile Include="Catalog.Designer.cs">
       <DependentUpon>Catalog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Basket.cs">
+    <Compile Include="Cart.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Basket.Designer.cs">
-      <DependentUpon>Basket.cs</DependentUpon>
+    <Compile Include="Cart.Designer.cs">
+      <DependentUpon>Cart.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Basket.resx">
-      <DependentUpon>Basket.cs</DependentUpon>
+    <EmbeddedResource Include="Cart.resx">
+      <DependentUpon>Cart.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Catalog.resx">
       <DependentUpon>Catalog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Client_indentification.resx">
-      <DependentUpon>Client_indentification.cs</DependentUpon>
+    <EmbeddedResource Include="ClientIdentification.resx">
+      <DependentUpon>ClientIdentification.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Home_page.resx">
-      <DependentUpon>Home_page.cs</DependentUpon>
+    <EmbeddedResource Include="CommandOverviewPage.resx">
+      <DependentUpon>CommandOverviewPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login_staff.resx">
-      <DependentUpon>Login_staff.cs</DependentUpon>
+    <EmbeddedResource Include="HomePage.resx">
+      <DependentUpon>HomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserLoginPage.resx">
+      <DependentUpon>UserLoginPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Order.resx">
       <DependentUpon>Order.cs</DependentUpon>

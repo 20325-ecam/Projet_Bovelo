@@ -10,20 +10,41 @@ using System.Windows.Forms;
 
 namespace ProjectBovelo
 {
-    public partial class Login_staff : Form
+    public partial class UserLoginPage : BoveloBaseForm
     {
-        public Login_staff()
-        {
-            InitializeComponent();
+        public UserLoginPage()
+        {            
+            InitializeComponent();           
         }
 
         private void bp_login_Click(object sender, EventArgs e)
         {
-            /*this.Hide();
-            Form frontpage = new Front_page();
-            frontpage.Show();*/
             int userID;
             string password;
+            BoveloUser user;
+            try
+            {
+                userID = Int32.Parse(textBoxID.Text);
+                password = textBoxPassword.Text;
+                user = DBConnection.SelectUser(userID, password);
+                if (user != null)
+                {
+                    MenusSelectionPage menusSelectionPage = new MenusSelectionPage(user);
+                    menusSelectionPage.Show();
+                    Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Incorrect login info");
+                }
+            }
+            catch (FormatException)
+            {
+                //labelErrorLogin.Text = "Incorrect login format";
+                MessageBox.Show("Incorrect login format");
+            }
+            
+            /*
             try
             {
                 userID = Int32.Parse(textBoxID.Text);
@@ -43,20 +64,9 @@ namespace ProjectBovelo
             {
                 labelErrorLogin.Text = "Incorrect login or password";
             }
+            */
         }
-
-        private void bp_quit_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Exit or no?",
-                           "Bovélo",
-                            MessageBoxButtons.YesNo,
-                            MessageBoxIcon.Information) == DialogResult.Yes)
-            {
-                this.Close();
-                Environment.Exit(1);
-            }
-        }
-
+       
         private void cb_hide_password_CheckedChanged(object sender, EventArgs e)
         {
 
@@ -65,6 +75,13 @@ namespace ProjectBovelo
         private void labelErrorLogin_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Login_staff_Load(object sender, EventArgs e)
+        {
+            PageLayoutMaker.SetBasePageLayout(this);
+            PageLayoutMaker.CreateQuitButton(this);
+            PageLayoutMaker.CreateHeader(this, DBConnection.loadImage(1));
         }
     }
 }

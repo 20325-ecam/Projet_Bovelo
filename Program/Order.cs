@@ -10,59 +10,53 @@ using System.Windows.Forms;
 
 namespace ProjectBovelo
 {
-    public partial class Order : Form
+    public partial class Order : BoveloBaseForm
     {
-        string name;
-        public Order(string type)
+        AvailableBicycle bicycle;
+        public Order(AvailableBicycle bicycle, BoveloUser user, Client client)
         {
+            this.bicycle = bicycle;
+            this.user = user;
+            this.client = client;
             InitializeComponent();
-            label_name.Text = type;
-            name = type;
-        }
-
-        private void bp_return_Click(object sender, EventArgs e)
-        {
-            Form catalog = Application.OpenForms["Catalog"];
-            catalog.Show();
-            this.Close();
-        }
-
-        private void bp_quit_Click(object sender, EventArgs e)
-        {
-            /*Form catalog = Application.OpenForms["Home_page"];
-            catalog.Close();
-            this.Close();
-            Form front_page = Application.OpenForms["Front_page"];
-            front_page.Close();
-            */
             
-            if (MessageBox.Show("Exit or no?",
-                           "Bovélo",
-                            MessageBoxButtons.YesNo,
-                            MessageBoxIcon.Information) == DialogResult.Yes)
+        }
+
+        private void Order_Load(object sender, EventArgs e)
+        {
+            PageLayoutMaker.SetBasePageLayout(this);
+            PageLayoutMaker.CreateHeader(this, DBConnection.loadImage(1), user, client);
+            PageLayoutMaker.CreateQuitButton(this);
+            PageLayoutMaker.CreateReturnToCatalogButton(this);
+            label_name.Text = bicycle.name;
+            for (int i = 0; i< bicycle.availableColors.Count; i++)
             {
-                this.Close();
-                Environment.Exit(1);
+                comboBoxColor.Items.Add(bicycle.availableColors[i]);
+            }
+            for (int i = 0; i < bicycle.availableSizes.Count; i++)
+            {
+                comboBoxSize.Items.Add(bicycle.availableSizes[i]);
             }
         }
 
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        private void buttonOrder_Click(object sender, EventArgs e)
         {
-            
-        }
-
-        
-
-        private void pb_basket_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Form basket = new Basket();
-            basket.Show();
-        }
-
-        private void label_name_Click(object sender, EventArgs e)
-        {
-
+            if(comboBoxColor.SelectedItem != null && comboBoxSize.SelectedItem != null)
+            {
+                SingleBikeOrder singleOrder;
+                int bikeId = bicycle.id;
+                string bikeName = bicycle.name;
+                int quantity = (int)numericUpDownQuantity.Value;
+                BicycleColor color = (BicycleColor)comboBoxColor.SelectedItem;
+                BicycleSize size = (BicycleSize)comboBoxSize.SelectedItem;
+                int clientId = client.id;
+                float totalPrice = quantity * bicycle.price;
+                singleOrder = new SingleBikeOrder(bikeId, bikeName, quantity, color, size, clientId, totalPrice);
+                client.AddOrderToCart(singleOrder);
+                Cart cartPage = new Cart(user, client);
+                cartPage.Show();
+                this.Close();
+            }           
         }
     }
 }
