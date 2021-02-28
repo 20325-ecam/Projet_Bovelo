@@ -129,8 +129,8 @@ namespace ProjectBovelo
         public void InsertNewClient(AddNewClient addNewClient)
         {
             //long newClientId = 4;
-            string queryNewClient = "INSERT INTO Client (name, phone, email, address, zipCode, city, vat)"+
-                           "VALUES('" + addNewClient.clientName + "', '" + 
+            string queryNewClient = "INSERT INTO Client (id, name, phone, email, address, zipCode, city, vat)"+
+                           "VALUES('"+ addNewClient.newClientId +"','" + addNewClient.clientName + "', '" + 
                            addNewClient.clientPhone + "', '" + addNewClient.clientEmail+"', '" + addNewClient.clientaddress +"', '"+ 
                            addNewClient.clientZipCode+"', '"+ addNewClient.clientCity +"', '"+ addNewClient.clientVat+"')";
 
@@ -143,6 +143,7 @@ namespace ProjectBovelo
 
                 //long lastClientId = cmdNewClient.LastInsertedId;
                 //long newClientId = lastClientId + 1;
+
                 //Execute command
                 cmdNewClient.ExecuteNonQuery();
 

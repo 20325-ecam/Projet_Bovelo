@@ -26,12 +26,29 @@ namespace ProjectBovelo
             PageLayoutMaker.CreateHeader(this, DBConnection.loadImage(1), user);
         }
 
-        private void textBoxname_TextChanged(object sender, EventArgs e)
+        private void buttonvalidate_Click(object sender, EventArgs e)
         {
-
+            int newClientId = 3;
+            string clientName = textBoxname.Text;
+            string clientPhone = textBoxphone.Text;
+            string clientEmail = textBoxmail.Text;
+            string clientaddress = textBoxaddress.Text;
+            string clientZipCode = textBoxZipCode.Text;
+            string clientCity = textBoxCity.Text;
+            string clientVat = textBoxVat.Text;
+            AddNewClient addNewClient = new AddNewClient(newClientId, clientName, clientPhone, clientEmail, clientaddress, clientZipCode, clientCity, clientVat);
+            DBConnection.InsertNewClient(addNewClient);
+            ClientIdentification clientIdentification = new ClientIdentification(user, client);
+            clientIdentification.Show();
+            this.Close();
         }
 
-        private void textBoxfirstname_TextChanged(object sender, EventArgs e)
+        private void textBoxname_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void textBoxphone_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -41,26 +58,24 @@ namespace ProjectBovelo
 
         }
 
-        private void textBoxphone_TextChanged(object sender, EventArgs e)
+        private void textBoxaddress_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void buttonvalidate_Click(object sender, EventArgs e)
+        private void textBoxZipCode_TextChanged(object sender, EventArgs e)
         {
-            int newClientId = 3;
-            string clientName = "jeand";
-            long clientPhone = 00000000115;
-            string clientEmail = "test@test.testd";
-            string clientaddress = "Boulevard du test, 52";
-            int clientZipCode = 1000;
-            string clientCity = "BXL";
-            string clientVat = "BE23654100";
-            AddNewClient addNewClient = new AddNewClient(newClientId, clientName, clientPhone, clientEmail, clientaddress, clientZipCode, clientCity, clientVat);
-            DBConnection.InsertNewClient(addNewClient);
-            ClientIdentification clientIdentification = new ClientIdentification(user, client);
-            clientIdentification.Show();
-            this.Close();
+
+        }
+
+        private void textBoxCity_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxVat_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
