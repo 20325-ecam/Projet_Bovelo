@@ -125,6 +125,32 @@ namespace ProjectBovelo
             }
         }
 
+        // insert new client in the DB
+        public void InsertNewClient(AddNewClient addNewClient)
+        {
+            //long newClientId = 4;
+            string queryNewClient = "INSERT INTO Client (name, phone, email, address, zipCode, city, vat)"+
+                           "VALUES('" + addNewClient.clientName + "', '" + 
+                           addNewClient.clientPhone + "', '" + addNewClient.clientEmail+"', '" + addNewClient.clientaddress +"', '"+ 
+                           addNewClient.clientZipCode+"', '"+ addNewClient.clientCity +"', '"+ addNewClient.clientVat+"')";
+
+
+            //open connection
+            if (this.OpenConnection() == true)
+            {
+                //create command and assign the query and connection from the constructor
+                MySqlCommand cmdNewClient = new MySqlCommand(queryNewClient, connection);
+
+                //long lastClientId = cmdNewClient.LastInsertedId;
+                //long newClientId = lastClientId + 1;
+                //Execute command
+                cmdNewClient.ExecuteNonQuery();
+
+                //close connection
+                this.CloseConnection();
+            }
+        }
+
         //Update statement
         public void Update()
         {

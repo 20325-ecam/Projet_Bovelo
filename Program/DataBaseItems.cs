@@ -8,7 +8,7 @@ namespace ProjectBovelo
 {
     public class BoveloUser
     {
-        
+
         public int id;
         public string password;
         public string firstname;
@@ -66,7 +66,7 @@ namespace ProjectBovelo
     public class AvailableBicycle
     {
 
-        public int id;       
+        public int id;
         public string name;
         public string description;
         public float price;
@@ -161,5 +161,29 @@ namespace ProjectBovelo
         {
             singleBikeOrderList.Add(order);
         }
+    }
+    public class AddNewClient
+    {
+        public int newClientId;
+        public string clientName;
+        public long clientPhone;
+        public string clientEmail;
+        public string clientaddress;
+        public int clientZipCode;
+        public string clientCity;
+        public string clientVat;
+
+        public AddNewClient(int newClientId, string clientName, long clientPhone, string clientEmail, string clientaddress, int clientZipCode, string clientCity, string clientVat)
+        {
+            this.newClientId = newClientId;
+            this.clientName = clientName;
+            this.clientPhone = clientPhone;
+            this.clientEmail = clientEmail;
+            this.clientaddress = clientaddress;
+            this.clientZipCode = clientZipCode;
+            this.clientCity = clientCity;
+            this.clientVat = clientVat;
+        }
+
     }
 }
