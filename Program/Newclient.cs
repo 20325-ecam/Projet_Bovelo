@@ -28,7 +28,7 @@ namespace ProjectBovelo
 
         private void buttonvalidate_Click(object sender, EventArgs e)
         {
-            int newClientId = 3;
+            int newClientId;
             string clientName = textBoxname.Text;
             string clientPhone = textBoxphone.Text;
             string clientEmail = textBoxmail.Text;
@@ -36,7 +36,7 @@ namespace ProjectBovelo
             string clientZipCode = textBoxZipCode.Text;
             string clientCity = textBoxCity.Text;
             string clientVat = textBoxVat.Text;
-            AddNewClient addNewClient = new AddNewClient(newClientId, clientName, clientPhone, clientEmail, clientaddress, clientZipCode, clientCity, clientVat);
+            AddNewClient addNewClient = new AddNewClient(clientName, clientPhone, clientEmail, clientaddress, clientZipCode, clientCity, clientVat);
             DBConnection.InsertNewClient(addNewClient);
             ClientIdentification clientIdentification = new ClientIdentification(user, client);
             clientIdentification.Show();

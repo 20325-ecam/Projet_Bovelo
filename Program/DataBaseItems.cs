@@ -173,9 +173,9 @@ namespace ProjectBovelo
         public string clientCity;
         public string clientVat;
 
-        public AddNewClient(int newClientId, string clientName, string clientPhone, string clientEmail, string clientaddress, string clientZipCode, string clientCity, string clientVat)
+        public AddNewClient(string clientName, string clientPhone, string clientEmail, string clientaddress, string clientZipCode, string clientCity, string clientVat)
         {
-            this.newClientId = newClientId;
+            //this.newClientId = newClientId;
             this.clientName = clientName;
             this.clientPhone = clientPhone;
             this.clientEmail = clientEmail;
