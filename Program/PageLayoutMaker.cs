@@ -14,7 +14,7 @@ namespace ProjectBovelo
         public static void SetBasePageLayout(BoveloBaseForm form)
         {
             form.Location = new Point(100, 100);
-            form.Size = new Size(800, 600);
+            form.Size = new Size(850, 600);
         }
         public static void CreateHeader(Form form, Bitmap image)
         {

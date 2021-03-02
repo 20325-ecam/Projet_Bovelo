@@ -16,6 +16,7 @@ namespace ProjectBovelo
         List<AvailableBicycle> availableBikeList;
         public Catalog(BoveloUser user, Client client)
         {
+            
             this.user = user;
             if(client != null)
             {

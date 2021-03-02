@@ -44,5 +44,12 @@ namespace ProjectBovelo
                 this.Close();
             }
         }
+
+        private void buttonnewclient_Click(object sender, EventArgs e)
+        {
+            Newclient newclient = new Newclient(user);
+            newclient.Show();
+            this.Close();
+        }
     }
 }
