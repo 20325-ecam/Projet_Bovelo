@@ -21,6 +21,7 @@ namespace ProjectBovelo
             {
                 this.client = client;
             }
+            availableBikeList = DBConnection.SelectAvailableBikes();
             InitializeComponent();          
         }
 
@@ -58,8 +59,7 @@ namespace ProjectBovelo
             }               
         }
         private void FillTableLayout()
-        {
-            availableBikeList = DBConnection.SelectAvailableBikes();
+        {           
             tableLayoutPanel1.RowCount = 3 * availableBikeList.Count;
             tableLayoutPanel1.ColumnCount = 3;
 
