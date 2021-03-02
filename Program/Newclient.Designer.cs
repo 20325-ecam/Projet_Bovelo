@@ -93,6 +93,7 @@ namespace ProjectBovelo
             // textBoxmail
             // 
             this.textBoxmail.Location = new System.Drawing.Point(219, 221);
+            this.textBoxmail.MaxLength = 45;
             this.textBoxmail.Name = "textBoxmail";
             this.textBoxmail.Size = new System.Drawing.Size(187, 22);
             this.textBoxmail.TabIndex = 6;
@@ -101,6 +102,7 @@ namespace ProjectBovelo
             // textBoxphone
             // 
             this.textBoxphone.Location = new System.Drawing.Point(219, 176);
+            this.textBoxphone.MaxLength = 15;
             this.textBoxphone.Name = "textBoxphone";
             this.textBoxphone.Size = new System.Drawing.Size(187, 22);
             this.textBoxphone.TabIndex = 7;
@@ -119,6 +121,7 @@ namespace ProjectBovelo
             // textBoxaddress
             // 
             this.textBoxaddress.Location = new System.Drawing.Point(219, 261);
+            this.textBoxaddress.MaxLength = 45;
             this.textBoxaddress.Name = "textBoxaddress";
             this.textBoxaddress.Size = new System.Drawing.Size(187, 22);
             this.textBoxaddress.TabIndex = 9;
@@ -127,6 +130,7 @@ namespace ProjectBovelo
             // textBoxVat
             // 
             this.textBoxVat.Location = new System.Drawing.Point(219, 389);
+            this.textBoxVat.MaxLength = 12;
             this.textBoxVat.Name = "textBoxVat";
             this.textBoxVat.Size = new System.Drawing.Size(187, 22);
             this.textBoxVat.TabIndex = 15;
@@ -135,6 +139,7 @@ namespace ProjectBovelo
             // textBoxZipCode
             // 
             this.textBoxZipCode.Location = new System.Drawing.Point(219, 304);
+            this.textBoxZipCode.MaxLength = 4;
             this.textBoxZipCode.Name = "textBoxZipCode";
             this.textBoxZipCode.Size = new System.Drawing.Size(187, 22);
             this.textBoxZipCode.TabIndex = 14;
@@ -143,6 +148,7 @@ namespace ProjectBovelo
             // textBoxCity
             // 
             this.textBoxCity.Location = new System.Drawing.Point(219, 349);
+            this.textBoxCity.MaxLength = 20;
             this.textBoxCity.Name = "textBoxCity";
             this.textBoxCity.Size = new System.Drawing.Size(187, 22);
             this.textBoxCity.TabIndex = 13;
@@ -153,9 +159,9 @@ namespace ProjectBovelo
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(84, 389);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(29, 17);
+            this.label5.Size = new System.Drawing.Size(35, 17);
             this.label5.TabIndex = 12;
-            this.label5.Text = "Vat";
+            this.label5.Text = "VAT";
             // 
             // label6
             // 

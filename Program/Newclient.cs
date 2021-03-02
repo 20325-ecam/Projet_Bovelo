@@ -36,11 +36,28 @@ namespace ProjectBovelo
             string clientZipCode = textBoxZipCode.Text;
             string clientCity = textBoxCity.Text;
             string clientVat = textBoxVat.Text;
-            AddNewClient addNewClient = new AddNewClient(clientName, clientPhone, clientEmail, clientaddress, clientZipCode, clientCity, clientVat);
-            DBConnection.InsertNewClient(addNewClient);
-            ClientIdentification clientIdentification = new ClientIdentification(user, client);
-            clientIdentification.Show();
-            this.Close();
+
+            if (!(string.IsNullOrEmpty(textBoxname.Text) || string.IsNullOrEmpty(textBoxphone.Text) || string.IsNullOrEmpty(textBoxmail.Text)
+                || string.IsNullOrEmpty(textBoxaddress.Text) || string.IsNullOrEmpty(textBoxZipCode.Text) || string.IsNullOrEmpty(textBoxCity.Text)))
+            {
+                if (EmailValide.IsValidEmail(textBoxmail.Text))
+                {
+                    AddNewClient addNewClient = new AddNewClient(clientName, clientPhone, clientEmail, clientaddress, clientZipCode, clientCity, clientVat);
+                    DBConnection.InsertNewClient(addNewClient);
+                    ClientIdentification clientIdentification = new ClientIdentification(user, client);
+                    clientIdentification.Show();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Email not valide", "wrong Email", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Every box is not full", "textBox empty", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         private void textBoxname_TextChanged(object sender, EventArgs e)
