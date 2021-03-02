@@ -28,7 +28,7 @@ namespace ProjectBovelo
 
         private void buttonvalidate_Click(object sender, EventArgs e)
         {
-            int newClientId;
+            //int newClientId;
             string clientName = textBoxname.Text;
             string clientPhone = textBoxphone.Text;
             string clientEmail = textBoxmail.Text;
