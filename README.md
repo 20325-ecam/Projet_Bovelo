@@ -14,11 +14,8 @@ Person working for Bovélo supervising the planning and assembly of new bicycles
 **-Représentant / Representative**  
 A person working for Bovélo selling assembled bicycles to other stores in order to distribute them to consumers.
 
-**-Magasin / Store**  
-A business buying bikes from Bovélo to re-sell them to consumers.  
-
-**-Consomateur / Consumer**  
-Person buying a bicycle from a representative.  
+**-Magasin / Store / Client**  
+A business buying bikes from Bovélo to re-sell them to consumers.   
 
 ## Contributors
 

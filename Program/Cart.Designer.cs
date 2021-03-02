@@ -46,7 +46,8 @@ namespace ProjectBovelo
             this.tableLayoutPanelOrder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanelOrder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanelOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableLayoutPanelOrder.Location = new System.Drawing.Point(136, 117);
+            this.tableLayoutPanelOrder.Location = new System.Drawing.Point(181, 144);
+            this.tableLayoutPanelOrder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanelOrder.Name = "tableLayoutPanelOrder";
             this.tableLayoutPanelOrder.RowCount = 3;
             this.tableLayoutPanelOrder.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -57,10 +58,10 @@ namespace ProjectBovelo
             // 
             // buttonValidate
             // 
-            this.buttonValidate.Location = new System.Drawing.Point(320, 459);
-            this.buttonValidate.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonValidate.Location = new System.Drawing.Point(378, 478);
+            this.buttonValidate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonValidate.Name = "buttonValidate";
-            this.buttonValidate.Size = new System.Drawing.Size(98, 32);
+            this.buttonValidate.Size = new System.Drawing.Size(131, 39);
             this.buttonValidate.TabIndex = 2;
             this.buttonValidate.Text = "Validate cart";
             this.buttonValidate.UseVisualStyleBackColor = true;
@@ -70,22 +71,21 @@ namespace ProjectBovelo
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.label1.Location = new System.Drawing.Point(323, 37);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(368, 40);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 46);
+            this.label1.Size = new System.Drawing.Size(115, 55);
             this.label1.TabIndex = 0;
             this.label1.Text = "Cart";
             // 
             // Cart
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.ClientSize = new System.Drawing.Size(832, 555);
             this.Controls.Add(this.tableLayoutPanelOrder);
             this.Controls.Add(this.buttonValidate);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Cart";
             this.Text = "Bovélo";
             this.Load += new System.EventHandler(this.Cart_Load);
