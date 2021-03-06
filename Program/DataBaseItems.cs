@@ -135,7 +135,7 @@ namespace ProjectBovelo
         public BicycleColor color;
         public BicycleSize size;
         public int clientId;
-        public float totalPrice;
+        public float Price;
 
         public OrderItem(int bikeId, string bikeName, int quantity, BicycleColor color, BicycleSize size, int clientId, float totalPrice)
         {
@@ -145,19 +145,19 @@ namespace ProjectBovelo
             this.color = color;
             this.size = size;
             this.clientId = clientId;
-            this.totalPrice = totalPrice;
+            this.Price = totalPrice;
         }
     }
     public class Order
     {
         public int clientId;
-        public float totalPrice;
+        public float totalPrice = 0;
         public List<OrderItem> orderItemList = new List<OrderItem>();
         public Order(int clientId)
         {
             this.clientId = clientId;
         }
-        public void AddSingleBikeOrder(OrderItem order)
+        public void AddOrderItem(OrderItem order)
         {
             orderItemList.Add(order);
         }

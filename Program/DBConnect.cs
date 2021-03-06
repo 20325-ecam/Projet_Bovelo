@@ -101,7 +101,7 @@ namespace ProjectBovelo
 
         public void InsertNewOrder(Order order)
         {
-            string queryOrder = "INSERT INTO Order (client, totalprice) VALUES('" + order.clientId + "', '" + order.totalPrice + "')";
+            string queryOrder = "INSERT INTO OrderDB (totalPrice) VALUES('" + order.totalPrice + "')";
 
             //open connection
             if (this.OpenConnection() == true)
@@ -110,14 +110,14 @@ namespace ProjectBovelo
                 MySqlCommand cmdOrder = new MySqlCommand(queryOrder, connection);
                 cmdOrder.ExecuteNonQuery();
 
-                long wholeOrderId = cmdOrder.LastInsertedId;
+                long orderId = cmdOrder.LastInsertedId;
 
                 for (int i =0 ; i < order.orderItemList.Count; i++)
                 {
                     OrderItem orderItem = order.orderItemList[i];
-                    string queryOrderItem = "INSERT INTO OrderItem (bikeId, colorId, sizeId, quantity, totalprice, clientId, OrderId) " +
-                                                  "VALUES('" + orderItem.bikeId + "', '" + orderItem.color.id + "', '" + orderItem.size.id + "', '" + orderItem.quantity +
-                                                  "', '" + orderItem.totalPrice + "', '" + orderItem.clientId + "', '" + wholeOrderId + "')";
+                    string queryOrderItem = "INSERT INTO OrderItem (bikeId, colorId, sizeId, Price, clientId, OrderId) " +
+                                                  "VALUES('" + orderItem.bikeId + "', '" + orderItem.color.id + "', '" + orderItem.size.id  
+                                                  +"', '" + orderItem.Price + "', '" + orderItem.clientId + "', '" + orderId + "')";
                     MySqlCommand cmdOrderItem = new MySqlCommand(queryOrderItem, connection);
                     cmdOrderItem.ExecuteNonQuery();
                 }

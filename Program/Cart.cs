@@ -81,7 +81,7 @@ namespace ProjectBovelo
                 Label sizeLabel = new Label();
                 Label quantityLabel = new Label();
                 Label priceLabel = new Label();
-                totalPrice += client.cart[i].totalPrice;
+                totalPrice += client.cart[i].Price;
 
                 bikeLabel.Text = client.cart[i].bikeName;
                 bikeLabel.AutoSize = true;
@@ -103,7 +103,7 @@ namespace ProjectBovelo
                 tableLayoutPanelOrder.SetRow(quantityLabel, i + 1);
                 tableLayoutPanelOrder.SetColumn(quantityLabel, 3);
 
-                priceLabel.Text = client.cart[i].totalPrice.ToString();
+                priceLabel.Text = client.cart[i].Price.ToString();
                 priceLabel.AutoSize = true;
                 tableLayoutPanelOrder.SetRow(priceLabel, i + 1);
                 tableLayoutPanelOrder.SetColumn(priceLabel, 4);
@@ -124,8 +124,8 @@ namespace ProjectBovelo
                 Order order = new Order(client.id);
                 for(int i = 0; i< client.cart.Count; i++)
                 {
-                    order.AddSingleBikeOrder(client.cart[i]);
-                    order.totalPrice += client.cart[i].totalPrice;
+                    order.AddOrderItem(client.cart[i]);
+                    order.totalPrice += client.cart[i].Price;
                 }
                 DBConnection.InsertNewOrder(order);
                 client.ClearCart();
