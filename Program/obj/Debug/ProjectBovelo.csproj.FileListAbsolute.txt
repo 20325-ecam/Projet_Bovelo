@@ -1,35 +1,35 @@
-D:\OneDrive - ECAM\3bepi30 Software engineering 2\Projet génie logiciel\projet github\Projet_Bovelo\Program\bin\Debug\ProjectBovelo.exe.config
-D:\OneDrive - ECAM\3bepi30 Software engineering 2\Projet génie logiciel\projet github\Projet_Bovelo\Program\bin\Debug\ProjectBovelo.exe
-D:\OneDrive - ECAM\3bepi30 Software engineering 2\Projet génie logiciel\projet github\Projet_Bovelo\Program\bin\Debug\ProjectBovelo.pdb
-D:\OneDrive - ECAM\3bepi30 Software engineering 2\Projet génie logiciel\projet github\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.csprojAssemblyReference.cache
-D:\OneDrive - ECAM\3bepi30 Software engineering 2\Projet génie logiciel\projet github\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.Catalog.resources
-D:\OneDrive - ECAM\3bepi30 Software engineering 2\Projet génie logiciel\projet github\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.Order.resources
-D:\OneDrive - ECAM\3bepi30 Software engineering 2\Projet génie logiciel\projet github\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.Properties.Resources.resources
-D:\OneDrive - ECAM\3bepi30 Software engineering 2\Projet génie logiciel\projet github\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.csproj.GenerateResource.cache
-D:\OneDrive - ECAM\3bepi30 Software engineering 2\Projet génie logiciel\projet github\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.csproj.CoreCompileInputs.cache
-D:\OneDrive - ECAM\3bepi30 Software engineering 2\Projet génie logiciel\projet github\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.exe
-D:\OneDrive - ECAM\3bepi30 Software engineering 2\Projet génie logiciel\projet github\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.pdb
-D:\OneDrive - ECAM\3bepi30 Software engineering 2\Projet génie logiciel\projet github\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.Cart.resources
-D:\OneDrive - ECAM\3bepi30 Software engineering 2\Projet génie logiciel\projet github\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.ClientIdentification.resources
-D:\OneDrive - ECAM\3bepi30 Software engineering 2\Projet génie logiciel\projet github\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.CommandOverviewPage.resources
-D:\OneDrive - ECAM\3bepi30 Software engineering 2\Projet génie logiciel\projet github\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.HomePage.resources
-D:\OneDrive - ECAM\3bepi30 Software engineering 2\Projet génie logiciel\projet github\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.UserLoginPage.resources
-D:\OneDrive - ECAM\3bepi30 Software engineering 2\Projet génie logiciel\projet github\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.MenusSelectionPage.resources
-D:\OneDrive - ECAM\3bepi30 Software engineering 2\Projet génie logiciel\projet github\Projet_Bovelo\Program\bin\Debug\MySql.Data.dll
-D:\OneDrive - ECAM\3bepi30 Software engineering 2\Projet génie logiciel\projet github\Projet_Bovelo\Program\bin\Debug\Google.Protobuf.dll
-D:\OneDrive - ECAM\3bepi30 Software engineering 2\Projet génie logiciel\projet github\Projet_Bovelo\Program\bin\Debug\Zstandard.Net.dll
-D:\OneDrive - ECAM\3bepi30 Software engineering 2\Projet génie logiciel\projet github\Projet_Bovelo\Program\bin\Debug\K4os.Compression.LZ4.Streams.dll
-D:\OneDrive - ECAM\3bepi30 Software engineering 2\Projet génie logiciel\projet github\Projet_Bovelo\Program\bin\Debug\BouncyCastle.Crypto.dll
-D:\OneDrive - ECAM\3bepi30 Software engineering 2\Projet génie logiciel\projet github\Projet_Bovelo\Program\bin\Debug\Ubiety.Dns.Core.dll
-D:\OneDrive - ECAM\3bepi30 Software engineering 2\Projet génie logiciel\projet github\Projet_Bovelo\Program\bin\Debug\Renci.SshNet.dll
-D:\OneDrive - ECAM\3bepi30 Software engineering 2\Projet génie logiciel\projet github\Projet_Bovelo\Program\bin\Debug\System.Memory.dll
-D:\OneDrive - ECAM\3bepi30 Software engineering 2\Projet génie logiciel\projet github\Projet_Bovelo\Program\bin\Debug\System.Buffers.dll
-D:\OneDrive - ECAM\3bepi30 Software engineering 2\Projet génie logiciel\projet github\Projet_Bovelo\Program\bin\Debug\K4os.Compression.LZ4.dll
-D:\OneDrive - ECAM\3bepi30 Software engineering 2\Projet génie logiciel\projet github\Projet_Bovelo\Program\bin\Debug\K4os.Hash.xxHash.dll
-D:\OneDrive - ECAM\3bepi30 Software engineering 2\Projet génie logiciel\projet github\Projet_Bovelo\Program\bin\Debug\System.Numerics.Vectors.dll
-D:\OneDrive - ECAM\3bepi30 Software engineering 2\Projet génie logiciel\projet github\Projet_Bovelo\Program\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-D:\OneDrive - ECAM\3bepi30 Software engineering 2\Projet génie logiciel\projet github\Projet_Bovelo\Program\bin\Debug\MySql.Data.xml
-D:\OneDrive - ECAM\3bepi30 Software engineering 2\Projet génie logiciel\projet github\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.exe.config
-D:\OneDrive - ECAM\3bepi30 Software engineering 2\Projet génie logiciel\projet github\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.csproj.CopyComplete
-D:\OneDrive - ECAM\3bepi30 Software engineering 2\Projet génie logiciel\projet github\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.newclient.resources
-D:\OneDrive - ECAM\3bepi30 Software engineering 2\Projet génie logiciel\projet github\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.Planning.resources
+F:\PC4\Documents\GitHub\Projet_Bovelo\Program\bin\Debug\ProjectBovelo.exe.config
+F:\PC4\Documents\GitHub\Projet_Bovelo\Program\bin\Debug\ProjectBovelo.exe
+F:\PC4\Documents\GitHub\Projet_Bovelo\Program\bin\Debug\ProjectBovelo.pdb
+F:\PC4\Documents\GitHub\Projet_Bovelo\Program\bin\Debug\MySql.Data.dll
+F:\PC4\Documents\GitHub\Projet_Bovelo\Program\bin\Debug\Google.Protobuf.dll
+F:\PC4\Documents\GitHub\Projet_Bovelo\Program\bin\Debug\Zstandard.Net.dll
+F:\PC4\Documents\GitHub\Projet_Bovelo\Program\bin\Debug\K4os.Compression.LZ4.Streams.dll
+F:\PC4\Documents\GitHub\Projet_Bovelo\Program\bin\Debug\BouncyCastle.Crypto.dll
+F:\PC4\Documents\GitHub\Projet_Bovelo\Program\bin\Debug\Ubiety.Dns.Core.dll
+F:\PC4\Documents\GitHub\Projet_Bovelo\Program\bin\Debug\Renci.SshNet.dll
+F:\PC4\Documents\GitHub\Projet_Bovelo\Program\bin\Debug\System.Memory.dll
+F:\PC4\Documents\GitHub\Projet_Bovelo\Program\bin\Debug\System.Buffers.dll
+F:\PC4\Documents\GitHub\Projet_Bovelo\Program\bin\Debug\K4os.Compression.LZ4.dll
+F:\PC4\Documents\GitHub\Projet_Bovelo\Program\bin\Debug\K4os.Hash.xxHash.dll
+F:\PC4\Documents\GitHub\Projet_Bovelo\Program\bin\Debug\System.Numerics.Vectors.dll
+F:\PC4\Documents\GitHub\Projet_Bovelo\Program\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+F:\PC4\Documents\GitHub\Projet_Bovelo\Program\bin\Debug\MySql.Data.xml
+F:\PC4\Documents\GitHub\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.csprojAssemblyReference.cache
+F:\PC4\Documents\GitHub\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.exe.config
+F:\PC4\Documents\GitHub\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.Cart.resources
+F:\PC4\Documents\GitHub\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.Catalog.resources
+F:\PC4\Documents\GitHub\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.ClientIdentification.resources
+F:\PC4\Documents\GitHub\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.CommandOverviewPage.resources
+F:\PC4\Documents\GitHub\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.HomePage.resources
+F:\PC4\Documents\GitHub\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.Newclient.resources
+F:\PC4\Documents\GitHub\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.Planning.resources
+F:\PC4\Documents\GitHub\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.UserLoginPage.resources
+F:\PC4\Documents\GitHub\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.Order.resources
+F:\PC4\Documents\GitHub\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.MenusSelectionPage.resources
+F:\PC4\Documents\GitHub\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.Properties.Resources.resources
+F:\PC4\Documents\GitHub\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.csproj.GenerateResource.cache
+F:\PC4\Documents\GitHub\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.csproj.CoreCompileInputs.cache
+F:\PC4\Documents\GitHub\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.csproj.CopyComplete
+F:\PC4\Documents\GitHub\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.exe
+F:\PC4\Documents\GitHub\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.pdb
