@@ -33,3 +33,37 @@ F:\PC4\Documents\GitHub\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.csproj.Cop
 F:\PC4\Documents\GitHub\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.exe
 F:\PC4\Documents\GitHub\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.pdb
 F:\PC4\Documents\GitHub\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.OrderPage.resources
+D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjectBovelo\Projet_Bovelo\Program\bin\Debug\ProjectBovelo.exe.config
+D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjectBovelo\Projet_Bovelo\Program\bin\Debug\ProjectBovelo.exe
+D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjectBovelo\Projet_Bovelo\Program\bin\Debug\ProjectBovelo.pdb
+D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjectBovelo\Projet_Bovelo\Program\bin\Debug\Google.Protobuf.dll
+D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjectBovelo\Projet_Bovelo\Program\bin\Debug\Zstandard.Net.dll
+D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjectBovelo\Projet_Bovelo\Program\bin\Debug\K4os.Compression.LZ4.Streams.dll
+D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjectBovelo\Projet_Bovelo\Program\bin\Debug\BouncyCastle.Crypto.dll
+D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjectBovelo\Projet_Bovelo\Program\bin\Debug\Ubiety.Dns.Core.dll
+D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjectBovelo\Projet_Bovelo\Program\bin\Debug\Renci.SshNet.dll
+D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjectBovelo\Projet_Bovelo\Program\bin\Debug\System.Memory.dll
+D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjectBovelo\Projet_Bovelo\Program\bin\Debug\System.Buffers.dll
+D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjectBovelo\Projet_Bovelo\Program\bin\Debug\K4os.Compression.LZ4.dll
+D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjectBovelo\Projet_Bovelo\Program\bin\Debug\K4os.Hash.xxHash.dll
+D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjectBovelo\Projet_Bovelo\Program\bin\Debug\System.Numerics.Vectors.dll
+D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjectBovelo\Projet_Bovelo\Program\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjectBovelo\Projet_Bovelo\Program\bin\Debug\MySql.Data.xml
+D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjectBovelo\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.csprojAssemblyReference.cache
+D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjectBovelo\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.exe.config
+D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjectBovelo\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.Cart.resources
+D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjectBovelo\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.Catalog.resources
+D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjectBovelo\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.ClientIdentification.resources
+D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjectBovelo\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.CommandOverviewPage.resources
+D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjectBovelo\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.HomePage.resources
+D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjectBovelo\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.Newclient.resources
+D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjectBovelo\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.Planning.resources
+D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjectBovelo\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.UserLoginPage.resources
+D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjectBovelo\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.OrderPage.resources
+D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjectBovelo\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.MenusSelectionPage.resources
+D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjectBovelo\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.Properties.Resources.resources
+D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjectBovelo\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.csproj.GenerateResource.cache
+D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjectBovelo\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.csproj.CoreCompileInputs.cache
+D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjectBovelo\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.csproj.CopyComplete
+D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjectBovelo\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.exe
+D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjectBovelo\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.pdb

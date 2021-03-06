@@ -83,6 +83,7 @@
             this.bp_planning.TabIndex = 5;
             this.bp_planning.Text = "Planning";
             this.bp_planning.UseVisualStyleBackColor = true;
+            this.bp_planning.Click += new System.EventHandler(this.bp_planning_Click);
             // 
             // bp_stock
             // 

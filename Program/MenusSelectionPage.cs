@@ -40,5 +40,12 @@ namespace ProjectBovelo
             commandOverviewPage.Show();
             this.Close();
         }
+
+        private void bp_planning_Click(object sender, EventArgs e)
+        {
+            Planning planning = new Planning(user);
+            planning.Show();
+            this.Close();
+        }
     }
 }
