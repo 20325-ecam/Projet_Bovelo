@@ -101,25 +101,25 @@ namespace ProjectBovelo
 
         public void InsertNewOrder(Order order)
         {
-            string queryWholeBikeOrder = "INSERT INTO wholeBikeOrder (client, totalprice) VALUES('" + order.clientId + "', '" + order.totalPrice + "')";
+            string queryOrder = "INSERT INTO Order (client, totalprice) VALUES('" + order.clientId + "', '" + order.totalPrice + "')";
 
             //open connection
             if (this.OpenConnection() == true)
             {
                 //create command and assign the query and connection from the constructor
-                MySqlCommand cmdWholeBikeOrder = new MySqlCommand(queryWholeBikeOrder, connection);
-                cmdWholeBikeOrder.ExecuteNonQuery();
+                MySqlCommand cmdOrder = new MySqlCommand(queryOrder, connection);
+                cmdOrder.ExecuteNonQuery();
 
-                long wholeOrderId = cmdWholeBikeOrder.LastInsertedId;
+                long wholeOrderId = cmdOrder.LastInsertedId;
 
-                for (int i =0 ; i < order.singleBikeOrderList.Count; i++)
+                for (int i =0 ; i < order.orderItemList.Count; i++)
                 {
-                    OrderItem orderItem = order.singleBikeOrderList[i];
-                    string querySingleBikeOrder = "INSERT INTO singleBikeOrder (bikeId, colorId, sizeId, quantity, totalprice, clientId, wholeBikeOrderId) " +
+                    OrderItem orderItem = order.orderItemList[i];
+                    string queryOrderItem = "INSERT INTO OrderItem (bikeId, colorId, sizeId, quantity, totalprice, clientId, OrderId) " +
                                                   "VALUES('" + orderItem.bikeId + "', '" + orderItem.color.id + "', '" + orderItem.size.id + "', '" + orderItem.quantity +
                                                   "', '" + orderItem.totalPrice + "', '" + orderItem.clientId + "', '" + wholeOrderId + "')";
-                    MySqlCommand cmdSingleBikeOrder = new MySqlCommand(querySingleBikeOrder, connection);
-                    cmdSingleBikeOrder.ExecuteNonQuery();
+                    MySqlCommand cmdOrderItem = new MySqlCommand(queryOrderItem, connection);
+                    cmdOrderItem.ExecuteNonQuery();
                 }
                 this.CloseConnection();
             }
