@@ -119,7 +119,13 @@ namespace ProjectBovelo
                                                   "VALUES('" + orderItem.bikeId + "', '" + orderItem.color.id + "', '" + orderItem.size.id  
                                                   +"', '" + orderItem.Price + "', '" + orderItem.clientId + "', '" + orderId + "')";
                     MySqlCommand cmdOrderItem = new MySqlCommand(queryOrderItem, connection);
-                    cmdOrderItem.ExecuteNonQuery();
+                    for(int j = 0; j < orderItem.quantity; j++)
+                    {
+                        cmdOrderItem.ExecuteNonQuery();
+                        string queryTask = "INSERT INTO Task (OrderItemId) VALUES('" + cmdOrderItem.LastInsertedId + "')";
+                        MySqlCommand cmdTask = new MySqlCommand(queryTask, connection);
+                        cmdTask.ExecuteNonQuery();
+                    }                                            
                 }
                 this.CloseConnection();
             }
