@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace ProjectBovelo
 {
-    public partial class Order : BoveloBaseForm
+    public partial class OrderPage : BoveloBaseForm
     {
         AvailableBicycle bicycle;
-        public Order(AvailableBicycle bicycle, BoveloUser user, Client client)
+        public OrderPage(AvailableBicycle bicycle, BoveloUser user, Client client)
         {
             this.bicycle = bicycle;
             this.user = user;
@@ -43,7 +43,7 @@ namespace ProjectBovelo
         {
             if(comboBoxColor.SelectedItem != null && comboBoxSize.SelectedItem != null)
             {
-                SingleBikeOrder singleOrder;
+                OrderItem orderItem;
                 int bikeId = bicycle.id;
                 string bikeName = bicycle.name;
                 int quantity = (int)numericUpDownQuantity.Value;
@@ -51,8 +51,8 @@ namespace ProjectBovelo
                 BicycleSize size = (BicycleSize)comboBoxSize.SelectedItem;
                 int clientId = client.id;
                 float totalPrice = quantity * bicycle.price;
-                singleOrder = new SingleBikeOrder(bikeId, bikeName, quantity, color, size, clientId, totalPrice);
-                client.AddOrderToCart(singleOrder);
+                orderItem = new OrderItem(bikeId, bikeName, quantity, color, size, clientId, totalPrice);
+                client.AddOrderToCart(orderItem);
                 Cart cartPage = new Cart(user, client);
                 cartPage.Show();
                 this.Close();

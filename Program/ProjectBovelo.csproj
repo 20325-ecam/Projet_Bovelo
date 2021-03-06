@@ -90,11 +90,11 @@
     <Compile Include="UserLoginPage.Designer.cs">
       <DependentUpon>UserLoginPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Order.cs">
+    <Compile Include="OrderPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Order.Designer.cs">
-      <DependentUpon>Order.cs</DependentUpon>
+    <Compile Include="OrderPage.Designer.cs">
+      <DependentUpon>OrderPage.cs</DependentUpon>
     </Compile>
     <Compile Include="MenusSelectionPage.cs">
       <SubType>Form</SubType>
@@ -140,8 +140,8 @@
     <EmbeddedResource Include="UserLoginPage.resx">
       <DependentUpon>UserLoginPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Order.resx">
-      <DependentUpon>Order.cs</DependentUpon>
+    <EmbeddedResource Include="OrderPage.resx">
+      <DependentUpon>OrderPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenusSelectionPage.resx">
       <DependentUpon>MenusSelectionPage.cs</DependentUpon>

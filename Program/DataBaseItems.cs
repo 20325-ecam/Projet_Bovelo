@@ -36,7 +36,7 @@ namespace ProjectBovelo
         public string zipcode;
         public string city;
         public string vat;
-        public List<SingleBikeOrder> cart = new List<SingleBikeOrder>();
+        public List<OrderItem> cart = new List<OrderItem>();
 
         public Client(int id, string name, string phone, string email, string address, string zipcode, string city, string vat)
         {
@@ -49,7 +49,7 @@ namespace ProjectBovelo
             this.city = city;
             this.vat = vat;
         }
-        public void AddOrderToCart(SingleBikeOrder order)
+        public void AddOrderToCart(OrderItem order)
         {
             cart.Add(order);
         }
@@ -127,7 +127,7 @@ namespace ProjectBovelo
         }
     }
 
-    public class SingleBikeOrder
+    public class OrderItem
     {
         public int bikeId;
         public string bikeName;
@@ -137,7 +137,7 @@ namespace ProjectBovelo
         public int clientId;
         public float totalPrice;
 
-        public SingleBikeOrder(int bikeId, string bikeName, int quantity, BicycleColor color, BicycleSize size, int clientId, float totalPrice)
+        public OrderItem(int bikeId, string bikeName, int quantity, BicycleColor color, BicycleSize size, int clientId, float totalPrice)
         {
             this.bikeId = bikeId;
             this.bikeName = bikeName;
@@ -148,18 +148,18 @@ namespace ProjectBovelo
             this.totalPrice = totalPrice;
         }
     }
-    public class WholeBikeOrder
+    public class Order
     {
         public int clientId;
         public float totalPrice;
-        public List<SingleBikeOrder> singleBikeOrderList = new List<SingleBikeOrder>();
-        public WholeBikeOrder(int clientId)
+        public List<OrderItem> orderItemList = new List<OrderItem>();
+        public Order(int clientId)
         {
             this.clientId = clientId;
         }
-        public void AddSingleBikeOrder(SingleBikeOrder order)
+        public void AddSingleBikeOrder(OrderItem order)
         {
-            singleBikeOrderList.Add(order);
+            orderItemList.Add(order);
         }
     }
     public class AddNewClient

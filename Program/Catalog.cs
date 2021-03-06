@@ -45,7 +45,7 @@ namespace ProjectBovelo
                     if (availableBikeList[i].id.ToString() == pushedButton.Name)
                     {
                         bicycle = availableBikeList[i];
-                        Order order = new Order(bicycle, user, client);
+                        OrderPage order = new OrderPage(bicycle, user, client);
                         order.Show();
                         this.Close();
                         break;

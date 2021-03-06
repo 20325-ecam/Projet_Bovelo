@@ -99,9 +99,9 @@ namespace ProjectBovelo
             }
         }
 
-        public void InsertNewOrder(WholeBikeOrder wholeBikeOrder)
+        public void InsertNewOrder(Order order)
         {
-            string queryWholeBikeOrder = "INSERT INTO wholeBikeOrder (client, totalprice) VALUES('" + wholeBikeOrder.clientId + "', '" + wholeBikeOrder.totalPrice + "')";
+            string queryWholeBikeOrder = "INSERT INTO wholeBikeOrder (client, totalprice) VALUES('" + order.clientId + "', '" + order.totalPrice + "')";
 
             //open connection
             if (this.OpenConnection() == true)
@@ -112,12 +112,12 @@ namespace ProjectBovelo
 
                 long wholeOrderId = cmdWholeBikeOrder.LastInsertedId;
 
-                for (int i =0 ; i < wholeBikeOrder.singleBikeOrderList.Count; i++)
+                for (int i =0 ; i < order.singleBikeOrderList.Count; i++)
                 {
-                    SingleBikeOrder order = wholeBikeOrder.singleBikeOrderList[i];
+                    OrderItem orderItem = order.singleBikeOrderList[i];
                     string querySingleBikeOrder = "INSERT INTO singleBikeOrder (bikeId, colorId, sizeId, quantity, totalprice, clientId, wholeBikeOrderId) " +
-                                                  "VALUES('" + order.bikeId + "', '" + order.color.id + "', '" + order.size.id + "', '" + order.quantity +
-                                                  "', '" + order.totalPrice + "', '" + order.clientId + "', '" + wholeOrderId + "')";
+                                                  "VALUES('" + orderItem.bikeId + "', '" + orderItem.color.id + "', '" + orderItem.size.id + "', '" + orderItem.quantity +
+                                                  "', '" + orderItem.totalPrice + "', '" + orderItem.clientId + "', '" + wholeOrderId + "')";
                     MySqlCommand cmdSingleBikeOrder = new MySqlCommand(querySingleBikeOrder, connection);
                     cmdSingleBikeOrder.ExecuteNonQuery();
                 }

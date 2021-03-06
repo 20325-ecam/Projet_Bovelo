@@ -12,7 +12,7 @@ namespace ProjectBovelo
 {
     public partial class CommandOverviewPage : BoveloBaseForm
     {
-        List<SingleBikeOrder> singleBikeOrderList;
+        List<OrderItem> singleBikeOrderList;
         public CommandOverviewPage(BoveloUser user)
         {
             this.user = user;

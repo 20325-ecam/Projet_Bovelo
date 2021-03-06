@@ -121,13 +121,13 @@ namespace ProjectBovelo
         {
             if (client.cart.Count > 0)
             {
-                WholeBikeOrder wholeBikeOrder = new WholeBikeOrder(client.id);
+                Order order = new Order(client.id);
                 for(int i = 0; i< client.cart.Count; i++)
                 {
-                    wholeBikeOrder.AddSingleBikeOrder(client.cart[i]);
-                    wholeBikeOrder.totalPrice += client.cart[i].totalPrice;
+                    order.AddSingleBikeOrder(client.cart[i]);
+                    order.totalPrice += client.cart[i].totalPrice;
                 }
-                DBConnection.InsertNewOrder(wholeBikeOrder);
+                DBConnection.InsertNewOrder(order);
                 client.ClearCart();
                 Catalog CatalogPage = new Catalog(user, client);
                 CatalogPage.Show();

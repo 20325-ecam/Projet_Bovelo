@@ -1,7 +1,7 @@
 ﻿
 namespace ProjectBovelo
 {
-    partial class Order
+    partial class OrderPage
     {
         /// <summary>
         /// Required designer variable.
