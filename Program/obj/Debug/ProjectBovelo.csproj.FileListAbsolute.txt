@@ -67,3 +67,4 @@ D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjectBove
 D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjectBovelo\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.csproj.CopyComplete
 D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjectBovelo\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.exe
 D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjectBovelo\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.pdb
+D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjectBovelo\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.PlanningPopUp.resources

@@ -211,7 +211,7 @@ namespace ProjectBovelo
                 {
                     dataReader.Read();
                     string firstname = (string)dataReader["firstname"];
-                    string lastname = (string)dataReader["name"];
+                    string lastname = (string)dataReader["userName"];
                     int accessLevel = (int)dataReader["jobTitle"];
 
                     user = new BoveloUser(id, password, firstname, lastname, accessLevel);
@@ -318,7 +318,7 @@ namespace ProjectBovelo
                 for (int i = 0; i < bikeDataTable.Rows.Count; i++)
                 {
                     int id = (int)bikeDataTable.Rows[i]["id"];
-                    string name = (string)bikeDataTable.Rows[i]["name"];
+                    string name = (string)bikeDataTable.Rows[i]["bikeName"];
                     string description = (string)bikeDataTable.Rows[i]["description"];
                     float price = (float)bikeDataTable.Rows[i]["price"];
                     int imageId = (int)bikeDataTable.Rows[i]["imageId"];
@@ -360,6 +360,60 @@ namespace ProjectBovelo
                 return bikeList;               
             }              
         }
+
+
+
+        public List<Task> SelectAllTasks()
+        {
+            List<Task> taskList = new List<Task>();
+            string taskQuery =
+                "SELECT OrderItem.OrderId, BikeModel.bikeName, Size.size, Color.color, TaskState.state, AppUser.userName " +
+                "FROM  Task " +
+                "INNER JOIN OrderItem " +
+                "ON Task.OrderItemId = OrderItem.id " +
+                "INNER JOIN  BikeModel " +
+                "ON OrderItem.bikeId = BikeModel.id " +
+                "INNER JOIN Size " +
+                "ON OrderItem.sizeId = Size.id " +
+                "INNER JOIN Color " +
+                "ON OrderItem.colorId = Color.id " +
+                "INNER JOIN TaskState " +
+                "ON Task.stateId = TaskState.id " +
+                "LEFT JOIN AppUser " +
+                "ON Task.asignedUserId = AppUser.id; ";
+
+            DataTable TaskDataTable;
+            if (this.OpenConnection() == true)
+            {
+                TaskDataTable = CreateDataTable(taskQuery);
+                this.CloseConnection();
+                for (int i = 0; i < TaskDataTable.Rows.Count; i++)
+                {
+                    /*
+                    int id = (int)colorDataTable.Rows[i]["id"];
+                    string color = (string)colorDataTable.Rows[i]["color"];
+                    BicycleColor bikeColor = new BicycleColor(id, color);
+                    colorList.Add(bikeColor);
+                    */
+                    int orderId = (int)TaskDataTable.Rows[i]["OrderId"];
+                    string bikeName = (string)TaskDataTable.Rows[i]["bikeName"];
+                    string bikeSize = (string)TaskDataTable.Rows[i]["size"];
+                    string bikeColor = (string)TaskDataTable.Rows[i]["color"];
+                    string state = (string)TaskDataTable.Rows[i]["state"];
+                    string userName = "";
+                    if (TaskDataTable.Rows[i]["userName"] != DBNull.Value)
+                    {
+                        userName = (string)TaskDataTable.Rows[i]["userName"];
+                    }
+                    Task task = new Task(orderId, bikeName, bikeSize, bikeColor, state, userName);
+                    taskList.Add(task);
+                }
+            }
+            return taskList;
+        }
+
+
+
         public Bitmap loadImage(int imgID)
         {
             string imageQuery = "SELECT * FROM Files WHERE id ='" + imgID.ToString() + "'";

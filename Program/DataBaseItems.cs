@@ -184,6 +184,23 @@ namespace ProjectBovelo
             this.clientCity = clientCity;
             this.clientVat = clientVat;
         }
-
+    }
+    public class Task
+    {
+        public int orderId;
+        public string bikeName;
+        public string bikeSize;
+        public string bikeColor;
+        public string state;
+        public string userName;
+        public Task(int orderId, string bikeName, string bikeSize, string bikeColor, string state, string userName)
+        {
+            this.orderId = orderId;
+            this.bikeName = bikeName;
+            this.bikeSize = bikeSize;
+            this.bikeColor = bikeColor;
+            this.state = state;
+            this.userName = userName;
+        }
     }
 }
