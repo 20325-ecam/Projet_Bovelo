@@ -425,6 +425,11 @@ namespace ProjectBovelo
             return taskList;
         }
 
+        public void selectAllOrders()
+        {
+            //Andre
+        }
+
         public Bitmap loadImage(int imgID)
         {
             string imageQuery = "SELECT * FROM Files WHERE id ='" + imgID.ToString() + "'";
