@@ -5,11 +5,12 @@ namespace ProjectBovelo
 {
     public partial class CommandOverviewPage : BoveloBaseForm
     {
-        private List<OrderItem> singleBikeOrderList;
+        private List<OrderItem> commandList;
 
         public CommandOverviewPage(BoveloUser user)
         {
             this.user = user;
+            //commandList = DBConnection.SelectAllCommands();
             InitializeComponent();
         }
 
@@ -24,6 +25,7 @@ namespace ProjectBovelo
 
         private void FillTableLayoutCommand()
         {
+
         }
     }
 }

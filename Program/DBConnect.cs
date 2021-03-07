@@ -98,7 +98,8 @@ namespace ProjectBovelo
 
         public void InsertNewOrder(Order order)
         {
-            string queryOrder = "INSERT INTO OrderDB (totalPrice) VALUES('" + order.totalPrice + "')";
+            string queryOrder = "INSERT INTO OrderDB (totalPrice, clientId, bikeAmount) " +
+                "VALUES('" + order.totalPrice + "', '" + order.clientId + "', '" + order.GetBikeAmount() + "')";
 
             //open connection
             if (this.OpenConnection() == true)
@@ -111,10 +112,10 @@ namespace ProjectBovelo
 
                 for (int i = 0; i < order.orderItemList.Count; i++)
                 {
-                    OrderItem orderItem = order.orderItemList[i];
-                    string queryOrderItem = "INSERT INTO OrderItem (bikeId, colorId, sizeId, Price, clientId, OrderId) " +
+                    OrderItem orderItem = order.GetOrderItem(i);
+                    string queryOrderItem = "INSERT INTO OrderItem (bikeId, colorId, sizeId, Price, OrderId) " +
                                                   "VALUES('" + orderItem.bikeId + "', '" + orderItem.color.id + "', '" + orderItem.size.id
-                                                  + "', '" + orderItem.Price + "', '" + orderItem.clientId + "', '" + orderId + "')";
+                                                  + "', '" + orderItem.bikePrice + "', '" + orderId + "')";
                     MySqlCommand cmdOrderItem = new MySqlCommand(queryOrderItem, connection);
                     for (int j = 0; j < orderItem.quantity; j++)
                     {

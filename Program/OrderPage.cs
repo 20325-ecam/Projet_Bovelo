@@ -41,9 +41,6 @@ namespace ProjectBovelo
                 int quantity = (int)numericUpDownQuantity.Value;
                 BicycleColor color = (BicycleColor)comboBoxColor.SelectedItem;
                 BicycleSize size = (BicycleSize)comboBoxSize.SelectedItem;
-                int clientId = client.id;
-                float totalPrice = quantity * bicycle.price;
-                orderItem = new OrderItem(bikeId, bikeName, quantity, color, size, clientId, totalPrice);
                 client.AddOrderToCart(orderItem);
                 Cart cartPage = new Cart(user, client);
                 cartPage.Show();
