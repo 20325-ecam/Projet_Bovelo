@@ -1,25 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace ProjectBovelo
 {
     public partial class OrderPage : BoveloBaseForm
     {
-        AvailableBicycle bicycle;
+        private AvailableBicycle bicycle;
+
         public OrderPage(AvailableBicycle bicycle, BoveloUser user, Client client)
         {
             this.bicycle = bicycle;
             this.user = user;
             this.client = client;
             InitializeComponent();
-            
         }
 
         private void Order_Load(object sender, EventArgs e)
@@ -29,7 +21,7 @@ namespace ProjectBovelo
             PageLayoutMaker.CreateQuitButton(this);
             PageLayoutMaker.CreateReturnToCatalogButton(this);
             label_name.Text = bicycle.name;
-            for (int i = 0; i< bicycle.availableColors.Count; i++)
+            for (int i = 0; i < bicycle.availableColors.Count; i++)
             {
                 comboBoxColor.Items.Add(bicycle.availableColors[i]);
             }
@@ -41,7 +33,7 @@ namespace ProjectBovelo
 
         private void buttonOrder_Click(object sender, EventArgs e)
         {
-            if(comboBoxColor.SelectedItem != null && comboBoxSize.SelectedItem != null)
+            if (comboBoxColor.SelectedItem != null && comboBoxSize.SelectedItem != null)
             {
                 OrderItem orderItem;
                 int bikeId = bicycle.id;
@@ -56,7 +48,7 @@ namespace ProjectBovelo
                 Cart cartPage = new Cart(user, client);
                 cartPage.Show();
                 this.Close();
-            }           
+            }
         }
     }
 }
