@@ -60,28 +60,21 @@ namespace ProjectBovelo
 
         private void radioButtonToDo_CheckedChanged(object sender, EventArgs e)
         {
-<<<<<<< HEAD
             task.state = "To Do";
-=======
->>>>>>> 2a79395f8dad05fca56e3a4805f9abd37ac3e631
         }
 
         private void radioButtonInProduction_CheckedChanged(object sender, EventArgs e)
         {
-<<<<<<< HEAD
             task.state = "In Production";
         }
 
         private void radioButtonDone_CheckedChanged(object sender, EventArgs e)
         {
             task.state = "Done";
-=======
->>>>>>> 2a79395f8dad05fca56e3a4805f9abd37ac3e631
         }
 
         private void radioButtonDelay_CheckedChanged(object sender, EventArgs e)
         {
-<<<<<<< HEAD
             task.state = "Delay";
         }
 
@@ -105,8 +98,6 @@ namespace ProjectBovelo
             }
             DBConnection.ModifyTask(task, num);
             this.Close();
-=======
->>>>>>> 2a79395f8dad05fca56e3a4805f9abd37ac3e631
         }
 
         private void comboBoxMechanic_SelectedIndexChanged(object sender, EventArgs e)

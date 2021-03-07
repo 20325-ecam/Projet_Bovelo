@@ -130,7 +130,6 @@ namespace ProjectBovelo
 
         private void buttonDetails_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
             Button pushedButton = (Button)sender;
             Task task;
             for (int i = 0; i < taskList.Count; i++)
@@ -144,9 +143,6 @@ namespace ProjectBovelo
                     break;
                 }
             }   
-            
-=======
->>>>>>> 2a79395f8dad05fca56e3a4805f9abd37ac3e631
         }
     }
 }

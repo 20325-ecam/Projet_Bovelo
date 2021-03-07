@@ -222,10 +222,6 @@ namespace ProjectBovelo
             this.state = state;
             this.userName = userName;
         }
-    }
-<<<<<<< HEAD
-    
+    }    
 }
-=======
-}
->>>>>>> 2a79395f8dad05fca56e3a4805f9abd37ac3e631
+
