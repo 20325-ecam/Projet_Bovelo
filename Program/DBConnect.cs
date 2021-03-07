@@ -144,9 +144,6 @@ namespace ProjectBovelo
                 //create command and assign the query and connection from the constructor
                 MySqlCommand cmdNewClient = new MySqlCommand(queryNewClient, connection);
 
-                //long lastClientId = cmdNewClient.LastInsertedId;
-                //long newClientId = lastClientId + 1;
-
                 //Execute command
                 cmdNewClient.ExecuteNonQuery();
 
@@ -156,20 +153,17 @@ namespace ProjectBovelo
         }
 
         //Modifie task
-        public void ModifyTask(Task task, int num)
+        public void ModifyTask(int num, int Id)
         {
-            string queryModifyTask = "UPDATE Task SET stateId = '" + num + "' WHERE id = '" + task.orderId + "'";
+            Console.WriteLine(Id);
+            string queryModifyTask = "UPDATE Task SET stateId = '" + num + "' WHERE id = '" + Id + "'";
 
             //Open connection
             if (this.OpenConnection() == true)
             {
                 //create mysql command
-                MySqlCommand cmdModifyTask = new MySqlCommand();
-                //Assign the query using CommandText
-                cmdModifyTask.CommandText = queryModifyTask;
-                //Assign the connection using Connection
-                cmdModifyTask.Connection = connection;
-
+                MySqlCommand cmdModifyTask = new MySqlCommand(queryModifyTask, connection);
+                
                 //Execute query
                 cmdModifyTask.ExecuteNonQuery();
 
@@ -385,7 +379,7 @@ namespace ProjectBovelo
         {
             List<Task> taskList = new List<Task>();
             string taskQuery =
-                "SELECT OrderItem.OrderId, BikeModel.bikeName, Size.size, Color.color, TaskState.state, AppUser.userName " +
+                "SELECT Task.id, OrderItem.OrderId, BikeModel.bikeName, Size.size, Color.color, TaskState.state, AppUser.userName " +
                 "FROM  Task " +
                 "INNER JOIN OrderItem " +
                 "ON Task.OrderItemId = OrderItem.id " +
@@ -413,6 +407,7 @@ namespace ProjectBovelo
                     BicycleColor bikeColor = new BicycleColor(id, color);
                     colorList.Add(bikeColor);
                     */
+                    int id = (int)TaskDataTable.Rows[i]["id"];
                     int orderId = (int)TaskDataTable.Rows[i]["OrderId"];
                     string bikeName = (string)TaskDataTable.Rows[i]["bikeName"];
                     string bikeSize = (string)TaskDataTable.Rows[i]["size"];
@@ -423,7 +418,7 @@ namespace ProjectBovelo
                     {
                         userName = (string)TaskDataTable.Rows[i]["userName"];
                     }
-                    Task task = new Task(orderId, bikeName, bikeSize, bikeColor, state, userName);
+                    Task task = new Task(id, orderId, bikeName, bikeSize, bikeColor, state, userName);
                     taskList.Add(task);
                 }
             }

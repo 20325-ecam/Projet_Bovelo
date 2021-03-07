@@ -119,7 +119,7 @@ namespace ProjectBovelo
 
                 Button details = new Button();
                 details.Text = "Details";
-                details.Name = taskList[i].orderId.ToString();
+                details.Name = taskList[i].id.ToString();
                 details.AutoSize = true;
                 details.Click += new EventHandler(buttonDetails_Click);
                 tableLayoutPanelTasks.SetRow(details, i + 1);
@@ -134,12 +134,12 @@ namespace ProjectBovelo
             Task task;
             for (int i = 0; i < taskList.Count; i++)
             {
-                if (taskList[i].orderId.ToString() == pushedButton.Name)
+                if (taskList[i].id.ToString() == pushedButton.Name)
                 {
                     task = taskList[i];
                     PlanningPopUp planningPopUp = new PlanningPopUp(user, task);
-                    planningPopUp.ShowDialog();
-                    //task = taskList[-1];
+                    planningPopUp.Show();
+                    this.Close();
                     break;
                 }
             }   

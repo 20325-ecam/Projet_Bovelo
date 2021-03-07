@@ -23,6 +23,7 @@ namespace ProjectBovelo
             labelSize.Text = task.bikeSize;
             labelColor.Text = task.bikeColor;
             labelBikeName.Text = task.bikeName;
+
             if (task.state == "In Production")
             {
                 radioButtonInProduction.Checked = true;
@@ -80,10 +81,10 @@ namespace ProjectBovelo
 
         private void buttonReturn_Click(object sender, EventArgs e)
         {
-            Console.WriteLine(task.state);
+            //DBConnection.ModifyTask();
             switch (task.state)
             {
-                case "TO DO":
+                case "To Do":
                     num = 1;
                     break;
                 case "In Production":
@@ -95,8 +96,13 @@ namespace ProjectBovelo
                 case "Delay":
                     num = 4;
                     break;
+                default:
+                    num = 1;
+                    break;
             }
-            DBConnection.ModifyTask(task, num);
+            DBConnection.ModifyTask(num, task.id);
+            Planning planning = new Planning(user);
+            planning.Show();
             this.Close();
         }
 

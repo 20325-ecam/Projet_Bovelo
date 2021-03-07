@@ -206,6 +206,7 @@ namespace ProjectBovelo
 
     public class Task
     {
+        public int id;
         public int orderId;
         public string bikeName;
         public string bikeSize;
@@ -213,8 +214,9 @@ namespace ProjectBovelo
         public string state;
         public string userName;
 
-        public Task(int orderId, string bikeName, string bikeSize, string bikeColor, string state, string userName)
+        public Task(int id, int orderId, string bikeName, string bikeSize, string bikeColor, string state, string userName)
         {
+            this.id = id;
             this.orderId = orderId;
             this.bikeName = bikeName;
             this.bikeSize = bikeSize;
