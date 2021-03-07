@@ -158,6 +158,29 @@ namespace ProjectBovelo
             }
         }
 
+        //Modifie task
+        public void ModifyTask(Task task, int num)
+        {
+            string queryModifyTask = "UPDATE Task SET stateId = '" + num + "' WHERE id = '" + task.orderId + "'";
+
+            //Open connection
+            if (this.OpenConnection() == true)
+            {
+                //create mysql command
+                MySqlCommand cmdModifyTask = new MySqlCommand();
+                //Assign the query using CommandText
+                cmdModifyTask.CommandText = queryModifyTask;
+                //Assign the connection using Connection
+                cmdModifyTask.Connection = connection;
+
+                //Execute query
+                cmdModifyTask.ExecuteNonQuery();
+
+                //close connection
+                this.CloseConnection();
+            }
+        }
+
         //Update statement
         public void Update()
         {

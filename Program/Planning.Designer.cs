@@ -42,7 +42,8 @@ namespace ProjectBovelo
             this.tableLayoutPanelTasks.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanelTasks.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanelTasks.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableLayoutPanelTasks.Location = new System.Drawing.Point(62, 125);
+            this.tableLayoutPanelTasks.Location = new System.Drawing.Point(93, 192);
+            this.tableLayoutPanelTasks.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tableLayoutPanelTasks.Name = "tableLayoutPanelTasks";
             this.tableLayoutPanelTasks.RowCount = 3;
             this.tableLayoutPanelTasks.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -53,11 +54,11 @@ namespace ProjectBovelo
             // 
             // Planning
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(624, 410);
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(936, 631);
             this.Controls.Add(this.tableLayoutPanelTasks);
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Planning";
             this.Text = "Planning";
             this.Load += new System.EventHandler(this.Planning_Load);
