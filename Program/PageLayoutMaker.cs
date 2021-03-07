@@ -57,7 +57,7 @@ namespace ProjectBovelo
         {
             Button buttonQuit = new Button();
             buttonQuit.Text = "Quit";
-            buttonQuit.Location = new Point(650, 500);
+            buttonQuit.Location = new Point(750, 500);
             buttonQuit.Click += new EventHandler(ButtonQuit_Click);
             form.Controls.Add(buttonQuit);
         }
@@ -66,7 +66,7 @@ namespace ProjectBovelo
         {
             Button buttonReturn = new Button();
             buttonReturn.Text = "Return";
-            buttonReturn.Location = new Point(650, 470);
+            buttonReturn.Location = new Point(750, 470);
             buttonReturn.Click += new EventHandler(ButtonReturnToMenus_Click);
             fromForm.Controls.Add(buttonReturn);
         }
@@ -75,7 +75,7 @@ namespace ProjectBovelo
         {
             Button buttonReturn = new Button();
             buttonReturn.Text = "Return";
-            buttonReturn.Location = new Point(650, 470);
+            buttonReturn.Location = new Point(750, 470);
             buttonReturn.Click += new EventHandler(ButtonReturnToCatalog_Click);
             fromForm.Controls.Add(buttonReturn);
         }
@@ -84,7 +84,7 @@ namespace ProjectBovelo
         {
             Button buttonLogout = new Button();
             buttonLogout.Text = "Logout";
-            buttonLogout.Location = new Point(650, 470);
+            buttonLogout.Location = new Point(750, 470);
             buttonLogout.Click += new EventHandler(ButtonLogoutUser_Click);
             form.Controls.Add(buttonLogout);
         }
