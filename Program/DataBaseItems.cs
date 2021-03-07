@@ -203,8 +203,5 @@ namespace ProjectBovelo
             this.userName = userName;
         }
     }
-    public class TaskModifie
-    {
-        public int orderId;
-    }
+    
 }
