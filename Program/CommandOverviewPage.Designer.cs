@@ -28,8 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
-            this.tableLayoutPanelCommands = new System.Windows.Forms.TableLayoutPanel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.commandOverviewPageBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.commandOverviewPageBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -43,35 +47,30 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "List of commands";
             // 
-            // tableLayoutPanelCommands
+            // dataGridView1
             // 
-            this.tableLayoutPanelCommands.AutoSize = true;
-            this.tableLayoutPanelCommands.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelCommands.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Outset;
-            this.tableLayoutPanelCommands.ColumnCount = 3;
-            this.tableLayoutPanelCommands.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelCommands.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelCommands.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelCommands.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableLayoutPanelCommands.Location = new System.Drawing.Point(112, 146);
-            this.tableLayoutPanelCommands.Name = "tableLayoutPanelCommands";
-            this.tableLayoutPanelCommands.RowCount = 3;
-            this.tableLayoutPanelCommands.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelCommands.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelCommands.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelCommands.Size = new System.Drawing.Size(8, 8);
-            this.tableLayoutPanelCommands.TabIndex = 4;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(89, 159);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(585, 236);
+            this.dataGridView1.TabIndex = 5;
+            // 
+            // commandOverviewPageBindingSource
+            // 
+            this.commandOverviewPageBindingSource.DataSource = typeof(ProjectBovelo.CommandOverviewPage);
             // 
             // CommandOverviewPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.tableLayoutPanelCommands);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
             this.Name = "CommandOverviewPage";
             this.Text = "Bovélo";
             this.Load += new System.EventHandler(this.CommandOverviewPage_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.commandOverviewPageBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -80,6 +79,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelCommands;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource commandOverviewPageBindingSource;
     }
 }

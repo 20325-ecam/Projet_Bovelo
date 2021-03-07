@@ -425,9 +425,22 @@ namespace ProjectBovelo
             return taskList;
         }
 
-        public void selectAllOrders()
+        public DataTable selectAllOrders()
         {
-            //Andre
+            List<Order> orderList = new List<Order>();
+            string orderQuery =
+                "SELECT OrderDB.id, Client.name, Client.address, OrderDB.bikeAmount, OrderDB.totalPrice " +
+                "FROM  OrderDB " +
+                "INNER JOIN Client " +
+                "ON OrderDB.clientId = Client.id";
+
+            DataTable orderDataTable = new DataTable();
+            if (this.OpenConnection() == true)
+            {
+                orderDataTable = CreateDataTable(orderQuery);
+                this.CloseConnection();              
+            }
+            return orderDataTable;
         }
 
         public Bitmap loadImage(int imgID)

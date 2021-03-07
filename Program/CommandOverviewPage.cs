@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 
 namespace ProjectBovelo
 {
     public partial class CommandOverviewPage : BoveloBaseForm
     {
-        private List<OrderItem> commandList;
+        private DataTable orderDataTable;
 
         public CommandOverviewPage(BoveloUser user)
         {
             this.user = user;
-            //commandList = DBConnection.SelectAllCommands();
+            orderDataTable = DBConnection.selectAllOrders();
             InitializeComponent();
         }
 
@@ -25,7 +26,7 @@ namespace ProjectBovelo
 
         private void FillTableLayoutCommand()
         {
-
+            dataGridView1.DataSource = orderDataTable;
         }
     }
 }
