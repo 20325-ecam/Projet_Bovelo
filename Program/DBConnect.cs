@@ -1,13 +1,10 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
-using System.Windows.Forms;
 using System.Data;
 using System.Drawing;
 using System.IO;
+using System.Windows.Forms;
 
 namespace ProjectBovelo
 {
@@ -27,7 +24,7 @@ namespace ProjectBovelo
 
         //Initialize values
         private void Initialize()
-        {            
+        {
             string connectionString = "server=193.191.240.67;user=dbMaster;database=Bovelo;port=63302;password=dbMaster";
             connection = new MySqlConnection(connectionString);
         }
@@ -42,7 +39,7 @@ namespace ProjectBovelo
             }
             catch (MySqlException ex)
             {
-                //When handling errors, you can your application's response based 
+                //When handling errors, you can your application's response based
                 //on the error number.
                 //The two most common error numbers when connecting are as follows:
                 //0: Cannot connect to server.
@@ -112,20 +109,20 @@ namespace ProjectBovelo
 
                 long orderId = cmdOrder.LastInsertedId;
 
-                for (int i =0 ; i < order.orderItemList.Count; i++)
+                for (int i = 0; i < order.orderItemList.Count; i++)
                 {
                     OrderItem orderItem = order.orderItemList[i];
                     string queryOrderItem = "INSERT INTO OrderItem (bikeId, colorId, sizeId, Price, clientId, OrderId) " +
-                                                  "VALUES('" + orderItem.bikeId + "', '" + orderItem.color.id + "', '" + orderItem.size.id  
-                                                  +"', '" + orderItem.Price + "', '" + orderItem.clientId + "', '" + orderId + "')";
+                                                  "VALUES('" + orderItem.bikeId + "', '" + orderItem.color.id + "', '" + orderItem.size.id
+                                                  + "', '" + orderItem.Price + "', '" + orderItem.clientId + "', '" + orderId + "')";
                     MySqlCommand cmdOrderItem = new MySqlCommand(queryOrderItem, connection);
-                    for(int j = 0; j < orderItem.quantity; j++)
+                    for (int j = 0; j < orderItem.quantity; j++)
                     {
                         cmdOrderItem.ExecuteNonQuery();
                         string queryTask = "INSERT INTO Task (OrderItemId) VALUES('" + cmdOrderItem.LastInsertedId + "')";
                         MySqlCommand cmdTask = new MySqlCommand(queryTask, connection);
                         cmdTask.ExecuteNonQuery();
-                    }                                            
+                    }
                 }
                 this.CloseConnection();
             }
@@ -135,11 +132,10 @@ namespace ProjectBovelo
         public void InsertNewClient(AddNewClient addNewClient)
         {
             //long newClientId = 4;
-            string queryNewClient = "INSERT INTO Client (name, phone, email, address, zipCode, city, vat)"+
-                           "VALUES('" + addNewClient.clientName + "', '" + 
-                           addNewClient.clientPhone + "', '" + addNewClient.clientEmail+"', '" + addNewClient.clientaddress +"', '"+ 
-                           addNewClient.clientZipCode+"', '"+ addNewClient.clientCity +"', '"+ addNewClient.clientVat+"')";
-
+            string queryNewClient = "INSERT INTO Client (name, phone, email, address, zipCode, city, vat)" +
+                           "VALUES('" + addNewClient.clientName + "', '" +
+                           addNewClient.clientPhone + "', '" + addNewClient.clientEmail + "', '" + addNewClient.clientaddress + "', '" +
+                           addNewClient.clientZipCode + "', '" + addNewClient.clientCity + "', '" + addNewClient.clientVat + "')";
 
             //open connection
             if (this.OpenConnection() == true)
@@ -197,7 +193,7 @@ namespace ProjectBovelo
         //Select statement
         public BoveloUser SelectUser(int id, string password)
         {
-            string query = "SELECT * FROM AppUser WHERE id ='"+ id + "' AND password ='" + password + "'";
+            string query = "SELECT * FROM AppUser WHERE id ='" + id + "' AND password ='" + password + "'";
             BoveloUser user;
             //Open connection
             if (this.OpenConnection() == true)
@@ -225,28 +221,28 @@ namespace ProjectBovelo
                     dataReader.Close();
                     this.CloseConnection();
                     return null;
-                }         
+                }
             }
             else
             {
                 MessageBox.Show("No connection to database");
                 return null;
             }
-        }        
+        }
 
         public List<Client> SelectRegisteredClient()
         {
             string registeredClientQuery = "SELECT * FROM Client";
             DataTable registeredClientTable;
             List<Client> clientList = new List<Client>();
-            
+
             if (this.OpenConnection() == true)
             {
                 registeredClientTable = CreateDataTable(registeredClientQuery);
                 this.CloseConnection();
                 for (int i = 0; i < registeredClientTable.Rows.Count; i++)
                 {
-                    int id = (int)registeredClientTable.Rows[i]["id"];                  
+                    int id = (int)registeredClientTable.Rows[i]["id"];
                     string name = (string)registeredClientTable.Rows[i]["name"];
                     string phone = (string)registeredClientTable.Rows[i]["phone"];
                     string email = (string)registeredClientTable.Rows[i]["email"];
@@ -261,7 +257,7 @@ namespace ProjectBovelo
                     else
                     {
                         vat = (string)registeredClientTable.Rows[i]["vat"];
-                    }                   
+                    }
                     Client client = new Client(id, name, phone, email, address, zipcode, city, vat);
                     clientList.Add(client);
                 }
@@ -323,20 +319,20 @@ namespace ProjectBovelo
                     float price = (float)bikeDataTable.Rows[i]["price"];
                     int imageId = (int)bikeDataTable.Rows[i]["imageId"];
                     AvailableBicycle availableBicycle = new AvailableBicycle(id, name, description, price, imageId);
-                    for(int j = 0; j < bikeColorDataTable.Rows.Count; j++)
+                    for (int j = 0; j < bikeColorDataTable.Rows.Count; j++)
                     {
-                        if((int)bikeColorDataTable.Rows[j]["BikeModel_id"] == id)
+                        if ((int)bikeColorDataTable.Rows[j]["BikeModel_id"] == id)
                         {
-                            for(int k = 0; k < colorList.Count; k++)
+                            for (int k = 0; k < colorList.Count; k++)
                             {
-                                if(colorList[k].id == (int)bikeColorDataTable.Rows[j]["Color_id"])
+                                if (colorList[k].id == (int)bikeColorDataTable.Rows[j]["Color_id"])
                                 {
                                     availableBicycle.AddAvailableColor(colorList[k]);
                                     break;
                                 }
-                            } 
+                            }
                         }
-                    }                   
+                    }
                     for (int j = 0; j < bikeSizeDataTable.Rows.Count; j++)
                     {
                         if ((int)bikeSizeDataTable.Rows[j]["BikeModel_id"] == id)
@@ -356,12 +352,10 @@ namespace ProjectBovelo
                 return bikeList;
             }
             else
-            {              
-                return bikeList;               
-            }              
+            {
+                return bikeList;
+            }
         }
-
-
 
         public List<Task> SelectAllTasks()
         {
@@ -412,8 +406,6 @@ namespace ProjectBovelo
             return taskList;
         }
 
-
-
         public Bitmap loadImage(int imgID)
         {
             string imageQuery = "SELECT * FROM Files WHERE id ='" + imgID.ToString() + "'";
@@ -428,7 +420,7 @@ namespace ProjectBovelo
                 if (!dataReader.HasRows)
                 {
                     throw new Exception("There are no blobs to save");
-                }                  
+                }
                 dataReader.Read();
 
                 FileSize = dataReader.GetUInt32(dataReader.GetOrdinal("image_size"));
@@ -489,13 +481,11 @@ namespace ProjectBovelo
         //Backup
         public void Backup()
         {
-            
         }
 
         //Restore
         public void Restore()
         {
-
         }
     }
 }

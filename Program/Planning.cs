@@ -1,18 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProjectBovelo
 {
     public partial class Planning : BoveloBaseForm
     {
-        List<Task> taskList;
+        private List<Task> taskList;
+
         public Planning(BoveloUser user)
         {
             this.user = user;
@@ -28,6 +23,7 @@ namespace ProjectBovelo
             PageLayoutMaker.CreateReturnToMenusButton(this);
             PageLayoutMaker.CreateHeader(this, DBConnection.loadImage(1), user);
         }
+
         private void FillTaskTable()
         {
             tableLayoutPanelTasks.RowCount = taskList.Count + 1;
@@ -82,7 +78,7 @@ namespace ProjectBovelo
                 Label labelOrderId = new Label();
                 labelOrderId.Text = taskList[i].orderId.ToString();
                 labelOrderId.AutoSize = true;
-                tableLayoutPanelTasks.SetRow(labelOrderId, i+1);
+                tableLayoutPanelTasks.SetRow(labelOrderId, i + 1);
                 tableLayoutPanelTasks.SetColumn(labelOrderId, 0);
                 tableLayoutPanelTasks.Controls.Add(labelOrderId);
 
@@ -130,9 +126,9 @@ namespace ProjectBovelo
                 tableLayoutPanelTasks.Controls.Add(details);
             }
         }
+
         private void buttonDetails_Click(object sender, EventArgs e)
         {
-            
         }
     }
 }

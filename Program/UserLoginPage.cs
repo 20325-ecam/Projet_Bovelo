@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProjectBovelo
@@ -13,8 +6,8 @@ namespace ProjectBovelo
     public partial class UserLoginPage : BoveloBaseForm
     {
         public UserLoginPage()
-        {            
-            InitializeComponent();           
+        {
+            InitializeComponent();
         }
 
         private void bp_login_Click(object sender, EventArgs e)
@@ -43,7 +36,7 @@ namespace ProjectBovelo
                 //labelErrorLogin.Text = "Incorrect login format";
                 MessageBox.Show("Incorrect login format");
             }
-            
+
             /*
             try
             {
@@ -66,15 +59,13 @@ namespace ProjectBovelo
             }
             */
         }
-       
+
         private void cb_hide_password_CheckedChanged(object sender, EventArgs e)
         {
-
         }
 
         private void labelErrorLogin_Click(object sender, EventArgs e)
         {
-
         }
 
         private void Login_staff_Load(object sender, EventArgs e)

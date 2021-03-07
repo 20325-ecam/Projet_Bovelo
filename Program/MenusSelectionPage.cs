@@ -1,12 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace ProjectBovelo
 {
@@ -14,7 +6,7 @@ namespace ProjectBovelo
     {
         public MenusSelectionPage(BoveloUser user)
         {
-            this.user = user;          
+            this.user = user;
             InitializeComponent();
         }
 
@@ -31,7 +23,6 @@ namespace ProjectBovelo
             PageLayoutMaker.CreateQuitButton(this);
             PageLayoutMaker.CreateLogoutUserButton(this);
             PageLayoutMaker.CreateHeader(this, DBConnection.loadImage(1), user);
-            
         }
 
         private void bp_l_commands_Click(object sender, EventArgs e)

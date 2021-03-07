@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProjectBovelo
@@ -17,7 +10,7 @@ namespace ProjectBovelo
             this.user = user;
             this.client = client;
             InitializeComponent();
-        }        
+        }
 
         private void Cart_Load(object sender, EventArgs e)
         {
@@ -27,6 +20,7 @@ namespace ProjectBovelo
             PageLayoutMaker.CreateReturnToCatalogButton(this);
             PageLayoutMaker.CreateHeader(this, DBConnection.loadImage(1), user, client);
         }
+
         private void FillOrderTable()
         {
             tableLayoutPanelOrder.RowCount = client.cart.Count + 2;
@@ -62,7 +56,7 @@ namespace ProjectBovelo
             priceTitle.AutoSize = true;
             tableLayoutPanelOrder.SetRow(priceTitle, 0);
             tableLayoutPanelOrder.SetColumn(priceTitle, 4);
-     
+
             priceTotalLabel.AutoSize = true;
             tableLayoutPanelOrder.SetRow(priceTotalLabel, client.cart.Count + 2);
             tableLayoutPanelOrder.SetColumn(priceTotalLabel, 4);
@@ -122,7 +116,7 @@ namespace ProjectBovelo
             if (client.cart.Count > 0)
             {
                 Order order = new Order(client.id);
-                for(int i = 0; i< client.cart.Count; i++)
+                for (int i = 0; i < client.cart.Count; i++)
                 {
                     order.AddOrderItem(client.cart[i]);
                     order.totalPrice += client.cart[i].Price;

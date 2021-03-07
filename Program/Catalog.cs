@@ -1,29 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
 
 namespace ProjectBovelo
 {
     public partial class Catalog : BoveloBaseForm
-    {              
-        List<AvailableBicycle> availableBikeList;
+    {
+        private List<AvailableBicycle> availableBikeList;
+
         public Catalog(BoveloUser user, Client client)
         {
-            
             this.user = user;
-            if(client != null)
+            if (client != null)
             {
                 this.client = client;
             }
             availableBikeList = DBConnection.SelectAvailableBikes();
-            InitializeComponent();          
+            InitializeComponent();
         }
 
         private void Catalog_Load(object sender, EventArgs e)
@@ -32,13 +26,14 @@ namespace ProjectBovelo
             FillTableLayout();
             PageLayoutMaker.CreateQuitButton(this);
             PageLayoutMaker.CreateReturnToMenusButton(this);
-            PageLayoutMaker.CreateHeader(this, DBConnection.loadImage(1), user, client);          
+            PageLayoutMaker.CreateHeader(this, DBConnection.loadImage(1), user, client);
         }
+
         private void buttonOrder_Click(object sender, EventArgs e)
         {
             Button pushedButton = (Button)sender;
             AvailableBicycle bicycle;
-            if(client != null)
+            if (client != null)
             {
                 for (int i = 0; i < availableBikeList.Count; i++)
                 {
@@ -57,10 +52,11 @@ namespace ProjectBovelo
                 ClientIdentification clientIdentificationPage = new ClientIdentification(user, client);
                 clientIdentificationPage.Show();
                 this.Close();
-            }               
+            }
         }
+
         private void FillTableLayout()
-        {           
+        {
             tableLayoutPanel1.RowCount = 3 * availableBikeList.Count;
             tableLayoutPanel1.ColumnCount = 3;
 

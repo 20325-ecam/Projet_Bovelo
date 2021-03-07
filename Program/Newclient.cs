@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProjectBovelo
@@ -57,42 +50,34 @@ namespace ProjectBovelo
             {
                 MessageBox.Show("Every box is not full", "textBox empty", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
         }
 
         private void textBoxname_TextChanged(object sender, EventArgs e)
         {
-            
         }
 
         private void textBoxphone_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void textBoxmail_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void textBoxaddress_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void textBoxZipCode_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void textBoxCity_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void textBoxVat_TextChanged(object sender, EventArgs e)
         {
-
         }
     }
 }

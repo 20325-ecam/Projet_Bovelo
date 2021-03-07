@@ -1,30 +1,29 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace ProjectBovelo
 {
     public static class PageLayoutMaker
     {
-        static DBConnect connection = new DBConnect();
+        private static DBConnect connection = new DBConnect();
+
         public static void SetBasePageLayout(BoveloBaseForm form)
         {
             form.Location = new Point(100, 100);
             form.Size = new Size(850, 600);
         }
+
         public static void CreateHeader(Form form, Bitmap image)
         {
             PictureBox PictureBoxLogo = new PictureBox();
             PictureBoxLogo.Size = new Size(150, 100);
             PictureBoxLogo.SizeMode = PictureBoxSizeMode.StretchImage;
-            PictureBoxLogo.Location = new Point(20,20);
+            PictureBoxLogo.Location = new Point(20, 20);
             PictureBoxLogo.Image = image;
             form.Controls.Add(PictureBoxLogo);
         }
+
         public static void CreateHeader(BoveloBaseForm form, Bitmap image, BoveloUser user)
         {
             CreateHeader(form, image);
@@ -34,13 +33,14 @@ namespace ProjectBovelo
             LabelUserName.Text = "Logged in as " + user.firstname + " " + user.lastname;
             form.Controls.Add(LabelUserName);
         }
+
         public static void CreateHeader(BoveloBaseForm form, Bitmap image, BoveloUser user, Client client)
         {
             CreateHeader(form, image, user);
             Label LabelClientName = new Label();
             LabelClientName.Location = new Point(550, 50);
             LabelClientName.AutoSize = true;
-            if(client != null)
+            if (client != null)
             {
                 LabelClientName.Text = "Client :" + client.name + " " + client.address;
                 LabelClientName.Click += new EventHandler(ButtonToCart_Click);
@@ -102,22 +102,25 @@ namespace ProjectBovelo
                 Environment.Exit(0);
             }
         }
+
         private static void ButtonReturnToMenus_Click(object sender, EventArgs e)
-        {          
+        {
             Control button = (Control)sender;
-            BoveloBaseForm form = (BoveloBaseForm)button.Parent;            
+            BoveloBaseForm form = (BoveloBaseForm)button.Parent;
             MenusSelectionPage menusSelectionPage = new MenusSelectionPage(form.user);
             menusSelectionPage.Show();
             form.Close();
         }
+
         private static void ButtonReturnToCatalog_Click(object sender, EventArgs e)
         {
             Control button = (Control)sender;
             BoveloBaseForm form = (BoveloBaseForm)button.Parent;
-            Catalog CatalogPage = new Catalog(form.user,form.client);
+            Catalog CatalogPage = new Catalog(form.user, form.client);
             CatalogPage.Show();
             form.Close();
         }
+
         private static void ButtonLogoutUser_Click(object sender, EventArgs e)
         {
             Control button = (Control)sender;
@@ -135,6 +138,7 @@ namespace ProjectBovelo
             clientIdentificationPage.Show();
             form.Close();
         }
+
         private static void ButtonToCart_Click(object sender, EventArgs e)
         {
             Control button = (Control)sender;

@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace ProjectBovelo
 {
     public class BoveloUser
     {
-
         public int id;
         public string password;
         public string firstname;
@@ -27,7 +22,6 @@ namespace ProjectBovelo
 
     public class Client
     {
-
         public int id;
         public string name;
         public string phone;
@@ -49,14 +43,17 @@ namespace ProjectBovelo
             this.city = city;
             this.vat = vat;
         }
+
         public void AddOrderToCart(OrderItem order)
         {
             cart.Add(order);
         }
+
         public void ClearCart()
         {
             cart.Clear();
         }
+
         public override string ToString()
         {
             return name + " " + address;
@@ -65,7 +62,6 @@ namespace ProjectBovelo
 
     public class AvailableBicycle
     {
-
         public int id;
         public string name;
         public string description;
@@ -89,6 +85,7 @@ namespace ProjectBovelo
         {
             this.availableColors.Add(color);
         }
+
         public void AddAvailableSize(BicycleSize size)
         {
             this.availableSizes.Add(size);
@@ -105,6 +102,7 @@ namespace ProjectBovelo
             this.id = id;
             this.color = color;
         }
+
         public override string ToString()
         {
             return this.color;
@@ -121,6 +119,7 @@ namespace ProjectBovelo
             this.id = id;
             this.size = size;
         }
+
         public override string ToString()
         {
             return this.size;
@@ -148,20 +147,24 @@ namespace ProjectBovelo
             this.Price = totalPrice;
         }
     }
+
     public class Order
     {
         public int clientId;
         public float totalPrice = 0;
         public List<OrderItem> orderItemList = new List<OrderItem>();
+
         public Order(int clientId)
         {
             this.clientId = clientId;
         }
+
         public void AddOrderItem(OrderItem order)
         {
             orderItemList.Add(order);
         }
     }
+
     public class AddNewClient
     {
         public int newClientId;
@@ -185,6 +188,7 @@ namespace ProjectBovelo
             this.clientVat = clientVat;
         }
     }
+
     public class Task
     {
         public int orderId;
@@ -193,6 +197,7 @@ namespace ProjectBovelo
         public string bikeColor;
         public string state;
         public string userName;
+
         public Task(int orderId, string bikeName, string bikeSize, string bikeColor, string state, string userName)
         {
             this.orderId = orderId;
