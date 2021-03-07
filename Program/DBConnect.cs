@@ -153,10 +153,18 @@ namespace ProjectBovelo
         }
 
         //Modifie task
-        public void ModifyTask(int num, int Id)
+        public void ModifyTask(int num, int Id, int mechanicId)
         {
-            Console.WriteLine(Id);
-            string queryModifyTask = "UPDATE Task SET stateId = '" + num + "' WHERE id = '" + Id + "'";
+            string queryModifyTask;
+            if (mechanicId >= 0)
+            {
+                queryModifyTask = "UPDATE Task SET stateId = '" + num + "', asignedUserId= '" + mechanicId + "' WHERE id = '" + Id + "'";
+            }
+            else
+            {
+                queryModifyTask = "UPDATE Task SET stateId = '" + num + "' WHERE id= '" + Id + "'";
+            }
+            
 
             //Open connection
             if (this.OpenConnection() == true)
@@ -423,6 +431,20 @@ namespace ProjectBovelo
                 }
             }
             return taskList;
+        }
+        public DataTable selectAllUser()
+        {
+            List<BoveloUser> userList = new List<BoveloUser>();
+            string userQuery =
+                "SELECT * FROM AppUser"; 
+
+            DataTable userDataTable = new DataTable();
+            if (this.OpenConnection() == true)
+            {
+                userDataTable = CreateDataTable(userQuery);
+                this.CloseConnection();
+            }
+            return userDataTable;
         }
 
         public DataTable selectAllOrders()

@@ -1,15 +1,18 @@
 ﻿using System;
+using System.Data;
 
 namespace ProjectBovelo
 {
     public partial class PlanningPopUp : BoveloBaseForm
     {
         Task task;
+        DataTable userTable;
         int num;
         public PlanningPopUp(BoveloUser user, Task task)
         {
             this.user = user;
             this.task = task;
+            userTable = DBConnection.selectAllUser();
             InitializeComponent();
         }
 
@@ -40,6 +43,14 @@ namespace ProjectBovelo
             {
                 radioButtonToDo.Checked = true;
                 task.state = "To Do";
+            }
+            
+            for (int i = 0; i < userTable.Rows.Count; i++)
+            {
+                if ((int)userTable.Rows[i]["jobTitle"] == 1)
+                {
+                    comboBoxMechanic.Items.Add(userTable.Rows[i]["userName"]);
+                }
             }
         }
 
@@ -81,7 +92,7 @@ namespace ProjectBovelo
 
         private void buttonReturn_Click(object sender, EventArgs e)
         {
-            //DBConnection.ModifyTask();
+            int mechanic = -1;
             switch (task.state)
             {
                 case "To Do":
@@ -100,7 +111,15 @@ namespace ProjectBovelo
                     num = 1;
                     break;
             }
-            DBConnection.ModifyTask(num, task.id);
+            for (int i=0; i< userTable.Rows.Count; i++)
+            {
+                if (userTable.Rows[i]["userName"] == comboBoxMechanic.SelectedItem)
+                {
+                    mechanic = (int)userTable.Rows[i]["id"];
+                }
+                
+            }
+            DBConnection.ModifyTask(num, task.id, mechanic);
             Planning planning = new Planning(user);
             planning.Show();
             this.Close();
