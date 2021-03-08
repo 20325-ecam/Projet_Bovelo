@@ -1,148 +1,183 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using System.Data;
 
 namespace ProjectBovelo
 {
     public partial class Planning : BoveloBaseForm
     {
-        private List<Task> taskList;
+        private DataTable taskDataTable;
+        private int selectedTaskId;
+        private int selectedTaskPriority;
+        private int insertedTaskId;
+        private int insertedTaskPriority;
 
         public Planning(BoveloUser user)
         {
             this.user = user;
-            taskList = DBConnection.SelectAllTasks();
+            taskDataTable = DBConnection.SelectAllTasks();
             InitializeComponent();
         }
 
         private void Planning_Load(object sender, EventArgs e)
         {
             PageLayoutMaker.SetBasePageLayout(this);
-            FillTaskTable();
+            FillDataGridView();
             PageLayoutMaker.CreateQuitButton(this);
             PageLayoutMaker.CreateReturnToMenusButton(this);
             PageLayoutMaker.CreateHeader(this, DBConnection.loadImage(1), user);
         }
 
-        private void FillTaskTable()
+        private void FillDataGridView()
         {
-            tableLayoutPanelTasks.RowCount = taskList.Count + 1;
-            tableLayoutPanelTasks.ColumnCount = 7;
-
-            Label orderTitle = new Label();
-            Label bikeTitle = new Label();
-            Label sizeTitle = new Label();
-            Label colorTitle = new Label();
-            Label stateTitle = new Label();
-            Label userTitle = new Label();
-
-            orderTitle.Text = "Command n°";
-            orderTitle.AutoSize = true;
-            tableLayoutPanelTasks.SetRow(orderTitle, 0);
-            tableLayoutPanelTasks.SetColumn(orderTitle, 0);
-
-            bikeTitle.Text = "Bicycle type";
-            bikeTitle.AutoSize = true;
-            tableLayoutPanelTasks.SetRow(bikeTitle, 0);
-            tableLayoutPanelTasks.SetColumn(bikeTitle, 1);
-
-            sizeTitle.Text = "Bicycle size";
-            sizeTitle.AutoSize = true;
-            tableLayoutPanelTasks.SetRow(sizeTitle, 0);
-            tableLayoutPanelTasks.SetColumn(sizeTitle, 2);
-
-            colorTitle.Text = "Bicycle color";
-            colorTitle.AutoSize = true;
-            tableLayoutPanelTasks.SetRow(colorTitle, 0);
-            tableLayoutPanelTasks.SetColumn(colorTitle, 3);
-
-            stateTitle.Text = "State";
-            stateTitle.AutoSize = true;
-            tableLayoutPanelTasks.SetRow(stateTitle, 0);
-            tableLayoutPanelTasks.SetColumn(stateTitle, 4);
-
-            userTitle.Text = "Mechanic";
-            userTitle.AutoSize = true;
-            tableLayoutPanelTasks.SetRow(userTitle, 0);
-            tableLayoutPanelTasks.SetColumn(userTitle, 5);
-
-            tableLayoutPanelTasks.Controls.Add(orderTitle);
-            tableLayoutPanelTasks.Controls.Add(bikeTitle);
-            tableLayoutPanelTasks.Controls.Add(sizeTitle);
-            tableLayoutPanelTasks.Controls.Add(colorTitle);
-            tableLayoutPanelTasks.Controls.Add(stateTitle);
-            tableLayoutPanelTasks.Controls.Add(userTitle);
-
-            for (int i = 0; i < taskList.Count; i++)
+            dataGridViewTask.DataSource = taskDataTable;
+            DataGridViewButtonColumn detailsButtonColumn = new DataGridViewButtonColumn();
+            detailsButtonColumn.Name = "details_column";
+            detailsButtonColumn.Text = "Details";
+            detailsButtonColumn.UseColumnTextForButtonValue = true;
+            int detailsColumnIndex = 7;
+            if (dataGridViewTask.Columns["details_column"] == null)
             {
-                Label labelOrderId = new Label();
-                labelOrderId.Text = taskList[i].orderId.ToString();
-                labelOrderId.AutoSize = true;
-                tableLayoutPanelTasks.SetRow(labelOrderId, i + 1);
-                tableLayoutPanelTasks.SetColumn(labelOrderId, 0);
-                tableLayoutPanelTasks.Controls.Add(labelOrderId);
+                dataGridViewTask.Columns.Insert(detailsColumnIndex, detailsButtonColumn);
+            }
+            DataGridViewButtonColumn selectButtonColumn = new DataGridViewButtonColumn();
+            selectButtonColumn.Name = "select_column";
+            selectButtonColumn.Text = "Select";
+            selectButtonColumn.UseColumnTextForButtonValue = true;
+            int selectColumnIndex = 8;
+            if (dataGridViewTask.Columns["select_column"] == null)
+            {
+                dataGridViewTask.Columns.Insert(selectColumnIndex, selectButtonColumn);
+            }
+            DataGridViewButtonColumn insertButtonColumn = new DataGridViewButtonColumn();
+            insertButtonColumn.Name = "insert_column";
+            insertButtonColumn.Text = "Insert";
+            insertButtonColumn.UseColumnTextForButtonValue = true;
+            int insertColumnIndex = 9;
+            if (dataGridViewTask.Columns["insert_column"] == null)
+            {
+                dataGridViewTask.Columns.Insert(insertColumnIndex, insertButtonColumn);
+            }
 
-                Label bikeType = new Label();
-                bikeType.Text = taskList[i].bikeName;
-                bikeType.AutoSize = true;
-                tableLayoutPanelTasks.SetRow(bikeType, i + 1);
-                tableLayoutPanelTasks.SetColumn(bikeType, 1);
-                tableLayoutPanelTasks.Controls.Add(bikeType);
+            // Set your desired AutoSize Mode:
+            dataGridViewTask.Columns["id"].Visible = false;
+            dataGridViewTask.Columns["priority"].Visible = false;
+            dataGridViewTask.Columns["select_column"].Visible = false;
+            dataGridViewTask.Columns["insert_column"].Visible = false;
 
-                Label bikeSize = new Label();
-                bikeSize.Text = taskList[i].bikeSize;
-                bikeSize.AutoSize = true;
-                tableLayoutPanelTasks.SetRow(bikeSize, i + 1);
-                tableLayoutPanelTasks.SetColumn(bikeSize, 2);
-                tableLayoutPanelTasks.Controls.Add(bikeSize);
+            dataGridViewTask.Columns["OrderId"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewTask.Columns["OrderId"].HeaderText = "Order";
+            dataGridViewTask.Columns["bikeName"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewTask.Columns["bikeName"].HeaderText = "Bike";
+            dataGridViewTask.Columns["size"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewTask.Columns["size"].HeaderText = "Size";
+            dataGridViewTask.Columns["color"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewTask.Columns["color"].HeaderText = "Color";
+            dataGridViewTask.Columns["state"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewTask.Columns["state"].HeaderText = "State";
+            dataGridViewTask.Columns["userName"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewTask.Columns["userName"].HeaderText = "Mechanic";
+            dataGridViewTask.Columns["details_column"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewTask.Columns["details_column"].HeaderText = "Details";
+            dataGridViewTask.Columns["select_column"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewTask.Columns["select_column"].HeaderText = "Select";
+            dataGridViewTask.Columns["insert_column"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewTask.Columns["insert_column"].HeaderText = "Insert";
 
-                Label bikeColor = new Label();
-                bikeColor.Text = taskList[i].bikeColor;
-                bikeColor.AutoSize = true;
-                tableLayoutPanelTasks.SetRow(bikeColor, i + 1);
-                tableLayoutPanelTasks.SetColumn(bikeColor, 3);
-                tableLayoutPanelTasks.Controls.Add(bikeColor);
+            // Now that DataGridView has calculated it's Widths; we can now store each column Width values.
+            for (int i = 0; i < dataGridViewTask.Columns.Count; i++)
+            {
+                // Store Auto Sized Widths:
+                int colw = dataGridViewTask.Columns[i].Width;
 
-                Label bikeState = new Label();
-                bikeState.Text = taskList[i].state;
-                bikeState.AutoSize = true;
-                tableLayoutPanelTasks.SetRow(bikeState, i + 1);
-                tableLayoutPanelTasks.SetColumn(bikeState, 4);
-                tableLayoutPanelTasks.Controls.Add(bikeState);
+                // Remove AutoSizing:
+                dataGridViewTask.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
 
-                Label userName = new Label();
-                userName.Text = taskList[i].userName;
-                userName.AutoSize = true;
-                tableLayoutPanelTasks.SetRow(userName, i + 1);
-                tableLayoutPanelTasks.SetColumn(userName, 5);
-                tableLayoutPanelTasks.Controls.Add(userName);
+                // Set Width to calculated AutoSize value:
+                dataGridViewTask.Columns[i].Width = colw;
 
-                Button details = new Button();
-                details.Text = "Details";
-                details.Name = taskList[i].id.ToString();
-                details.AutoSize = true;
-                details.Click += new EventHandler(buttonDetails_Click);
-                tableLayoutPanelTasks.SetRow(details, i + 1);
-                tableLayoutPanelTasks.SetColumn(details, 6);
-                tableLayoutPanelTasks.Controls.Add(details);
+                dataGridViewTask.Columns[i].SortMode = DataGridViewColumnSortMode.NotSortable;
             }
         }
 
-        private void buttonDetails_Click(object sender, EventArgs e)
+        private void updateDataGridView()
         {
-            Button pushedButton = (Button)sender;
-            Task task;
-            for (int i = 0; i < taskList.Count; i++)
+            taskDataTable = DBConnection.SelectAllTasks();
+            dataGridViewTask.DataSource = taskDataTable;
+        }
+
+        private void dataGridViewTask_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int rowIndex = e.RowIndex;
+            if (rowIndex >= 0)
             {
-                if (taskList[i].id.ToString() == pushedButton.Name)
+                if (e.ColumnIndex == dataGridViewTask.Columns["details_column"].Index)
                 {
-                    task = taskList[i];
+                    int id = (int)dataGridViewTask.Rows[rowIndex].Cells["id"].Value;
+                    int orderId = (int)dataGridViewTask.Rows[rowIndex].Cells["OrderId"].Value;
+                    string bikeName = (string)dataGridViewTask.Rows[rowIndex].Cells["bikeName"].Value;
+                    string bikeSize = (string)dataGridViewTask.Rows[rowIndex].Cells["size"].Value;
+                    string bikeColor = (string)dataGridViewTask.Rows[rowIndex].Cells["color"].Value;
+                    string state = (string)dataGridViewTask.Rows[rowIndex].Cells["state"].Value;
+                    string userName = "";
+                    if (dataGridViewTask.Rows[rowIndex].Cells["userName"].Value != DBNull.Value)
+                    {
+                        userName = (string)dataGridViewTask.Rows[rowIndex].Cells["userName"].Value;
+                    }
+                    Task task = new Task(id, orderId, bikeName, bikeSize, bikeColor, state, userName);
                     PlanningPopUp planningPopUp = new PlanningPopUp(user, task);
                     planningPopUp.Show();
                     this.Close();
-                    break;
                 }
-            }   
+                else if (e.ColumnIndex == dataGridViewTask.Columns["select_column"].Index)
+                {
+                    selectedTaskId = (int)dataGridViewTask.Rows[rowIndex].Cells["id"].Value;
+                    selectedTaskPriority = (int)dataGridViewTask.Rows[rowIndex].Cells["priority"].Value;
+                    dataGridViewTask.Columns["insert_column"].Visible = true;
+                    dataGridViewTask.Columns["select_column"].Visible = false;
+
+                }
+                else if (e.ColumnIndex == dataGridViewTask.Columns["insert_column"].Index)
+                {
+                    insertedTaskId = (int)dataGridViewTask.Rows[rowIndex].Cells["id"].Value;
+                    insertedTaskPriority = (int)dataGridViewTask.Rows[rowIndex].Cells["priority"].Value;
+                    DBConnection.updateTaskPriority(selectedTaskId, selectedTaskPriority, insertedTaskId, insertedTaskPriority);
+                    updateDataGridView();
+                    dataGridViewTask.Columns["insert_column"].Visible = false;
+                    dataGridViewTask.Columns["select_column"].Visible = true;
+                }
+            }
+        }
+
+        private void startReorderMode()
+        {
+            dataGridViewTask.Columns["details_column"].Visible = false;
+            dataGridViewTask.Columns["insert_column"].Visible = false;
+            dataGridViewTask.Columns["select_column"].Visible = true;
+        }
+
+        private void endReorderMode()
+        {
+            dataGridViewTask.Columns["details_column"].Visible = true;
+            dataGridViewTask.Columns["insert_column"].Visible = false;
+            dataGridViewTask.Columns["select_column"].Visible = false;
+        }
+
+        private void buttonEdit_Click(object sender, EventArgs e)
+        {
+            buttonEdit.Click -= new EventHandler(buttonEdit_Click);
+            buttonEdit.Click += new EventHandler(buttonFinishEdit_Click);
+            buttonEdit.Text = "Finish";
+            startReorderMode();
+        }
+
+        private void buttonFinishEdit_Click(object sender, EventArgs e)
+        {
+            buttonEdit.Click -= new EventHandler(buttonFinishEdit_Click);
+            buttonEdit.Click += new EventHandler(buttonEdit_Click);
+            buttonEdit.Text = "Edit";
+            endReorderMode();
         }
     }
 }

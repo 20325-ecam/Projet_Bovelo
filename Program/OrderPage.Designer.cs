@@ -42,7 +42,7 @@ namespace ProjectBovelo
             // 
             // buttonOrder
             // 
-            this.buttonOrder.Location = new System.Drawing.Point(341, 301);
+            this.buttonOrder.Location = new System.Drawing.Point(331, 300);
             this.buttonOrder.Margin = new System.Windows.Forms.Padding(2);
             this.buttonOrder.Name = "buttonOrder";
             this.buttonOrder.Size = new System.Drawing.Size(83, 33);
@@ -54,7 +54,7 @@ namespace ProjectBovelo
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(283, 145);
+            this.label1.Location = new System.Drawing.Point(262, 150);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(33, 13);
@@ -64,7 +64,7 @@ namespace ProjectBovelo
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(283, 193);
+            this.label2.Location = new System.Drawing.Point(262, 198);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 13);
@@ -85,7 +85,7 @@ namespace ProjectBovelo
             // comboBoxSize
             // 
             this.comboBoxSize.FormattingEnabled = true;
-            this.comboBoxSize.Location = new System.Drawing.Point(341, 142);
+            this.comboBoxSize.Location = new System.Drawing.Point(320, 147);
             this.comboBoxSize.Name = "comboBoxSize";
             this.comboBoxSize.Size = new System.Drawing.Size(121, 21);
             this.comboBoxSize.TabIndex = 13;
@@ -93,14 +93,14 @@ namespace ProjectBovelo
             // comboBoxColor
             // 
             this.comboBoxColor.FormattingEnabled = true;
-            this.comboBoxColor.Location = new System.Drawing.Point(341, 190);
+            this.comboBoxColor.Location = new System.Drawing.Point(320, 195);
             this.comboBoxColor.Name = "comboBoxColor";
             this.comboBoxColor.Size = new System.Drawing.Size(121, 21);
             this.comboBoxColor.TabIndex = 14;
             // 
             // numericUpDownQuantity
             // 
-            this.numericUpDownQuantity.Location = new System.Drawing.Point(341, 240);
+            this.numericUpDownQuantity.Location = new System.Drawing.Point(320, 245);
             this.numericUpDownQuantity.Maximum = new decimal(new int[] {
             5,
             0,
@@ -123,13 +123,13 @@ namespace ProjectBovelo
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(283, 242);
+            this.label3.Location = new System.Drawing.Point(262, 247);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 13);
             this.label3.TabIndex = 16;
             this.label3.Text = "Quantity :";
             // 
-            // Order
+            // OrderPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -143,7 +143,7 @@ namespace ProjectBovelo
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonOrder);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "Order";
+            this.Name = "OrderPage";
             this.Text = "Bovélo";
             this.Load += new System.EventHandler(this.Order_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownQuantity)).EndInit();

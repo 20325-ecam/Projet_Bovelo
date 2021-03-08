@@ -68,7 +68,7 @@
             this.bp_l_commands.Name = "bp_l_commands";
             this.bp_l_commands.Size = new System.Drawing.Size(190, 66);
             this.bp_l_commands.TabIndex = 3;
-            this.bp_l_commands.Text = "List of commands";
+            this.bp_l_commands.Text = "List of orders";
             this.bp_l_commands.UseVisualStyleBackColor = true;
             this.bp_l_commands.Click += new System.EventHandler(this.bp_l_commands_Click);
             // 

@@ -31,13 +31,13 @@ namespace ProjectBovelo
         {
             this.SuspendLayout();
             // 
-            // Home_page
+            // HomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(784, 561);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "Home_page";
+            this.Name = "HomePage";
             this.Text = "Bovélo";
             this.Load += new System.EventHandler(this.Home_page_Load);
             this.ResumeLayout(false);

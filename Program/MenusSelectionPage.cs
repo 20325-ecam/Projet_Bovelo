@@ -27,7 +27,7 @@ namespace ProjectBovelo
 
         private void bp_l_commands_Click(object sender, EventArgs e)
         {
-            CommandOverviewPage commandOverviewPage = new CommandOverviewPage(user);
+            OrdersOverviewPage commandOverviewPage = new OrdersOverviewPage(user);
             commandOverviewPage.Show();
             this.Close();
         }

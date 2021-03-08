@@ -50,11 +50,11 @@
     <Compile Include="BoveloBaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CommandOverviewPage.cs">
+    <Compile Include="OrdersOverviewPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CommandOverviewPage.Designer.cs">
-      <DependentUpon>CommandOverviewPage.cs</DependentUpon>
+    <Compile Include="OrdersOverviewPage.Designer.cs">
+      <DependentUpon>OrdersOverviewPage.cs</DependentUpon>
     </Compile>
     <Compile Include="EmailValide.cs" />
     <Compile Include="Newclient.cs">
@@ -131,8 +131,8 @@
     <EmbeddedResource Include="ClientIdentification.resx">
       <DependentUpon>ClientIdentification.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CommandOverviewPage.resx">
-      <DependentUpon>CommandOverviewPage.cs</DependentUpon>
+    <EmbeddedResource Include="OrdersOverviewPage.resx">
+      <DependentUpon>OrdersOverviewPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>

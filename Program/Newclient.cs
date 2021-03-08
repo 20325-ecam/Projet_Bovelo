@@ -15,7 +15,7 @@ namespace ProjectBovelo
         {
             PageLayoutMaker.SetBasePageLayout(this);
             PageLayoutMaker.CreateQuitButton(this);
-            PageLayoutMaker.CreateLogoutUserButton(this);
+            PageLayoutMaker.CreateReturnToClientSelectionButton(this);
             PageLayoutMaker.CreateHeader(this, DBConnection.loadImage(1), user);
         }
 

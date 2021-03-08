@@ -117,10 +117,23 @@ namespace ProjectBovelo
                                                   "VALUES('" + orderItem.bikeId + "', '" + orderItem.color.id + "', '" + orderItem.size.id
                                                   + "', '" + orderItem.bikePrice + "', '" + orderId + "')";
                     MySqlCommand cmdOrderItem = new MySqlCommand(queryOrderItem, connection);
+
+                    string maxPriorityQuery = "SELECT MAX(priority) FROM Task;";
+                    MySqlCommand cmdMaxPriority = new MySqlCommand(maxPriorityQuery, connection);
+                    MySqlDataReader maxPriorityReader = cmdMaxPriority.ExecuteReader();
+                    int maxPriority = 0;
+                    maxPriorityReader.Read();
+                    if (maxPriorityReader["MAX(priority)"] != DBNull.Value)
+                    {                      
+                        maxPriority = (int)maxPriorityReader["MAX(priority)"];
+                        
+                    }
+                    maxPriorityReader.Close();
                     for (int j = 0; j < orderItem.quantity; j++)
                     {
+                        maxPriority += 1;
                         cmdOrderItem.ExecuteNonQuery();
-                        string queryTask = "INSERT INTO Task (OrderItemId) VALUES('" + cmdOrderItem.LastInsertedId + "')";
+                        string queryTask = "INSERT INTO Task (OrderItemId, priority) VALUES(" + cmdOrderItem.LastInsertedId + ", " + maxPriority + "); ";
                         MySqlCommand cmdTask = new MySqlCommand(queryTask, connection);
                         cmdTask.ExecuteNonQuery();
                     }
@@ -178,6 +191,47 @@ namespace ProjectBovelo
                 //close connection
                 this.CloseConnection();
             }
+        }
+
+        public void updateTaskPriority(int selectedTaskId, int selectedTaskPriority, int insertedTaskId, int insertedTaskPriority)
+        {
+            string query = "";
+            if (selectedTaskPriority > insertedTaskPriority)
+            {
+                query = "UPDATE Task " + 
+                        "SET priority = priority + 1 " +
+                        "WHERE priority >= " + insertedTaskPriority + " " +
+                        "AND priority < " + selectedTaskPriority + "; " +
+                        "UPDATE Task " +
+                        "SET priority = " + insertedTaskPriority + " " +
+                        "WHERE id = " + selectedTaskId + "; ";
+            }           
+            else if(selectedTaskPriority < insertedTaskPriority)
+            {
+                query = "UPDATE Task " +
+                        "SET priority = priority - 1 " +
+                        "WHERE priority < " + insertedTaskPriority + " " +
+                        "AND priority > " + selectedTaskPriority + "; " +
+                        "UPDATE Task " +
+                        "SET priority = " + (insertedTaskPriority - 1) + " " +
+                        "WHERE id = " + selectedTaskId + "; ";
+            }
+            if (query != "" && this.OpenConnection() == true)
+            {
+                //create mysql command
+                MySqlCommand cmd = new MySqlCommand();
+                //Assign the query using CommandText
+                cmd.CommandText = query;
+                //Assign the connection using Connection
+                cmd.Connection = connection;
+
+                //Execute query
+                cmd.ExecuteNonQuery();
+
+                //close connection
+                this.CloseConnection();
+            }
+            
         }
 
         //Update statement
@@ -383,11 +437,11 @@ namespace ProjectBovelo
             }
         }
 
-        public List<Task> SelectAllTasks()
+        public DataTable SelectAllTasks()
         {
             List<Task> taskList = new List<Task>();
             string taskQuery =
-                "SELECT Task.id, OrderItem.OrderId, BikeModel.bikeName, Size.size, Color.color, TaskState.state, AppUser.userName " +
+                "SELECT Task.id, OrderItem.OrderId, BikeModel.bikeName, Size.size, Color.color, TaskState.state, AppUser.userName, Task.priority " +
                 "FROM  Task " +
                 "INNER JOIN OrderItem " +
                 "ON Task.OrderItemId = OrderItem.id " +
@@ -400,21 +454,17 @@ namespace ProjectBovelo
                 "INNER JOIN TaskState " +
                 "ON Task.stateId = TaskState.id " +
                 "LEFT JOIN AppUser " +
-                "ON Task.asignedUserId = AppUser.id; ";
+                "ON Task.asignedUserId = AppUser.id " +
+                "ORDER BY Task.priority ASC;";
 
-            DataTable TaskDataTable;
+            DataTable TaskDataTable = new DataTable();
             if (this.OpenConnection() == true)
             {
                 TaskDataTable = CreateDataTable(taskQuery);
                 this.CloseConnection();
+               /*
                 for (int i = 0; i < TaskDataTable.Rows.Count; i++)
                 {
-                    /*
-                    int id = (int)colorDataTable.Rows[i]["id"];
-                    string color = (string)colorDataTable.Rows[i]["color"];
-                    BicycleColor bikeColor = new BicycleColor(id, color);
-                    colorList.Add(bikeColor);
-                    */
                     int id = (int)TaskDataTable.Rows[i]["id"];
                     int orderId = (int)TaskDataTable.Rows[i]["OrderId"];
                     string bikeName = (string)TaskDataTable.Rows[i]["bikeName"];
@@ -429,8 +479,9 @@ namespace ProjectBovelo
                     Task task = new Task(id, orderId, bikeName, bikeSize, bikeColor, state, userName);
                     taskList.Add(task);
                 }
+                */
             }
-            return taskList;
+            return TaskDataTable;
         }
         public DataTable selectAllUser()
         {

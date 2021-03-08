@@ -29,46 +29,51 @@ namespace ProjectBovelo
         /// </summary>
         private void InitializeComponent()
         {
-            this.tableLayoutPanelTasks = new System.Windows.Forms.TableLayoutPanel();
+            this.dataGridViewTask = new System.Windows.Forms.DataGridView();
+            this.buttonEdit = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTask)).BeginInit();
             this.SuspendLayout();
             // 
-            // tableLayoutPanelTasks
+            // dataGridViewTask
             // 
-            this.tableLayoutPanelTasks.AutoSize = true;
-            this.tableLayoutPanelTasks.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelTasks.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Outset;
-            this.tableLayoutPanelTasks.ColumnCount = 3;
-            this.tableLayoutPanelTasks.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelTasks.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelTasks.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelTasks.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableLayoutPanelTasks.Location = new System.Drawing.Point(93, 192);
-            this.tableLayoutPanelTasks.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tableLayoutPanelTasks.Name = "tableLayoutPanelTasks";
-            this.tableLayoutPanelTasks.RowCount = 3;
-            this.tableLayoutPanelTasks.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelTasks.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelTasks.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelTasks.Size = new System.Drawing.Size(8, 8);
-            this.tableLayoutPanelTasks.TabIndex = 1;
+            this.dataGridViewTask.AllowUserToAddRows = false;
+            this.dataGridViewTask.AllowUserToDeleteRows = false;
+            this.dataGridViewTask.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewTask.Location = new System.Drawing.Point(122, 146);
+            this.dataGridViewTask.Name = "dataGridViewTask";
+            this.dataGridViewTask.Size = new System.Drawing.Size(531, 283);
+            this.dataGridViewTask.TabIndex = 2;
+            this.dataGridViewTask.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewTask_CellClick);
+            // 
+            // buttonEdit
+            // 
+            this.buttonEdit.Location = new System.Drawing.Point(674, 65);
+            this.buttonEdit.Name = "buttonEdit";
+            this.buttonEdit.Size = new System.Drawing.Size(75, 23);
+            this.buttonEdit.TabIndex = 3;
+            this.buttonEdit.Text = "Edit";
+            this.buttonEdit.UseVisualStyleBackColor = true;
+            this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
             // 
             // Planning
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(936, 631);
-            this.Controls.Add(this.tableLayoutPanelTasks);
+            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.buttonEdit);
+            this.Controls.Add(this.dataGridViewTask);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Planning";
             this.Text = "Planning";
             this.Load += new System.EventHandler(this.Planning_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTask)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelTasks;
+        private System.Windows.Forms.DataGridView dataGridViewTask;
+        private System.Windows.Forms.Button buttonEdit;
     }
 }

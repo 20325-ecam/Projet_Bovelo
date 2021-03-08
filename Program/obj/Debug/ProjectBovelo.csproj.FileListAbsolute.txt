@@ -54,7 +54,6 @@ D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjectBove
 D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjectBovelo\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.Cart.resources
 D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjectBovelo\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.Catalog.resources
 D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjectBovelo\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.ClientIdentification.resources
-D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjectBovelo\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.CommandOverviewPage.resources
 D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjectBovelo\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.HomePage.resources
 D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjectBovelo\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.Newclient.resources
 D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjectBovelo\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.Planning.resources
@@ -69,3 +68,4 @@ D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjectBove
 D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjectBovelo\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.pdb
 D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjectBovelo\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.PlanningPopUp.resources
 F:\PC4\Documents\GitHub\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.PlanningPopUp.resources
+D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjectBovelo\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.OrdersOverviewPage.resources

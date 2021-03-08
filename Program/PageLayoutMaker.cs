@@ -28,7 +28,7 @@ namespace ProjectBovelo
         {
             CreateHeader(form, image);
             Label LabelUserName = new Label();
-            LabelUserName.Location = new Point(550, 20);
+            LabelUserName.Location = new Point(650, 20);
             LabelUserName.AutoSize = true;
             LabelUserName.Text = "Logged in as " + user.firstname + " " + user.lastname;
             form.Controls.Add(LabelUserName);
@@ -38,7 +38,7 @@ namespace ProjectBovelo
         {
             CreateHeader(form, image, user);
             Label LabelClientName = new Label();
-            LabelClientName.Location = new Point(550, 50);
+            LabelClientName.Location = new Point(650, 50);
             LabelClientName.AutoSize = true;
             if (client != null)
             {
@@ -57,7 +57,7 @@ namespace ProjectBovelo
         {
             Button buttonQuit = new Button();
             buttonQuit.Text = "Quit";
-            buttonQuit.Location = new Point(750, 500);
+            buttonQuit.Location = new Point(700, 500);
             buttonQuit.Click += new EventHandler(ButtonQuit_Click);
             form.Controls.Add(buttonQuit);
         }
@@ -66,7 +66,7 @@ namespace ProjectBovelo
         {
             Button buttonReturn = new Button();
             buttonReturn.Text = "Return";
-            buttonReturn.Location = new Point(750, 470);
+            buttonReturn.Location = new Point(700, 470);
             buttonReturn.Click += new EventHandler(ButtonReturnToMenus_Click);
             fromForm.Controls.Add(buttonReturn);
         }
@@ -75,8 +75,17 @@ namespace ProjectBovelo
         {
             Button buttonReturn = new Button();
             buttonReturn.Text = "Return";
-            buttonReturn.Location = new Point(750, 470);
+            buttonReturn.Location = new Point(700, 470);
             buttonReturn.Click += new EventHandler(ButtonReturnToCatalog_Click);
+            fromForm.Controls.Add(buttonReturn);
+        }
+
+        public static void CreateReturnToClientSelectionButton(BoveloBaseForm fromForm)
+        {
+            Button buttonReturn = new Button();
+            buttonReturn.Text = "Return";
+            buttonReturn.Location = new Point(700, 470);
+            buttonReturn.Click += new EventHandler(ButtonReturnToClientSelection_Click);
             fromForm.Controls.Add(buttonReturn);
         }
 
@@ -84,7 +93,7 @@ namespace ProjectBovelo
         {
             Button buttonLogout = new Button();
             buttonLogout.Text = "Logout";
-            buttonLogout.Location = new Point(750, 470);
+            buttonLogout.Location = new Point(700, 470);
             buttonLogout.Click += new EventHandler(ButtonLogoutUser_Click);
             form.Controls.Add(buttonLogout);
         }
@@ -118,6 +127,15 @@ namespace ProjectBovelo
             BoveloBaseForm form = (BoveloBaseForm)button.Parent;
             Catalog CatalogPage = new Catalog(form.user, form.client);
             CatalogPage.Show();
+            form.Close();
+        }
+
+        private static void ButtonReturnToClientSelection_Click(object sender, EventArgs e)
+        {
+            Control button = (Control)sender;
+            BoveloBaseForm form = (BoveloBaseForm)button.Parent;
+            ClientIdentification clientIdentification = new ClientIdentification(form.user, form.client);
+            clientIdentification.Show();
             form.Close();
         }
 
