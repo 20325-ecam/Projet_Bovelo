@@ -39,30 +39,30 @@ namespace ProjectBovelo
             // comboBoxClientSelection
             // 
             this.comboBoxClientSelection.FormattingEnabled = true;
-            this.comboBoxClientSelection.Location = new System.Drawing.Point(336, 177);
-            this.comboBoxClientSelection.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxClientSelection.Location = new System.Drawing.Point(378, 221);
+            this.comboBoxClientSelection.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBoxClientSelection.Name = "comboBoxClientSelection";
-            this.comboBoxClientSelection.Size = new System.Drawing.Size(331, 24);
-            this.comboBoxClientSelection.TabIndex = 7;
+            this.comboBoxClientSelection.Size = new System.Drawing.Size(372, 28);
+            this.comboBoxClientSelection.TabIndex = 1;
             // 
             // buttonnewclient
             // 
-            this.buttonnewclient.Location = new System.Drawing.Point(336, 233);
+            this.buttonnewclient.Location = new System.Drawing.Point(378, 291);
             this.buttonnewclient.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonnewclient.Name = "buttonnewclient";
-            this.buttonnewclient.Size = new System.Drawing.Size(91, 30);
-            this.buttonnewclient.TabIndex = 4;
+            this.buttonnewclient.Size = new System.Drawing.Size(102, 38);
+            this.buttonnewclient.TabIndex = 3;
             this.buttonnewclient.Text = "New client";
             this.buttonnewclient.UseVisualStyleBackColor = true;
             this.buttonnewclient.Click += new System.EventHandler(this.buttonnewclient_Click);
             // 
             // bp_select
             // 
-            this.bp_select.Location = new System.Drawing.Point(460, 231);
+            this.bp_select.Location = new System.Drawing.Point(518, 289);
             this.bp_select.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bp_select.Name = "bp_select";
-            this.bp_select.Size = new System.Drawing.Size(85, 33);
-            this.bp_select.TabIndex = 3;
+            this.bp_select.Size = new System.Drawing.Size(96, 41);
+            this.bp_select.TabIndex = 2;
             this.bp_select.Text = "Select";
             this.bp_select.UseVisualStyleBackColor = true;
             this.bp_select.Click += new System.EventHandler(this.bp_select_Click);
@@ -70,9 +70,9 @@ namespace ProjectBovelo
             // l_select_client
             // 
             this.l_select_client.AutoSize = true;
-            this.l_select_client.Location = new System.Drawing.Point(332, 158);
+            this.l_select_client.Location = new System.Drawing.Point(374, 198);
             this.l_select_client.Name = "l_select_client";
-            this.l_select_client.Size = new System.Drawing.Size(116, 17);
+            this.l_select_client.Size = new System.Drawing.Size(129, 20);
             this.l_select_client.TabIndex = 2;
             this.l_select_client.Text = "Select your client";
             // 
@@ -80,17 +80,17 @@ namespace ProjectBovelo
             // 
             this.l_client_id.AutoSize = true;
             this.l_client_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.l_client_id.Location = new System.Drawing.Point(292, 54);
+            this.l_client_id.Location = new System.Drawing.Point(328, 68);
             this.l_client_id.Name = "l_client_id";
-            this.l_client_id.Size = new System.Drawing.Size(379, 46);
+            this.l_client_id.Size = new System.Drawing.Size(476, 58);
             this.l_client_id.TabIndex = 0;
             this.l_client_id.Text = "Client Indentification";
             // 
             // ClientIdentification
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1045, 690);
+            this.ClientSize = new System.Drawing.Size(1176, 862);
             this.Controls.Add(this.comboBoxClientSelection);
             this.Controls.Add(this.buttonnewclient);
             this.Controls.Add(this.bp_select);

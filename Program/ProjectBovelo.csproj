@@ -50,6 +50,12 @@
     <Compile Include="BoveloBaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="EditStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditStock.Designer.cs">
+      <DependentUpon>EditStock.cs</DependentUpon>
+    </Compile>
     <Compile Include="OrdersOverviewPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +95,18 @@
     </Compile>
     <Compile Include="PlanningPopUp.Designer.cs">
       <DependentUpon>PlanningPopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stock.Designer.cs">
+      <DependentUpon>Stock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StockDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StockDetail.Designer.cs">
+      <DependentUpon>StockDetail.cs</DependentUpon>
     </Compile>
     <Compile Include="UserLoginPage.cs">
       <SubType>Form</SubType>
@@ -131,6 +149,9 @@
     <EmbeddedResource Include="ClientIdentification.resx">
       <DependentUpon>ClientIdentification.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditStock.resx">
+      <DependentUpon>EditStock.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="OrdersOverviewPage.resx">
       <DependentUpon>OrdersOverviewPage.cs</DependentUpon>
     </EmbeddedResource>
@@ -145,6 +166,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PlanningPopUp.resx">
       <DependentUpon>PlanningPopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stock.resx">
+      <DependentUpon>Stock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StockDetail.resx">
+      <DependentUpon>StockDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserLoginPage.resx">
       <DependentUpon>UserLoginPage.cs</DependentUpon>

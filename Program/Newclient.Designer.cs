@@ -49,78 +49,70 @@ namespace ProjectBovelo
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(214, 125);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(321, 192);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(51, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Name";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(214, 160);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(321, 246);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 13);
+            this.label2.Size = new System.Drawing.Size(113, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Phone number";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(215, 197);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(322, 303);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(26, 13);
+            this.label3.Size = new System.Drawing.Size(37, 20);
             this.label3.TabIndex = 2;
             this.label3.Text = "Mail";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(215, 229);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(322, 352);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 13);
+            this.label4.Size = new System.Drawing.Size(68, 20);
             this.label4.TabIndex = 3;
             this.label4.Text = "Address";
             // 
             // textBoxname
             // 
-            this.textBoxname.Location = new System.Drawing.Point(316, 125);
-            this.textBoxname.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxname.Location = new System.Drawing.Point(474, 192);
             this.textBoxname.Name = "textBoxname";
-            this.textBoxname.Size = new System.Drawing.Size(141, 20);
-            this.textBoxname.TabIndex = 4;
+            this.textBoxname.Size = new System.Drawing.Size(210, 26);
+            this.textBoxname.TabIndex = 1;
             this.textBoxname.TextChanged += new System.EventHandler(this.textBoxname_TextChanged);
             // 
             // textBoxmail
             // 
-            this.textBoxmail.Location = new System.Drawing.Point(316, 197);
-            this.textBoxmail.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxmail.Location = new System.Drawing.Point(474, 303);
             this.textBoxmail.MaxLength = 45;
             this.textBoxmail.Name = "textBoxmail";
-            this.textBoxmail.Size = new System.Drawing.Size(141, 20);
-            this.textBoxmail.TabIndex = 6;
+            this.textBoxmail.Size = new System.Drawing.Size(210, 26);
+            this.textBoxmail.TabIndex = 3;
             this.textBoxmail.TextChanged += new System.EventHandler(this.textBoxmail_TextChanged);
             // 
             // textBoxphone
             // 
-            this.textBoxphone.Location = new System.Drawing.Point(316, 160);
-            this.textBoxphone.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxphone.Location = new System.Drawing.Point(474, 246);
             this.textBoxphone.MaxLength = 15;
             this.textBoxphone.Name = "textBoxphone";
-            this.textBoxphone.Size = new System.Drawing.Size(141, 20);
-            this.textBoxphone.TabIndex = 7;
+            this.textBoxphone.Size = new System.Drawing.Size(210, 26);
+            this.textBoxphone.TabIndex = 2;
             this.textBoxphone.TextChanged += new System.EventHandler(this.textBoxphone_TextChanged);
             // 
             // buttonvalidate
             // 
-            this.buttonvalidate.Location = new System.Drawing.Point(360, 407);
-            this.buttonvalidate.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonvalidate.Location = new System.Drawing.Point(540, 626);
             this.buttonvalidate.Name = "buttonvalidate";
-            this.buttonvalidate.Size = new System.Drawing.Size(56, 19);
+            this.buttonvalidate.Size = new System.Drawing.Size(84, 29);
             this.buttonvalidate.TabIndex = 8;
             this.buttonvalidate.Text = "Validate";
             this.buttonvalidate.UseVisualStyleBackColor = true;
@@ -128,79 +120,72 @@ namespace ProjectBovelo
             // 
             // textBoxaddress
             // 
-            this.textBoxaddress.Location = new System.Drawing.Point(316, 229);
-            this.textBoxaddress.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxaddress.Location = new System.Drawing.Point(474, 352);
             this.textBoxaddress.MaxLength = 45;
             this.textBoxaddress.Name = "textBoxaddress";
-            this.textBoxaddress.Size = new System.Drawing.Size(141, 20);
-            this.textBoxaddress.TabIndex = 9;
+            this.textBoxaddress.Size = new System.Drawing.Size(210, 26);
+            this.textBoxaddress.TabIndex = 4;
             this.textBoxaddress.TextChanged += new System.EventHandler(this.textBoxaddress_TextChanged);
             // 
             // textBoxVat
             // 
-            this.textBoxVat.Location = new System.Drawing.Point(316, 333);
-            this.textBoxVat.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxVat.Location = new System.Drawing.Point(474, 512);
             this.textBoxVat.MaxLength = 12;
             this.textBoxVat.Name = "textBoxVat";
-            this.textBoxVat.Size = new System.Drawing.Size(141, 20);
-            this.textBoxVat.TabIndex = 15;
+            this.textBoxVat.Size = new System.Drawing.Size(210, 26);
+            this.textBoxVat.TabIndex = 7;
             this.textBoxVat.TextChanged += new System.EventHandler(this.textBoxVat_TextChanged);
             // 
             // textBoxZipCode
             // 
-            this.textBoxZipCode.Location = new System.Drawing.Point(316, 264);
-            this.textBoxZipCode.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxZipCode.Location = new System.Drawing.Point(474, 406);
             this.textBoxZipCode.MaxLength = 4;
             this.textBoxZipCode.Name = "textBoxZipCode";
-            this.textBoxZipCode.Size = new System.Drawing.Size(141, 20);
-            this.textBoxZipCode.TabIndex = 14;
+            this.textBoxZipCode.Size = new System.Drawing.Size(210, 26);
+            this.textBoxZipCode.TabIndex = 5;
             this.textBoxZipCode.TextChanged += new System.EventHandler(this.textBoxZipCode_TextChanged);
             // 
             // textBoxCity
             // 
-            this.textBoxCity.Location = new System.Drawing.Point(316, 301);
-            this.textBoxCity.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxCity.Location = new System.Drawing.Point(474, 463);
             this.textBoxCity.MaxLength = 20;
             this.textBoxCity.Name = "textBoxCity";
-            this.textBoxCity.Size = new System.Drawing.Size(141, 20);
-            this.textBoxCity.TabIndex = 13;
+            this.textBoxCity.Size = new System.Drawing.Size(210, 26);
+            this.textBoxCity.TabIndex = 6;
             this.textBoxCity.TextChanged += new System.EventHandler(this.textBoxCity_TextChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(215, 333);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(322, 512);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(28, 13);
+            this.label5.Size = new System.Drawing.Size(40, 20);
             this.label5.TabIndex = 12;
             this.label5.Text = "VAT";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(215, 301);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(322, 463);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(24, 13);
+            this.label6.Size = new System.Drawing.Size(35, 20);
             this.label6.TabIndex = 11;
             this.label6.Text = "City";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(214, 264);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Location = new System.Drawing.Point(321, 406);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(50, 13);
+            this.label7.Size = new System.Drawing.Size(73, 20);
             this.label7.TabIndex = 10;
             this.label7.Text = "Zip Code";
             // 
             // Newclient
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.ClientSize = new System.Drawing.Size(1176, 863);
             this.Controls.Add(this.textBoxVat);
             this.Controls.Add(this.textBoxZipCode);
             this.Controls.Add(this.textBoxCity);
@@ -216,7 +201,6 @@ namespace ProjectBovelo
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Newclient";
             this.Text = "Newclient";
             this.Load += new System.EventHandler(this.newclient_Load);

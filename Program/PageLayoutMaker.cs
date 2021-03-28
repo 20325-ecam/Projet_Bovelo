@@ -4,8 +4,11 @@ using System.Windows.Forms;
 
 namespace ProjectBovelo
 {
-    public static class PageLayoutMaker
+    public class PageLayoutMaker
     {
+        public const int locationReturnX = 700;
+        public const int locationReturnY = 470;
+
         private static DBConnect connection = new DBConnect();
 
         public static void SetBasePageLayout(BoveloBaseForm form)
@@ -56,8 +59,9 @@ namespace ProjectBovelo
         public static void CreateQuitButton(BoveloBaseForm form)
         {
             Button buttonQuit = new Button();
+            
             buttonQuit.Text = "Quit";
-            buttonQuit.Location = new Point(700, 500);
+            buttonQuit.Location = new Point(locationReturnX, locationReturnY + 30);
             buttonQuit.Click += new EventHandler(ButtonQuit_Click);
             form.Controls.Add(buttonQuit);
         }
@@ -66,7 +70,7 @@ namespace ProjectBovelo
         {
             Button buttonReturn = new Button();
             buttonReturn.Text = "Return";
-            buttonReturn.Location = new Point(700, 470);
+            buttonReturn.Location = new Point(locationReturnX, locationReturnY);
             buttonReturn.Click += new EventHandler(ButtonReturnToMenus_Click);
             fromForm.Controls.Add(buttonReturn);
         }
@@ -75,7 +79,7 @@ namespace ProjectBovelo
         {
             Button buttonReturn = new Button();
             buttonReturn.Text = "Return";
-            buttonReturn.Location = new Point(700, 470);
+            buttonReturn.Location = new Point(locationReturnX, locationReturnY);
             buttonReturn.Click += new EventHandler(ButtonReturnToCatalog_Click);
             fromForm.Controls.Add(buttonReturn);
         }
@@ -84,16 +88,33 @@ namespace ProjectBovelo
         {
             Button buttonReturn = new Button();
             buttonReturn.Text = "Return";
-            buttonReturn.Location = new Point(700, 470);
+            buttonReturn.Location = new Point(locationReturnX, locationReturnY);
             buttonReturn.Click += new EventHandler(ButtonReturnToClientSelection_Click);
             fromForm.Controls.Add(buttonReturn);
         }
+        public static void CreateReturnToStockButton(BoveloBaseForm fromForm)
+        {
+            Button buttonReturn = new Button();
+            buttonReturn.Text = "Return";
+            buttonReturn.Location = new Point(locationReturnX, locationReturnY);
+            buttonReturn.Click += new EventHandler(ButtonReturnToStock_Click);
+            fromForm.Controls.Add(buttonReturn);
+        }
+
+        /*public static void CreateReturnToStockDetailButton(BoveloBaseForm fromForm)
+        {
+            Button buttonReturn = new Button();
+            buttonReturn.Text = "Return";
+            buttonReturn.Location = new Point(700, 470);
+            buttonReturn.Click += new EventHandler(ButtonReturnToStockDetail_Click);
+            fromForm.Controls.Add(buttonReturn);
+        }*/
 
         public static void CreateLogoutUserButton(BoveloBaseForm form)
         {
             Button buttonLogout = new Button();
             buttonLogout.Text = "Logout";
-            buttonLogout.Location = new Point(700, 470);
+            buttonLogout.Location = new Point(locationReturnX, locationReturnY);
             buttonLogout.Click += new EventHandler(ButtonLogoutUser_Click);
             form.Controls.Add(buttonLogout);
         }
@@ -138,6 +159,24 @@ namespace ProjectBovelo
             clientIdentification.Show();
             form.Close();
         }
+        private static void ButtonReturnToStock_Click(object sender, EventArgs e)
+        {
+            Control button = (Control)sender;
+            BoveloBaseForm form = (BoveloBaseForm)button.Parent;
+            Stock stock= new Stock(form.user);
+            stock.Show();
+            form.Close();
+        }
+
+        /*private static void ButtonReturnToStockDetail_Click(object sender, EventArgs e)
+        {
+            Control button = (Control)sender;
+            BoveloBaseForm form = (BoveloBaseForm)button.Parent;
+            EditStock editStock = (EditStock);
+            StockDetail stockDetail = new StockDetail(form.user, editStock., form.minimum, form.order);
+            stockDetail.Show();
+            form.Close();
+        }*/
 
         private static void ButtonLogoutUser_Click(object sender, EventArgs e)
         {

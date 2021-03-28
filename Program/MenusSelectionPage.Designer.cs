@@ -39,10 +39,9 @@
             // 
             this.bp_catalog.AutoSize = true;
             this.bp_catalog.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bp_catalog.Location = new System.Drawing.Point(289, 132);
-            this.bp_catalog.Margin = new System.Windows.Forms.Padding(2);
+            this.bp_catalog.Location = new System.Drawing.Point(434, 203);
             this.bp_catalog.Name = "bp_catalog";
-            this.bp_catalog.Size = new System.Drawing.Size(190, 66);
+            this.bp_catalog.Size = new System.Drawing.Size(285, 102);
             this.bp_catalog.TabIndex = 0;
             this.bp_catalog.Text = "Catalog";
             this.bp_catalog.UseVisualStyleBackColor = true;
@@ -52,10 +51,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.label1.Location = new System.Drawing.Point(309, 33);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(464, 51);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(151, 46);
+            this.label1.Size = new System.Drawing.Size(223, 69);
             this.label1.TabIndex = 2;
             this.label1.Text = "BoVélo";
             // 
@@ -63,11 +61,10 @@
             // 
             this.bp_l_commands.AutoSize = true;
             this.bp_l_commands.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bp_l_commands.Location = new System.Drawing.Point(289, 229);
-            this.bp_l_commands.Margin = new System.Windows.Forms.Padding(2);
+            this.bp_l_commands.Location = new System.Drawing.Point(434, 352);
             this.bp_l_commands.Name = "bp_l_commands";
-            this.bp_l_commands.Size = new System.Drawing.Size(190, 66);
-            this.bp_l_commands.TabIndex = 3;
+            this.bp_l_commands.Size = new System.Drawing.Size(285, 102);
+            this.bp_l_commands.TabIndex = 1;
             this.bp_l_commands.Text = "List of orders";
             this.bp_l_commands.UseVisualStyleBackColor = true;
             this.bp_l_commands.Click += new System.EventHandler(this.bp_l_commands_Click);
@@ -76,11 +73,10 @@
             // 
             this.bp_planning.AutoSize = true;
             this.bp_planning.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bp_planning.Location = new System.Drawing.Point(289, 319);
-            this.bp_planning.Margin = new System.Windows.Forms.Padding(2);
+            this.bp_planning.Location = new System.Drawing.Point(434, 491);
             this.bp_planning.Name = "bp_planning";
-            this.bp_planning.Size = new System.Drawing.Size(190, 66);
-            this.bp_planning.TabIndex = 5;
+            this.bp_planning.Size = new System.Drawing.Size(285, 102);
+            this.bp_planning.TabIndex = 3;
             this.bp_planning.Text = "Planning";
             this.bp_planning.UseVisualStyleBackColor = true;
             this.bp_planning.Click += new System.EventHandler(this.bp_planning_Click);
@@ -89,26 +85,25 @@
             // 
             this.bp_stock.AutoSize = true;
             this.bp_stock.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bp_stock.Location = new System.Drawing.Point(289, 411);
-            this.bp_stock.Margin = new System.Windows.Forms.Padding(2);
+            this.bp_stock.Location = new System.Drawing.Point(434, 632);
             this.bp_stock.Name = "bp_stock";
-            this.bp_stock.Size = new System.Drawing.Size(190, 66);
-            this.bp_stock.TabIndex = 6;
+            this.bp_stock.Size = new System.Drawing.Size(285, 102);
+            this.bp_stock.TabIndex = 4;
             this.bp_stock.Text = "Stock";
             this.bp_stock.UseVisualStyleBackColor = true;
+            this.bp_stock.Click += new System.EventHandler(this.bp_stock_Click);
             // 
             // MenusSelectionPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.ClientSize = new System.Drawing.Size(1176, 863);
             this.Controls.Add(this.bp_stock);
             this.Controls.Add(this.bp_planning);
             this.Controls.Add(this.bp_l_commands);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.bp_catalog);
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MenusSelectionPage";
             this.Text = "Bovélo";
             this.Load += new System.EventHandler(this.MenusSelectionPage_Load);

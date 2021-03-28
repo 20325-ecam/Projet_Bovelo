@@ -38,5 +38,12 @@ namespace ProjectBovelo
             planning.Show();
             this.Close();
         }
+
+        private void bp_stock_Click(object sender, EventArgs e)
+        {
+            Stock stock = new Stock(user);
+            stock.Show();
+            this.Close();
+        }
     }
 }
