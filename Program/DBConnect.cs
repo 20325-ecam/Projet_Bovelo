@@ -98,7 +98,7 @@ namespace ProjectBovelo
 
         public void InsertNewOrder(Order order)
         {
-            string queryOrder = "INSERT INTO OrderDB (totalPrice, clientId, bikeAmount) " +
+            string queryOrder = "INSERT INTO OrderDB (total_price, client_id, bike_amount) " +
                 "VALUES('" + order.totalPrice + "', '" + order.clientId + "', '" + order.GetBikeAmount() + "')";
 
             //open connection
@@ -113,9 +113,11 @@ namespace ProjectBovelo
                 for (int i = 0; i < order.orderItemList.Count; i++)
                 {
                     OrderItem orderItem = order.GetOrderItem(i);
+    // to modifie *******************************************************************************************************************************************************
                     string queryOrderItem = "INSERT INTO OrderItem (bikeId, colorId, sizeId, Price, OrderId) " +
                                                   "VALUES('" + orderItem.bikeId + "', '" + orderItem.color.id + "', '" + orderItem.size.id
                                                   + "', '" + orderItem.bikePrice + "', '" + orderId + "')";
+    // *******************************************************************************************************************************************************
                     MySqlCommand cmdOrderItem = new MySqlCommand(queryOrderItem, connection);
 
                     string maxPriorityQuery = "SELECT MAX(priority) FROM Task;";
@@ -514,6 +516,26 @@ namespace ProjectBovelo
                 this.CloseConnection();              
             }
             return orderDataTable;
+        }
+
+        public DataTable selectAllAssemblyParts()
+        {
+            string stockQuery =
+                "SELECT Assembly_parts.id, Assembly_parts.name, Color.color, Size.size, Assembly_parts.stock, Assembly_parts.needed, Assembly_parts.ordered, Assembly_parts.balance, Assembly_parts.min_amount, Assembly_parts.details " +
+                "FROM Assembly_parts " +
+                "INNER JOIN Color " +
+                "ON Assembly_parts.color = Color.id " +
+                "INNER JOIN Size " +
+                "ON Assembly_parts.size = Size.id " +
+                "ORDER BY Assembly_parts.id ASC ";
+
+            DataTable StockDataTable = new DataTable();
+            if (this.OpenConnection() == true)
+            {
+                StockDataTable = CreateDataTable(stockQuery);
+                this.CloseConnection();
+            }
+            return StockDataTable;
         }
 
         public Bitmap loadImage(int imgID)
