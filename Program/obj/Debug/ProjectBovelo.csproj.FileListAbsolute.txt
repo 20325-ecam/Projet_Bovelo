@@ -72,3 +72,4 @@ F:\PC4\Documents\GitHub\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.OrdersOver
 F:\PC4\Documents\GitHub\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.Stock.resources
 F:\PC4\Documents\GitHub\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.StockDetail.resources
 F:\PC4\Documents\GitHub\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.EditStock.resources
+F:\PC4\Documents\GitHub\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.BoveloBaseForm.resources

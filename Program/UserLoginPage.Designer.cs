@@ -108,6 +108,7 @@ namespace ProjectBovelo
             this.Controls.Add(this.textBoxID);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UserLoginPage";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bovélo";
             this.Load += new System.EventHandler(this.Login_staff_Load);
             this.ResumeLayout(false);

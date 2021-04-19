@@ -229,6 +229,7 @@ namespace ProjectBovelo
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelTitleName);
             this.Name = "PlanningPopUp";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PlanningPopUp";
             this.Load += new System.EventHandler(this.PlanningPopUp_Load);
             this.groupBox1.ResumeLayout(false);

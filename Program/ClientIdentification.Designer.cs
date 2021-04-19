@@ -98,6 +98,7 @@ namespace ProjectBovelo
             this.Controls.Add(this.l_client_id);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ClientIdentification";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bovélo";
             this.Load += new System.EventHandler(this.Client_indentification_Load);
             this.ResumeLayout(false);

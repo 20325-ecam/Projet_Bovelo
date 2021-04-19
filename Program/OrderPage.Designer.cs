@@ -143,6 +143,7 @@ namespace ProjectBovelo
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonOrder);
             this.Name = "OrderPage";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bovélo";
             this.Load += new System.EventHandler(this.Order_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownQuantity)).EndInit();

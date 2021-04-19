@@ -105,6 +105,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.bp_catalog);
             this.Name = "MenusSelectionPage";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bovélo";
             this.Load += new System.EventHandler(this.MenusSelectionPage_Load);
             this.ResumeLayout(false);

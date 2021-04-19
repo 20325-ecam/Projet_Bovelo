@@ -180,6 +180,7 @@ namespace ProjectBovelo
             this.Controls.Add(this.labelMinimum);
             this.Controls.Add(this.labelStock);
             this.Name = "StockDetail";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StockDetail";
             this.Load += new System.EventHandler(this.StockDetail_Load);
             this.ResumeLayout(false);

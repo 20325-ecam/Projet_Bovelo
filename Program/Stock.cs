@@ -90,10 +90,18 @@ namespace ProjectBovelo
                 if (e.ColumnIndex == dataGridViewStock.Columns["details_column"].Index)
                 {
                     int id = (int)dataGridViewStock.Rows[rowIndex].Cells["id"].Value;
-
+                    string name = (string)dataGridViewStock.Rows[rowIndex].Cells["name"].Value;
+                    string color = (string)dataGridViewStock.Rows[rowIndex].Cells["color"].Value;
+                    string size = (string)dataGridViewStock.Rows[rowIndex].Cells["size"].Value;
                     int stock = (int)dataGridViewStock.Rows[rowIndex].Cells["stock"].Value;
+                    int needed = (int)dataGridViewStock.Rows[rowIndex].Cells["needed"].Value;
+                    
+                    int order = 0;
+                    if (dataGridViewStock.Rows[rowIndex].Cells["ordered"].Value != DBNull.Value)
+                    {
+                        order = (int)dataGridViewStock.Rows[rowIndex].Cells["ordered"].Value;
+                    }
                     int minimum = (int)dataGridViewStock.Rows[rowIndex].Cells["min_amount"].Value;
-                    //int order = (int)dataGridViewStock.Rows[rowIndex].Cells["ordered"].Value;
 
                     StockDetail stockDetail = new StockDetail(user, stock, minimum, order);
                     stockDetail.Show();

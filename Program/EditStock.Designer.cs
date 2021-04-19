@@ -96,6 +96,7 @@ namespace ProjectBovelo
             this.Controls.Add(this.labelRemoveItem);
             this.Controls.Add(this.labelAddItem);
             this.Name = "EditStock";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditStock";
             this.Load += new System.EventHandler(this.EditStock_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAddItem)).EndInit();
