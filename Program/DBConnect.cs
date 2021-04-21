@@ -236,6 +236,29 @@ namespace ProjectBovelo
             
         }
 
+        //Update Stock
+        public void UpdateStock()
+        {
+            string query = "UPDATE Assembly_parts SET ordered=10 WHERE id=11";
+
+            //Open connection
+            if (this.OpenConnection() == true)
+            {
+                //create mysql command
+                MySqlCommand cmd = new MySqlCommand();
+                //Assign the query using CommandText
+                cmd.CommandText = query;
+                //Assign the connection using Connection
+                cmd.Connection = connection;
+
+                //Execute query
+                cmd.ExecuteNonQuery();
+
+                //close connection
+                this.CloseConnection();
+            }
+        }
+
         //Update statement
         public void Update()
         {

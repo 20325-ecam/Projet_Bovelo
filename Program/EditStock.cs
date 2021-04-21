@@ -22,15 +22,16 @@ namespace ProjectBovelo
     public partial class EditStock : BoveloBaseForm
     {
         StockInfo stockInfo;
-        //int stock;
-        decimal minimum;
-        decimal order;
+        decimal stock;
+        //decimal minimum;
+        //decimal order;
         public EditStock(BoveloUser user, StockInfo stockInfo)
         {
             this.user = user;
-            //stock = stockInfo.stock;
-            minimum = stockInfo.minimum;
-            order = stockInfo.order;
+            Console.WriteLine(stockInfo.id);
+            stock = stockInfo.stock;
+            //minimum = stockInfo.minimum;
+            //order = stockInfo.order;
             InitializeComponent();
         }
 
@@ -52,8 +53,9 @@ namespace ProjectBovelo
                             MessageBoxButtons.YesNo,
                             MessageBoxIcon.Information) == DialogResult.Yes)
             {
+                DBConnection.UpdateStock();
                 Control button = (Control)sender;
-                stockInfo.stock = stockInfo.stock + addItem - removeItem;
+                stockInfo.stock = 10; //= stockInfo.stock + addItem - removeItem;
                 StockDetail stockDetail = new StockDetail(user, stockInfo);
                 stockDetail.Show();
                 this.Close();

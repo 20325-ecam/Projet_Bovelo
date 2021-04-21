@@ -12,7 +12,7 @@ namespace ProjectBovelo
 {
     public partial class StockDetail : BoveloBaseForm
     {
-        StockInfo stockInfo;
+        //StockInfo stockInfo;
         int id;
         string name;
         string color;
@@ -27,6 +27,7 @@ namespace ProjectBovelo
         public StockDetail(BoveloUser user, StockInfo stockInfo)
         {
             this.user = user;
+            //this.stockInfo = stockInfo;
             id = stockInfo.id;
             name = stockInfo.name;
             color = stockInfo.color;
