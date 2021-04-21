@@ -95,26 +95,30 @@ namespace ProjectBovelo
                     string size = (string)dataGridViewStock.Rows[rowIndex].Cells["size"].Value;
                     int stock = (int)dataGridViewStock.Rows[rowIndex].Cells["stock"].Value;
                     int needed = (int)dataGridViewStock.Rows[rowIndex].Cells["needed"].Value;
-                    
                     int order = 0;
                     if (dataGridViewStock.Rows[rowIndex].Cells["ordered"].Value != DBNull.Value)
                     {
                         order = (int)dataGridViewStock.Rows[rowIndex].Cells["ordered"].Value;
                     }
+                    float balance = 0;
+                    if (dataGridViewStock.Rows[rowIndex].Cells["balance"].Value != DBNull.Value)
+                    {
+                        balance = (float)dataGridViewStock.Rows[rowIndex].Cells["balance"].Value;
+                    }
                     int minimum = (int)dataGridViewStock.Rows[rowIndex].Cells["min_amount"].Value;
 
-                    StockDetail stockDetail = new StockDetail(user, stock, minimum, order);
+                    StockDetail stockDetail = new StockDetail(user, id, name, color, size, stock, needed, order, balance, minimum);
                     stockDetail.Show();
                     this.Close();
                 }
             }
         }
 
-        private void buttonDetail_Click(object sender, EventArgs e)
+        /*private void buttonDetail_Click(object sender, EventArgs e)
         {
             StockDetail stockDetail = new StockDetail(user, stock, minimum, order);
             stockDetail.Show();
             this.Close();
-        }
+        }*/
     }
 }

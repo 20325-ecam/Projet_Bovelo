@@ -29,20 +29,9 @@ namespace ProjectBovelo
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonDetail = new System.Windows.Forms.Button();
             this.dataGridViewStock = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStock)).BeginInit();
             this.SuspendLayout();
-            // 
-            // buttonDetail
-            // 
-            this.buttonDetail.Location = new System.Drawing.Point(942, 133);
-            this.buttonDetail.Name = "buttonDetail";
-            this.buttonDetail.Size = new System.Drawing.Size(82, 43);
-            this.buttonDetail.TabIndex = 0;
-            this.buttonDetail.Text = "Detail";
-            this.buttonDetail.UseVisualStyleBackColor = true;
-            this.buttonDetail.Click += new System.EventHandler(this.buttonDetail_Click);
             // 
             // dataGridViewStock
             // 
@@ -63,7 +52,6 @@ namespace ProjectBovelo
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1297, 921);
             this.Controls.Add(this.dataGridViewStock);
-            this.Controls.Add(this.buttonDetail);
             this.Name = "Stock";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Stock";
@@ -74,8 +62,6 @@ namespace ProjectBovelo
         }
 
         #endregion
-
-        private System.Windows.Forms.Button buttonDetail;
         private System.Windows.Forms.DataGridView dataGridViewStock;
     }
 }

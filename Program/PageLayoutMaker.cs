@@ -6,7 +6,7 @@ namespace ProjectBovelo
 {
     public class PageLayoutMaker
     {
-        public const int locationReturnX = 700;
+        public const int locationReturnX = 750;
         public const int locationReturnY = 470;
 
         private static DBConnect connection = new DBConnect();
