@@ -13,10 +13,10 @@ namespace ProjectBovelo
     public partial class Stock : BoveloBaseForm
     {
         private DataTable stockDataTable;
-        decimal stock = 2;
-        decimal minimum = 1;
+        //decimal stock = 2;
+        //decimal minimum = 1;
         //int buy = 3;
-        decimal order = 0;
+        //decimal order = 0;
 
         public Stock(BoveloUser user)
         {
@@ -93,21 +93,22 @@ namespace ProjectBovelo
                     string name = (string)dataGridViewStock.Rows[rowIndex].Cells["name"].Value;
                     string color = (string)dataGridViewStock.Rows[rowIndex].Cells["color"].Value;
                     string size = (string)dataGridViewStock.Rows[rowIndex].Cells["size"].Value;
-                    int stock = (int)dataGridViewStock.Rows[rowIndex].Cells["stock"].Value;
-                    int needed = (int)dataGridViewStock.Rows[rowIndex].Cells["needed"].Value;
-                    int order = 0;
+                    decimal stock = (decimal)dataGridViewStock.Rows[rowIndex].Cells["stock"].Value;
+                    decimal needed = (decimal)dataGridViewStock.Rows[rowIndex].Cells["needed"].Value;
+                    decimal order = 0;
                     if (dataGridViewStock.Rows[rowIndex].Cells["ordered"].Value != DBNull.Value)
                     {
-                        order = (int)dataGridViewStock.Rows[rowIndex].Cells["ordered"].Value;
+                        order = (decimal)dataGridViewStock.Rows[rowIndex].Cells["ordered"].Value;
                     }
-                    float balance = 0;
+                    decimal balance = 0;
                     if (dataGridViewStock.Rows[rowIndex].Cells["balance"].Value != DBNull.Value)
                     {
-                        balance = (float)dataGridViewStock.Rows[rowIndex].Cells["balance"].Value;
+                        balance = (decimal)dataGridViewStock.Rows[rowIndex].Cells["balance"].Value;
                     }
-                    int minimum = (int)dataGridViewStock.Rows[rowIndex].Cells["min_amount"].Value;
+                    decimal minimum = (decimal)dataGridViewStock.Rows[rowIndex].Cells["min_amount"].Value;
 
-                    StockDetail stockDetail = new StockDetail(user, id, name, color, size, stock, needed, order, balance, minimum);
+                    StockInfo stockInfo = new StockInfo(id, name, color, size, stock, needed, order, balance, minimum);
+                    StockDetail stockDetail = new StockDetail(user, stockInfo);
                     stockDetail.Show();
                     this.Close();
                 }

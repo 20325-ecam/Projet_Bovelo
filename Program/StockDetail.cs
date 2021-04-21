@@ -12,22 +12,47 @@ namespace ProjectBovelo
 {
     public partial class StockDetail : BoveloBaseForm
     {
+        StockInfo stockInfo;
+        int id;
+        string name;
+        string color;
+        string size;
         decimal stock;
-        decimal minimum;
+        decimal needed;
         decimal order;
-        public StockDetail(BoveloUser user, decimal stock, decimal minimum, decimal order)
+        decimal balance;
+        decimal minimum;
+        
+
+        public StockDetail(BoveloUser user, StockInfo stockInfo)
         {
             this.user = user;
-            this.stock = stock;
-            this.minimum = minimum;
-            this.order = order;
+            id = stockInfo.id;
+            name = stockInfo.name;
+            color = stockInfo.color;
+            size = stockInfo.size;
+            stock = stockInfo.stock;
+            needed = stockInfo.needed;
+            order = stockInfo.order;
+            minimum = stockInfo.minimum;
+
             InitializeComponent();
+            labelNameColorSize.Text = name.ToUpper() + " " + color.ToUpper() + " " + size.ToUpper(); 
             labelStockNumber.Text = stock.ToString();
             labelMinimumNumber.Text = minimum.ToString();
-            decimal buy = minimum - stock;
-            labelBuyNumber.Text = buy.ToString();
+            
+            needed = minimum - stock;
+            if (needed <= 0)
+            {
+                labelBuyNumber.Text = "None";
+            }
+            else
+            {
+                labelBuyNumber.Text = needed.ToString();
+            }
+            
             labelOrderNumber.Text = order.ToString();
-            decimal balance = stock - minimum - buy + order;
+            balance = stock - minimum - needed + order;
             labelBalanceNumber.Text = balance.ToString();
         }
 
@@ -41,7 +66,7 @@ namespace ProjectBovelo
 
         private void buttonEditStock_Click(object sender, EventArgs e)
         {
-            EditStock editStock = new EditStock(user, stock, minimum, order);
+            EditStock editStock = new EditStock(user, stockInfo);
             editStock.Show();
             this.Close();
         }

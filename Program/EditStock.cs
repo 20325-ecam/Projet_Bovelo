@@ -21,15 +21,16 @@ namespace ProjectBovelo
      */
     public partial class EditStock : BoveloBaseForm
     {
-        decimal stock;
+        StockInfo stockInfo;
+        //int stock;
         decimal minimum;
         decimal order;
-        public EditStock(BoveloUser user, decimal stock, decimal minimum, decimal order)
+        public EditStock(BoveloUser user, StockInfo stockInfo)
         {
             this.user = user;
-            this.stock = stock;
-            this.minimum = minimum;
-            this.order = order;
+            //stock = stockInfo.stock;
+            minimum = stockInfo.minimum;
+            order = stockInfo.order;
             InitializeComponent();
         }
 
@@ -52,8 +53,8 @@ namespace ProjectBovelo
                             MessageBoxIcon.Information) == DialogResult.Yes)
             {
                 Control button = (Control)sender;
-                stock = stock + addItem - removeItem;
-                StockDetail stockDetail = new StockDetail(user, stock, minimum, order);
+                stockInfo.stock = stockInfo.stock + addItem - removeItem;
+                StockDetail stockDetail = new StockDetail(user, stockInfo);
                 stockDetail.Show();
                 this.Close();
             }
@@ -68,11 +69,11 @@ namespace ProjectBovelo
             this.Controls.Add(buttonReturn);
         }
 
-        private static void ButtonReturnToStockDetail_Click(object sender, EventArgs e)
+        private void ButtonReturnToStockDetail_Click(object sender, EventArgs e)
         {
             Control button = (Control)sender;
             EditStock editStock = (EditStock)button.Parent;
-            StockDetail stockDetail = new StockDetail(editStock.user, editStock.stock, editStock.minimum, editStock.order);
+            StockDetail stockDetail = new StockDetail(editStock.user, stockInfo);
             stockDetail.Show();
             editStock.Close();
         }

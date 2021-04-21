@@ -226,5 +226,31 @@ namespace ProjectBovelo
             this.userName = userName;
         }
     }    
+
+    public class StockInfo
+    {
+        public int id;
+        public string name;
+        public string color;
+        public string size;
+        public decimal stock;
+        public decimal needed;
+        public decimal order;
+        public decimal balance;
+        public decimal minimum;
+
+        public StockInfo(int id, string name, string color, string size, decimal stock, decimal needed, decimal order, decimal balance, decimal minimum)
+        {
+            this.id = id;
+            this.name = name;
+            this.color = color;
+            this.size = size;
+            this.stock = stock;
+            this.needed = needed;
+            this.order = order;
+            this.balance = balance;
+            this.minimum = minimum;
+        }
+    }
 }
 

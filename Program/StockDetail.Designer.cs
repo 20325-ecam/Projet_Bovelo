@@ -40,13 +40,14 @@ namespace ProjectBovelo
             this.labelOrderNumber = new System.Windows.Forms.Label();
             this.labelBalanceNumber = new System.Windows.Forms.Label();
             this.buttonEditStock = new System.Windows.Forms.Button();
+            this.labelNameColorSize = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelStock
             // 
             this.labelStock.AutoSize = true;
             this.labelStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelStock.Location = new System.Drawing.Point(102, 300);
+            this.labelStock.Location = new System.Drawing.Point(215, 313);
             this.labelStock.Name = "labelStock";
             this.labelStock.Size = new System.Drawing.Size(78, 25);
             this.labelStock.TabIndex = 0;
@@ -57,7 +58,7 @@ namespace ProjectBovelo
             // 
             this.labelMinimum.AutoSize = true;
             this.labelMinimum.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMinimum.Location = new System.Drawing.Point(102, 337);
+            this.labelMinimum.Location = new System.Drawing.Point(215, 350);
             this.labelMinimum.Name = "labelMinimum";
             this.labelMinimum.Size = new System.Drawing.Size(148, 25);
             this.labelMinimum.TabIndex = 1;
@@ -68,7 +69,7 @@ namespace ProjectBovelo
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(102, 374);
+            this.label1.Location = new System.Drawing.Point(215, 387);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(267, 25);
             this.label1.TabIndex = 2;
@@ -79,7 +80,7 @@ namespace ProjectBovelo
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(102, 411);
+            this.label2.Location = new System.Drawing.Point(215, 424);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(229, 25);
             this.label2.TabIndex = 3;
@@ -90,7 +91,7 @@ namespace ProjectBovelo
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(522, 300);
+            this.label3.Location = new System.Drawing.Point(738, 313);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(99, 25);
             this.label3.TabIndex = 4;
@@ -101,7 +102,7 @@ namespace ProjectBovelo
             // 
             this.labelStockNumber.AutoSize = true;
             this.labelStockNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelStockNumber.Location = new System.Drawing.Point(186, 300);
+            this.labelStockNumber.Location = new System.Drawing.Point(299, 313);
             this.labelStockNumber.Name = "labelStockNumber";
             this.labelStockNumber.Size = new System.Drawing.Size(172, 25);
             this.labelStockNumber.TabIndex = 5;
@@ -112,7 +113,7 @@ namespace ProjectBovelo
             // 
             this.labelMinimumNumber.AutoSize = true;
             this.labelMinimumNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMinimumNumber.Location = new System.Drawing.Point(256, 337);
+            this.labelMinimumNumber.Location = new System.Drawing.Point(369, 350);
             this.labelMinimumNumber.Name = "labelMinimumNumber";
             this.labelMinimumNumber.Size = new System.Drawing.Size(201, 25);
             this.labelMinimumNumber.TabIndex = 6;
@@ -123,7 +124,7 @@ namespace ProjectBovelo
             // 
             this.labelBuyNumber.AutoSize = true;
             this.labelBuyNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBuyNumber.Location = new System.Drawing.Point(375, 374);
+            this.labelBuyNumber.Location = new System.Drawing.Point(503, 387);
             this.labelBuyNumber.Name = "labelBuyNumber";
             this.labelBuyNumber.Size = new System.Drawing.Size(156, 25);
             this.labelBuyNumber.TabIndex = 7;
@@ -134,7 +135,7 @@ namespace ProjectBovelo
             // 
             this.labelOrderNumber.AutoSize = true;
             this.labelOrderNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelOrderNumber.Location = new System.Drawing.Point(337, 411);
+            this.labelOrderNumber.Location = new System.Drawing.Point(472, 424);
             this.labelOrderNumber.Name = "labelOrderNumber";
             this.labelOrderNumber.Size = new System.Drawing.Size(172, 25);
             this.labelOrderNumber.TabIndex = 8;
@@ -145,7 +146,7 @@ namespace ProjectBovelo
             // 
             this.labelBalanceNumber.AutoSize = true;
             this.labelBalanceNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBalanceNumber.Location = new System.Drawing.Point(627, 300);
+            this.labelBalanceNumber.Location = new System.Drawing.Point(843, 313);
             this.labelBalanceNumber.Name = "labelBalanceNumber";
             this.labelBalanceNumber.Size = new System.Drawing.Size(193, 25);
             this.labelBalanceNumber.TabIndex = 9;
@@ -155,7 +156,7 @@ namespace ProjectBovelo
             // buttonEditStock
             // 
             this.buttonEditStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEditStock.Location = new System.Drawing.Point(364, 292);
+            this.buttonEditStock.Location = new System.Drawing.Point(525, 307);
             this.buttonEditStock.Name = "buttonEditStock";
             this.buttonEditStock.Size = new System.Drawing.Size(119, 40);
             this.buttonEditStock.TabIndex = 1;
@@ -163,11 +164,22 @@ namespace ProjectBovelo
             this.buttonEditStock.UseVisualStyleBackColor = true;
             this.buttonEditStock.Click += new System.EventHandler(this.buttonEditStock_Click);
             // 
+            // labelNameColorSize
+            // 
+            this.labelNameColorSize.AutoSize = true;
+            this.labelNameColorSize.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNameColorSize.Location = new System.Drawing.Point(444, 144);
+            this.labelNameColorSize.Name = "labelNameColorSize";
+            this.labelNameColorSize.Size = new System.Drawing.Size(255, 29);
+            this.labelNameColorSize.TabIndex = 10;
+            this.labelNameColorSize.Text = "labelNameColorSize";
+            // 
             // StockDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(902, 575);
+            this.ClientSize = new System.Drawing.Size(1290, 575);
+            this.Controls.Add(this.labelNameColorSize);
             this.Controls.Add(this.buttonEditStock);
             this.Controls.Add(this.labelBalanceNumber);
             this.Controls.Add(this.labelOrderNumber);
@@ -201,5 +213,6 @@ namespace ProjectBovelo
         private System.Windows.Forms.Label labelOrderNumber;
         private System.Windows.Forms.Label labelBalanceNumber;
         private System.Windows.Forms.Button buttonEditStock;
+        private System.Windows.Forms.Label labelNameColorSize;
     }
 }
