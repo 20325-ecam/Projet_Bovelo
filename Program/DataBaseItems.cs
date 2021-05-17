@@ -129,19 +129,13 @@ namespace ProjectBovelo
 
     public class OrderItem
     {
-        public int bikeId;
-        public string bikeName;
+        public int variationId;
         public int quantity;
-        public BicycleColor color;
-        public BicycleSize size;
         public float bikePrice;
 
-        public OrderItem(int bikeId, string bikeName, BicycleColor color, BicycleSize size, int quantity, float bikePrice)
+        public OrderItem(int variationId, int quantity, float bikePrice)
         {
-            this.bikeId = bikeId;
-            this.bikeName = bikeName;
-            this.color = color;
-            this.size = size;
+            this.variationId = variationId;
             this.quantity = quantity;
             this.bikePrice = bikePrice;
         }

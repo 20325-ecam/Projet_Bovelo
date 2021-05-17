@@ -24,28 +24,16 @@ namespace ProjectBovelo
         private void FillOrderTable()
         {
             tableLayoutPanelOrder.RowCount = client.cart.Count + 2;
-            Label bikeTitle = new Label();
-            Label colorTitle = new Label();
-            Label sizeTitle = new Label();
+            Label infoTitle = new Label();
             Label quantityTitle = new Label();
             Label priceTitle = new Label();
             Label priceTotalLabel = new Label();
             float totalPrice = 0f;
 
-            bikeTitle.Text = "Bicycle type";
-            bikeTitle.AutoSize = true;
-            tableLayoutPanelOrder.SetRow(bikeTitle, 0);
-            tableLayoutPanelOrder.SetColumn(bikeTitle, 0);
-
-            colorTitle.Text = "Bicycle color";
-            colorTitle.AutoSize = true;
-            tableLayoutPanelOrder.SetRow(colorTitle, 0);
-            tableLayoutPanelOrder.SetColumn(colorTitle, 1);
-
-            sizeTitle.Text = "Bicycle size";
-            sizeTitle.AutoSize = true;
-            tableLayoutPanelOrder.SetRow(sizeTitle, 0);
-            tableLayoutPanelOrder.SetColumn(sizeTitle, 2);
+            infoTitle.Text = "Bicycle type";
+            infoTitle.AutoSize = true;
+            tableLayoutPanelOrder.SetRow(infoTitle, 0);
+            tableLayoutPanelOrder.SetColumn(infoTitle, 0);
 
             quantityTitle.Text = "Quantity";
             quantityTitle.AutoSize = true;
@@ -61,36 +49,22 @@ namespace ProjectBovelo
             tableLayoutPanelOrder.SetRow(priceTotalLabel, client.cart.Count + 2);
             tableLayoutPanelOrder.SetColumn(priceTotalLabel, 4);
 
-            tableLayoutPanelOrder.Controls.Add(bikeTitle);
-            tableLayoutPanelOrder.Controls.Add(colorTitle);
-            tableLayoutPanelOrder.Controls.Add(sizeTitle);
+            tableLayoutPanelOrder.Controls.Add(infoTitle);
             tableLayoutPanelOrder.Controls.Add(quantityTitle);
             tableLayoutPanelOrder.Controls.Add(priceTitle);
             tableLayoutPanelOrder.Controls.Add(priceTotalLabel);
 
             for (int i = 0; i < client.cart.Count; i++)
             {
-                Label bikeLabel = new Label();
-                Label colorLabel = new Label();
-                Label sizeLabel = new Label();
+                Label infoLabel = new Label();
                 Label quantityLabel = new Label();
                 Label priceLabel = new Label();
                 totalPrice += (client.cart[i].bikePrice * client.cart[i].quantity);
 
-                bikeLabel.Text = client.cart[i].bikeName;
-                bikeLabel.AutoSize = true;
-                tableLayoutPanelOrder.SetRow(bikeLabel, i + 1);
-                tableLayoutPanelOrder.SetColumn(bikeLabel, 0);
-
-                colorLabel.Text = client.cart[i].color.color;
-                colorLabel.AutoSize = true;
-                tableLayoutPanelOrder.SetRow(colorLabel, i + 1);
-                tableLayoutPanelOrder.SetColumn(colorLabel, 1);
-
-                sizeLabel.Text = client.cart[i].size.size;
-                sizeLabel.AutoSize = true;
-                tableLayoutPanelOrder.SetRow(sizeLabel, i + 1);
-                tableLayoutPanelOrder.SetColumn(sizeLabel, 2);
+                infoLabel.Text = DBConnection.SelectVariationInfo(client.cart[i].variationId);
+                infoLabel.AutoSize = true;
+                tableLayoutPanelOrder.SetRow(infoLabel, i + 1);
+                tableLayoutPanelOrder.SetColumn(infoLabel, 0);
 
                 quantityLabel.Text = client.cart[i].quantity.ToString();
                 quantityLabel.AutoSize = true;
@@ -102,9 +76,7 @@ namespace ProjectBovelo
                 tableLayoutPanelOrder.SetRow(priceLabel, i + 1);
                 tableLayoutPanelOrder.SetColumn(priceLabel, 4);
 
-                tableLayoutPanelOrder.Controls.Add(bikeLabel);
-                tableLayoutPanelOrder.Controls.Add(colorLabel);
-                tableLayoutPanelOrder.Controls.Add(sizeLabel);
+                tableLayoutPanelOrder.Controls.Add(infoLabel);
                 tableLayoutPanelOrder.Controls.Add(quantityLabel);
                 tableLayoutPanelOrder.Controls.Add(priceLabel);
             }

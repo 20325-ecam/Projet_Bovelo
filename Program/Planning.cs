@@ -66,10 +66,10 @@ namespace ProjectBovelo
             dataGridViewTask.Columns["select_column"].Visible = false;
             dataGridViewTask.Columns["insert_column"].Visible = false;
 
-            dataGridViewTask.Columns["OrderId"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewTask.Columns["OrderId"].HeaderText = "Order";
-            dataGridViewTask.Columns["bikeName"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewTask.Columns["bikeName"].HeaderText = "Bike";
+            dataGridViewTask.Columns["order_id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewTask.Columns["order_id"].HeaderText = "Order";
+            dataGridViewTask.Columns["bike_name"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewTask.Columns["bike_name"].HeaderText = "Bike";
             dataGridViewTask.Columns["size"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridViewTask.Columns["size"].HeaderText = "Size";
             dataGridViewTask.Columns["color"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
@@ -115,8 +115,8 @@ namespace ProjectBovelo
                 if (e.ColumnIndex == dataGridViewTask.Columns["details_column"].Index)
                 {
                     int id = (int)dataGridViewTask.Rows[rowIndex].Cells["id"].Value;
-                    int orderId = (int)dataGridViewTask.Rows[rowIndex].Cells["OrderId"].Value;
-                    string bikeName = (string)dataGridViewTask.Rows[rowIndex].Cells["bikeName"].Value;
+                    int orderId = (int)dataGridViewTask.Rows[rowIndex].Cells["order_id"].Value;
+                    string bikeName = (string)dataGridViewTask.Rows[rowIndex].Cells["bike_name"].Value;
                     string bikeSize = (string)dataGridViewTask.Rows[rowIndex].Cells["size"].Value;
                     string bikeColor = (string)dataGridViewTask.Rows[rowIndex].Cells["color"].Value;
                     string state = (string)dataGridViewTask.Rows[rowIndex].Cells["state"].Value;

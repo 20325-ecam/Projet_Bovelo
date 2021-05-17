@@ -113,11 +113,10 @@ namespace ProjectBovelo
                 for (int i = 0; i < order.orderItemList.Count; i++)
                 {
                     OrderItem orderItem = order.GetOrderItem(i);
-    // to modifie *******************************************************************************************************************************************************
-                    string queryOrderItem = "INSERT INTO OrderItem (bikeId, colorId, sizeId, Price, OrderId) " +
-                                                  "VALUES('" + orderItem.bikeId + "', '" + orderItem.color.id + "', '" + orderItem.size.id
-                                                  + "', '" + orderItem.bikePrice + "', '" + orderId + "')";
-    // *******************************************************************************************************************************************************
+    
+                    string queryOrderItem = "INSERT INTO OrderItem (variation, price, order_id) " +
+                                                  "VALUES('" + orderItem.variationId + "', '" + orderItem.bikePrice + "', '" + orderId + "')";
+   
                     MySqlCommand cmdOrderItem = new MySqlCommand(queryOrderItem, connection);
 
                     string maxPriorityQuery = "SELECT MAX(priority) FROM Task;";
@@ -135,7 +134,7 @@ namespace ProjectBovelo
                     {
                         maxPriority += 1;
                         cmdOrderItem.ExecuteNonQuery();
-                        string queryTask = "INSERT INTO Task (OrderItemId, priority) VALUES(" + cmdOrderItem.LastInsertedId + ", " + maxPriority + "); ";
+                        string queryTask = "INSERT INTO Task (order_item, priority) VALUES(" + cmdOrderItem.LastInsertedId + ", " + maxPriority + "); ";
                         MySqlCommand cmdTask = new MySqlCommand(queryTask, connection);
                         cmdTask.ExecuteNonQuery();
                     }
@@ -173,11 +172,11 @@ namespace ProjectBovelo
             string queryModifyTask;
             if (mechanicId >= 0)
             {
-                queryModifyTask = "UPDATE Task SET stateId = '" + num + "', asignedUserId= '" + mechanicId + "' WHERE id = '" + Id + "'";
+                queryModifyTask = "UPDATE Task SET state = '" + num + "', asigned_user= '" + mechanicId + "' WHERE id = '" + Id + "'";
             }
             else
             {
-                queryModifyTask = "UPDATE Task SET stateId = '" + num + "' WHERE id= '" + Id + "'";
+                queryModifyTask = "UPDATE Task SET state = '" + num + "' WHERE id= '" + Id + "'";
             }
             
 
@@ -378,15 +377,13 @@ namespace ProjectBovelo
         {
             string bikeQuery = "SELECT * FROM BikeModel";
             string colorQuery = "SELECT * FROM Color";
-            string bikeColorQuery = "SELECT * FROM BikeModel_Color";
             string sizeQuery = "SELECT * FROM Size";
-            string bikeSizeQuery = "SELECT * FROM BikeModel_Size";
+            string bikeVariationQuery = "SELECT * FROM BikeModel_variations";
 
             DataTable bikeDataTable;
             DataTable colorDataTable;
-            DataTable bikeColorDataTable;
             DataTable sizeDataTable;
-            DataTable bikeSizeDataTable;
+            DataTable bikeVariationDataTable;
 
             //Create a list to store the result
             List<AvailableBicycle> bikeList = new List<AvailableBicycle>();
@@ -398,9 +395,8 @@ namespace ProjectBovelo
             {
                 bikeDataTable = CreateDataTable(bikeQuery);
                 colorDataTable = CreateDataTable(colorQuery);
-                bikeColorDataTable = CreateDataTable(bikeColorQuery);
                 sizeDataTable = CreateDataTable(sizeQuery);
-                bikeSizeDataTable = CreateDataTable(bikeSizeQuery);
+                bikeVariationDataTable = CreateDataTable(bikeVariationQuery);
                 this.CloseConnection();
                 for (int i = 0; i < colorDataTable.Rows.Count; i++)
                 {
@@ -419,34 +415,28 @@ namespace ProjectBovelo
                 for (int i = 0; i < bikeDataTable.Rows.Count; i++)
                 {
                     int id = (int)bikeDataTable.Rows[i]["id"];
-                    string name = (string)bikeDataTable.Rows[i]["bikeName"];
+                    string name = (string)bikeDataTable.Rows[i]["bike_name"];
                     string description = (string)bikeDataTable.Rows[i]["description"];
                     float price = (float)bikeDataTable.Rows[i]["price"];
-                    int imageId = (int)bikeDataTable.Rows[i]["imageId"];
+                    int imageId = (int)bikeDataTable.Rows[i]["image"];
                     AvailableBicycle availableBicycle = new AvailableBicycle(id, name, description, price, imageId);
-                    for (int j = 0; j < bikeColorDataTable.Rows.Count; j++)
+                    for (int j = 0; j < bikeVariationDataTable.Rows.Count; j++)
                     {
-                        if ((int)bikeColorDataTable.Rows[j]["BikeModel_id"] == id)
+                        if ((int)bikeVariationDataTable.Rows[j]["model"] == id)
                         {
                             for (int k = 0; k < colorList.Count; k++)
                             {
-                                if (colorList[k].id == (int)bikeColorDataTable.Rows[j]["Color_id"])
+                                if (!availableBicycle.availableColors.Contains(colorList[k]) && colorList[k].id == (int)bikeVariationDataTable.Rows[j]["color"])
                                 {
                                     availableBicycle.AddAvailableColor(colorList[k]);
                                     break;
                                 }
                             }
-                        }
-                    }
-                    for (int j = 0; j < bikeSizeDataTable.Rows.Count; j++)
-                    {
-                        if ((int)bikeSizeDataTable.Rows[j]["BikeModel_id"] == id)
-                        {
-                            for (int k = 0; k < sizeList.Count; k++)
+                            for (int l = 0; l < sizeList.Count; l++)
                             {
-                                if (sizeList[k].id == (int)bikeSizeDataTable.Rows[j]["Size_id"])
+                                if (!availableBicycle.availableSizes.Contains(sizeList[l]) && sizeList[l].id == (int)bikeVariationDataTable.Rows[j]["size"])
                                 {
-                                    availableBicycle.AddAvailableSize(sizeList[k]);
+                                    availableBicycle.AddAvailableSize(sizeList[l]);
                                     break;
                                 }
                             }
@@ -466,20 +456,24 @@ namespace ProjectBovelo
         {
             List<Task> taskList = new List<Task>();
             string taskQuery =
-                "SELECT Task.id, OrderItem.OrderId, BikeModel.bikeName, Size.size, Color.color, TaskState.state, AppUser.userName, Task.priority " +
+                "SELECT Task.id, OrderItem.order_id, BikeModel.bike_name, Size.size, Color.color, Task_state.state, AppUser.userName, Task.priority " +
                 "FROM  Task " +
                 "INNER JOIN OrderItem " +
-                "ON Task.OrderItemId = OrderItem.id " +
+                "ON Task.order_item = OrderItem.id " +
+
+                "INNER JOIN BikeModel_variations " +
+                "ON OrderItem.variation = BikeModel_variations.id " +
+
                 "INNER JOIN  BikeModel " +
-                "ON OrderItem.bikeId = BikeModel.id " +
+                "ON BikeModel_variations.model = BikeModel.id " +
                 "INNER JOIN Size " +
-                "ON OrderItem.sizeId = Size.id " +
+                "ON BikeModel_variations.size = Size.id " +
                 "INNER JOIN Color " +
-                "ON OrderItem.colorId = Color.id " +
-                "INNER JOIN TaskState " +
-                "ON Task.stateId = TaskState.id " +
+                "ON BikeModel_variations.color = Color.id " +
+                "INNER JOIN Task_state " +
+                "ON Task.state = Task_state.id " +
                 "LEFT JOIN AppUser " +
-                "ON Task.asignedUserId = AppUser.id " +
+                "ON Task.asigned_user = AppUser.id " +
                 "ORDER BY Task.priority ASC;";
 
             DataTable TaskDataTable = new DataTable();
@@ -487,24 +481,7 @@ namespace ProjectBovelo
             {
                 TaskDataTable = CreateDataTable(taskQuery);
                 this.CloseConnection();
-               /*
-                for (int i = 0; i < TaskDataTable.Rows.Count; i++)
-                {
-                    int id = (int)TaskDataTable.Rows[i]["id"];
-                    int orderId = (int)TaskDataTable.Rows[i]["OrderId"];
-                    string bikeName = (string)TaskDataTable.Rows[i]["bikeName"];
-                    string bikeSize = (string)TaskDataTable.Rows[i]["size"];
-                    string bikeColor = (string)TaskDataTable.Rows[i]["color"];
-                    string state = (string)TaskDataTable.Rows[i]["state"];
-                    string userName = "";
-                    if (TaskDataTable.Rows[i]["userName"] != DBNull.Value)
-                    {
-                        userName = (string)TaskDataTable.Rows[i]["userName"];
-                    }
-                    Task task = new Task(id, orderId, bikeName, bikeSize, bikeColor, state, userName);
-                    taskList.Add(task);
-                }
-                */
+               
             }
             return TaskDataTable;
         }
@@ -527,10 +504,10 @@ namespace ProjectBovelo
         {
             List<Order> orderList = new List<Order>();
             string orderQuery =
-                "SELECT OrderDB.id, Client.name, Client.address, OrderDB.bikeAmount, OrderDB.totalPrice " +
+                "SELECT OrderDB.id, Client.name, Client.address, OrderDB.bike_amount, OrderDB.total_price " +
                 "FROM  OrderDB " +
                 "INNER JOIN Client " +
-                "ON OrderDB.clientId = Client.id";
+                "ON OrderDB.client_id = Client.id";
 
             DataTable orderDataTable = new DataTable();
             if (this.OpenConnection() == true)
@@ -560,7 +537,61 @@ namespace ProjectBovelo
             }
             return StockDataTable;
         }
+        public int SelectBikeVariationId(int bikeId, BicycleColor bikeColor, BicycleSize bikeSize)
+        {
+            string bikeVariationIdQuery =
+                "SELECT id " +
+                "FROM BikeModel_variations " +
+                "WHERE model = '" + bikeId + "' " +
+                "AND color = '" + bikeColor.id + "' " +
+                "AND size = '" + bikeSize.id + "'";
 
+            int variationId = 1;
+            if (this.OpenConnection() == true)
+            {
+                //Create Command
+                MySqlCommand cmd = new MySqlCommand(bikeVariationIdQuery, connection);
+                //Create a data reader and Execute the command
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                if (dataReader.HasRows)
+                {
+                    dataReader.Read();
+                    variationId = (int)dataReader["id"];
+
+                    dataReader.Close();
+                    this.CloseConnection();                    
+                }
+            }
+
+            return variationId;
+        }
+        public string SelectVariationInfo(int variationId)
+        {
+            string bikeVariationIdQuery =
+                "SELECT info " +
+                "FROM BikeModel_variations " +
+                "WHERE id = '" + variationId + "'";
+
+            string info = "";
+            if (this.OpenConnection() == true)
+            {
+                //Create Command
+                MySqlCommand cmd = new MySqlCommand(bikeVariationIdQuery, connection);
+                //Create a data reader and Execute the command
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                if (dataReader.HasRows)
+                {
+                    dataReader.Read();
+                    info = (string)dataReader["info"];
+
+                    dataReader.Close();
+                    this.CloseConnection();
+                }
+            }
+            return info;
+        }
         public Bitmap loadImage(int imgID)
         {
             string imageQuery = "SELECT * FROM Files WHERE id ='" + imgID.ToString() + "'";

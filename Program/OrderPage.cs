@@ -35,14 +35,13 @@ namespace ProjectBovelo
         {
             if (comboBoxColor.SelectedItem != null && comboBoxSize.SelectedItem != null)
             {
-                OrderItem orderItem;
                 int bikeId = bicycle.id;
-                string bikeName = bicycle.name;
-                int quantity = (int)numericUpDownQuantity.Value;
                 BicycleColor color = (BicycleColor)comboBoxColor.SelectedItem;
                 BicycleSize size = (BicycleSize)comboBoxSize.SelectedItem;
+                int quantity = (int)numericUpDownQuantity.Value;
                 float bikePrice = bicycle.price;
-                orderItem = new OrderItem(bikeId, bikeName, color, size, quantity, bikePrice);
+                int variationId = DBConnection.SelectBikeVariationId(bikeId, color, size);                                        
+                OrderItem orderItem = new OrderItem(variationId, quantity, bikePrice);
                 client.AddOrderToCart(orderItem);
                 Cart cartPage = new Cart(user, client);
                 cartPage.Show();
