@@ -227,13 +227,13 @@ namespace ProjectBovelo
         public string name;
         public string color;
         public string size;
-        public decimal stock;
-        public decimal needed;
-        public decimal order;
-        public decimal balance;
-        public decimal minimum;
+        public int stock;
+        public int needed;
+        public int ordered;
+        public int balance;
+        public int minimum;
 
-        public StockInfo(int id, string name, string color, string size, decimal stock, decimal needed, decimal order, decimal balance, decimal minimum)
+        public StockInfo(int id, string name, string color, string size, int stock, int needed, int ordered, int minimum)
         {
             this.id = id;
             this.name = name;
@@ -241,9 +241,14 @@ namespace ProjectBovelo
             this.size = size;
             this.stock = stock;
             this.needed = needed;
-            this.order = order;
-            this.balance = balance;
+            this.ordered = ordered;
             this.minimum = minimum;
+            CalculateBalance();
+        }
+
+        public void CalculateBalance()
+        {
+            balance = (stock - minimum) + (ordered - needed);                                                        
         }
     }
 }

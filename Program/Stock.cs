@@ -13,10 +13,6 @@ namespace ProjectBovelo
     public partial class Stock : BoveloBaseForm
     {
         private DataTable stockDataTable;
-        //decimal stock = 2;
-        //decimal minimum = 1;
-        //int buy = 3;
-        //decimal order = 0;
 
         public Stock(BoveloUser user)
         {
@@ -37,19 +33,89 @@ namespace ProjectBovelo
         private void FillDataGridViewStock()
         {
             dataGridViewStock.DataSource = stockDataTable;
+
+            DataGridViewColumn orderedColumn = new DataGridViewColumn(dataGridViewStock.Columns["id"].CellTemplate);
+            orderedColumn.Name = "ordered";
+            orderedColumn.HeaderText = "Ordered";
+            int orderedColumnIndex = 6;
+            if (dataGridViewStock.Columns["ordered"] == null)
+            {
+                dataGridViewStock.Columns.Insert(orderedColumnIndex, orderedColumn);
+            }
+
+            DataGridViewColumn neededColumn = new DataGridViewColumn(dataGridViewStock.Columns["id"].CellTemplate);
+            neededColumn.Name = "needed";
+            neededColumn.HeaderText = "Needed";
+            int neededColumnIndex = 7;
+            if (dataGridViewStock.Columns["needed"] == null)
+            {
+                dataGridViewStock.Columns.Insert(neededColumnIndex, neededColumn);
+            }
+
+
+            DataGridViewColumn balanceColumn = new DataGridViewColumn(dataGridViewStock.Columns["id"].CellTemplate);
+            balanceColumn.Name = "balance";
+            balanceColumn.HeaderText = "Balance";
+            int balanceColumnIndex = 8;
+            if (dataGridViewStock.Columns["balance"] == null)
+            {
+                dataGridViewStock.Columns.Insert(balanceColumnIndex, balanceColumn);
+            }
+
             DataGridViewButtonColumn detailsButtonColumn = new DataGridViewButtonColumn();
-            detailsButtonColumn.Name = "details_column";
+            detailsButtonColumn.Name = "detailsButton";
             detailsButtonColumn.Text = "Details";
             detailsButtonColumn.UseColumnTextForButtonValue = true;
-            int detailsColumnIndex = 10;
-            if (dataGridViewStock.Columns["details_column"] == null)
+            int detailsButtonColumnIndex = 9;
+            if (dataGridViewStock.Columns["detailsButton"] == null)
             {
-                dataGridViewStock.Columns.Insert(detailsColumnIndex, detailsButtonColumn);
+                dataGridViewStock.Columns.Insert(detailsButtonColumnIndex, detailsButtonColumn);
             }
-            // Set your desired AutoSize Mode:
-            dataGridViewStock.Columns["id"].Visible = true;
-            dataGridViewStock.Columns["balance"].Visible = false;
-            dataGridViewStock.Columns["details"].Visible = false;
+
+            DataGridViewCellStyle styleGreen = new DataGridViewCellStyle();
+            styleGreen.BackColor = Color.LightGreen;
+            styleGreen.ForeColor = Color.Black;
+            DataGridViewCellStyle styleBlue = new DataGridViewCellStyle();
+            styleBlue.BackColor = Color.LightBlue;
+            styleBlue.ForeColor = Color.Black;
+            DataGridViewCellStyle styleRed = new DataGridViewCellStyle();
+            styleRed.BackColor = Color.Red;
+            styleRed.ForeColor = Color.Black;
+
+            
+            for (int i = 0; i < dataGridViewStock.RowCount; i++)
+            {
+                if((string)dataGridViewStock.Rows[i].Cells["color"].Value == "None")
+                {
+                    dataGridViewStock.Rows[i].Cells["color"].Value = "/";
+                }
+                if((string)dataGridViewStock.Rows[i].Cells["size"].Value == "None")
+                {
+                    dataGridViewStock.Rows[i].Cells["size"].Value = "/";
+                }
+                dataGridViewStock.Rows[i].Cells["ordered"].Value = GetQuantityOrdered((int)dataGridViewStock.Rows[i].Cells["id"].Value);
+                dataGridViewStock.Rows[i].Cells["needed"].Value = GetQuantityNeeded((int)dataGridViewStock.Rows[i].Cells["id"].Value);
+
+                dataGridViewStock.Rows[i].Cells["balance"].Value = ((int)dataGridViewStock.Rows[i].Cells["stock"].Value - (int)dataGridViewStock.Rows[i].Cells["min_amount"].Value)
+                                                                 + ((int)dataGridViewStock.Rows[i].Cells["ordered"].Value - (int)dataGridViewStock.Rows[i].Cells["needed"].Value);
+                int value = (int)dataGridViewStock.Rows[i].Cells["balance"].Value;
+                if (value > 0)
+                {
+                    dataGridViewStock.Rows[i].Cells["balance"].Style = styleGreen;
+                }
+                else if (value == 0)
+                {
+                    dataGridViewStock.Rows[i].Cells["balance"].Style = styleBlue;
+                }
+                else
+                {
+                    dataGridViewStock.Rows[i].Cells["balance"].Style = styleRed;
+                }
+
+            }
+
+            dataGridViewStock.Columns["id"].Visible = false;
+            dataGridViewStock.Columns["balance"].Visible = true;
 
             dataGridViewStock.Columns["id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridViewStock.Columns["id"].HeaderText = "Id";
@@ -67,59 +133,57 @@ namespace ProjectBovelo
             dataGridViewStock.Columns["ordered"].HeaderText = "Ordered";
             dataGridViewStock.Columns["balance"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridViewStock.Columns["balance"].HeaderText = "Balance";
-            dataGridViewStock.Columns["min_amount"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewStock.Columns["min_amount"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewStock.Columns["min_amount"].HeaderText = "Min amount";
-            dataGridViewStock.Columns["details"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewStock.Columns["details"].HeaderText = "Details";
-            dataGridViewStock.Columns["details_column"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewStock.Columns["details_column"].HeaderText = "Details button";
-
-            /*for (int i = 0; i < dataGridViewStock.Columns.Count; i++)
-            {
-                int colw = dataGridViewStock.Columns[i].Width;
-                dataGridViewStock.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-                dataGridViewStock.Columns[i].SortMode = DataGridViewColumnSortMode.NotSortable;
-            }*/
+            dataGridViewStock.Columns["detailsButton"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewStock.Columns["detailsButton"].HeaderText = "Details button";           
         }
-
+        private int GetQuantityOrdered(int itemId)
+        {
+            DataTable externalOrderDataTable = DBConnection.selectExternalOrder(itemId);
+            int quantity = 0;
+            for(int i = 0; i < externalOrderDataTable.Rows.Count; i++)
+            {
+                quantity += (int)externalOrderDataTable.Rows[i].ItemArray[2];
+            }
+            return quantity;
+        }
+        private int GetQuantityNeeded(int itemId)
+        {
+            DataTable bikePartsCombinationDataTable = DBConnection.selectBikePartsCombination(itemId);
+            int quantity = 0;
+            for(int i = 0; i < bikePartsCombinationDataTable.Rows.Count; i++)
+            {
+                quantity += DBConnection.selectOrderItemCount(bikePartsCombinationDataTable.Rows[i].Field<int>("model_variation")) * bikePartsCombinationDataTable.Rows[i].Field<int>("qtty");
+            }
+            return quantity;
+        }
         private void dataGridViewStock_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int rowIndex = e.RowIndex;
             if (rowIndex >= 0)
             {
-                if (e.ColumnIndex == dataGridViewStock.Columns["details_column"].Index)
+                if (e.ColumnIndex == dataGridViewStock.Columns["detailsButton"].Index)
                 {
                     int id = (int)dataGridViewStock.Rows[rowIndex].Cells["id"].Value;
                     string name = (string)dataGridViewStock.Rows[rowIndex].Cells["name"].Value;
                     string color = (string)dataGridViewStock.Rows[rowIndex].Cells["color"].Value;
                     string size = (string)dataGridViewStock.Rows[rowIndex].Cells["size"].Value;
-                    decimal stock = (decimal)dataGridViewStock.Rows[rowIndex].Cells["stock"].Value;
-                    decimal needed = (decimal)dataGridViewStock.Rows[rowIndex].Cells["needed"].Value;
-                    decimal order = 0;
+                    int stock = (int)dataGridViewStock.Rows[rowIndex].Cells["stock"].Value;
+                    int needed = (int)dataGridViewStock.Rows[rowIndex].Cells["needed"].Value;
+                    int order = 0;
                     if (dataGridViewStock.Rows[rowIndex].Cells["ordered"].Value != DBNull.Value)
                     {
-                        order = (decimal)dataGridViewStock.Rows[rowIndex].Cells["ordered"].Value;
+                        order = (int)dataGridViewStock.Rows[rowIndex].Cells["ordered"].Value;
                     }
-                    decimal balance = 0;
-                    if (dataGridViewStock.Rows[rowIndex].Cells["balance"].Value != DBNull.Value)
-                    {
-                        balance = (decimal)dataGridViewStock.Rows[rowIndex].Cells["balance"].Value;
-                    }
-                    decimal minimum = (decimal)dataGridViewStock.Rows[rowIndex].Cells["min_amount"].Value;
+                    int minimum = (int)dataGridViewStock.Rows[rowIndex].Cells["min_amount"].Value;
 
-                    StockInfo stockInfo = new StockInfo(id, name, color, size, stock, needed, order, balance, minimum);
+                    StockInfo stockInfo = new StockInfo(id, name, color, size, stock, needed, order, minimum);
                     StockDetail stockDetail = new StockDetail(user, stockInfo);
                     stockDetail.Show();
                     this.Close();
                 }
             }
         }
-
-        /*private void buttonDetail_Click(object sender, EventArgs e)
-        {
-            StockDetail stockDetail = new StockDetail(user, stock, minimum, order);
-            stockDetail.Show();
-            this.Close();
-        }*/
     }
 }

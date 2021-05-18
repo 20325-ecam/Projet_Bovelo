@@ -13,62 +13,97 @@ namespace ProjectBovelo
     public partial class StockDetail : BoveloBaseForm
     {
         StockInfo stockInfo;
-        int id;
-        string name;
-        string color;
-        string size;
-        decimal stock;
-        decimal needed;
-        decimal order;
-        decimal balance;
-        decimal minimum;
+        private DataTable externalOrderDataTable;
         
-
         public StockDetail(BoveloUser user, StockInfo stockInfo)
         {
             this.user = user;
             this.stockInfo = stockInfo;
-            id = stockInfo.id;
-            name = stockInfo.name;
-            color = stockInfo.color;
-            size = stockInfo.size;
-            stock = stockInfo.stock;
-            needed = stockInfo.needed;
-            order = stockInfo.order;
-            minimum = stockInfo.minimum;
-
+            
             InitializeComponent();
-            labelNameColorSize.Text = name.ToUpper() + " " + color.ToUpper() + " " + size.ToUpper(); 
-            labelStockNumber.Text = stock.ToString();
-            labelMinimumNumber.Text = minimum.ToString();
-            
-            needed = minimum - stock;
-            if (needed <= 0)
+            string nameText = this.stockInfo.name.First().ToString().ToUpper() + this.stockInfo.name.Substring(1);
+            string colorText = "";
+            if(this.stockInfo.color != "/")
             {
-                labelBuyNumber.Text = "None";
+                colorText = this.stockInfo.color.First().ToString().ToUpper() + this.stockInfo.color.Substring(1);
             }
-            else
+            string sizeText = "";
+            if (this.stockInfo.size != "/")
             {
-                labelBuyNumber.Text = needed.ToString();
+                sizeText = this.stockInfo.size.First().ToString().ToUpper() + this.stockInfo.size.Substring(1);
             }
+            labelNameColorSize.Text = nameText + " " + colorText + " " + sizeText; 
+            labelStockNumber.Text = this.stockInfo.stock.ToString();
+            labelMinimumNumber.Text = this.stockInfo.minimum.ToString();
+            labelBuyNumber.Text = this.stockInfo.needed.ToString();
             
-            labelOrderNumber.Text = order.ToString();
-            balance = stock - minimum - needed + order;
-            labelBalanceNumber.Text = balance.ToString();
+            labelOrderNumber.Text = this.stockInfo.ordered.ToString();
+            labelBalanceNumber.Text = this.stockInfo.balance.ToString();
         }
 
         private void StockDetail_Load(object sender, EventArgs e)
         {
             PageLayoutMaker.SetBasePageLayout(this);
+            FillDataGridViewExternalOrder();
             PageLayoutMaker.CreateQuitButton(this);
             PageLayoutMaker.CreateReturnToStockButton(this);
             PageLayoutMaker.CreateHeader(this, DBConnection.loadImage(1), user);
+        }
+        private void FillDataGridViewExternalOrder()
+        {
+            externalOrderDataTable = DBConnection.selectExternalOrder(stockInfo.id);
+            dataGridViewExternalOrder.DataSource = externalOrderDataTable;
+            DataGridViewButtonColumn confirmButtonColumn = new DataGridViewButtonColumn();
+            confirmButtonColumn.Name = "confirmButton";
+            confirmButtonColumn.HeaderText = "Confirm";
+            confirmButtonColumn.Text = "Confirm";
+            confirmButtonColumn.UseColumnTextForButtonValue = true;
+            int detailsButtonColumnIndex = 4;
+            if (dataGridViewExternalOrder.Columns["confirmButton"] == null)
+            {
+                dataGridViewExternalOrder.Columns.Insert(detailsButtonColumnIndex, confirmButtonColumn);
+            }
+
+            dataGridViewExternalOrder.Columns["id"].Visible = false;
+            dataGridViewExternalOrder.Columns["name"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewExternalOrder.Columns["name"].HeaderText = "Provider";
+            dataGridViewExternalOrder.Columns["qtty"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewExternalOrder.Columns["qtty"].HeaderText = "Quantity";
+            dataGridViewExternalOrder.Columns["deliveryDate"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewExternalOrder.Columns["deliveryDate"].HeaderText = "Delivery date";
         }
 
         private void buttonEditStock_Click(object sender, EventArgs e)
         {
             EditStock editStock = new EditStock(user, stockInfo);
             editStock.Show();
+            this.Close();
+        }
+
+        private void dataGridViewExternalOrder_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int rowIndex = e.RowIndex;
+            if (rowIndex >= 0)
+            {
+                if (e.ColumnIndex == dataGridViewExternalOrder.Columns["confirmButton"].Index)
+                {
+                    stockInfo.ordered -= (int)dataGridViewExternalOrder.Rows[rowIndex].Cells["qtty"].Value;
+                    stockInfo.stock += (int)dataGridViewExternalOrder.Rows[rowIndex].Cells["qtty"].Value;
+                    stockInfo.CalculateBalance();
+                    DBConnection.UpdateStock(stockInfo);
+                    DBConnection.DeleteExternalOrder((int)dataGridViewExternalOrder.Rows[rowIndex].Cells["id"].Value);
+                    FillDataGridViewExternalOrder();
+                    labelStockNumber.Text = stockInfo.stock.ToString();
+                    labelOrderNumber.Text = stockInfo.ordered.ToString();
+                    labelBalanceNumber.Text = stockInfo.balance.ToString();                  
+                }
+            }
+        }
+
+        private void buttonNewOrder_Click(object sender, EventArgs e)
+        {
+            StockDetailAddOrder stockDetailAddOrder = new StockDetailAddOrder(user, stockInfo);
+            stockDetailAddOrder.Show();
             this.Close();
         }
     }

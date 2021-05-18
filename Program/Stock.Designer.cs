@@ -38,20 +38,21 @@ namespace ProjectBovelo
             this.dataGridViewStock.AllowUserToAddRows = false;
             this.dataGridViewStock.AllowUserToDeleteRows = false;
             this.dataGridViewStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewStock.Location = new System.Drawing.Point(13, 181);
-            this.dataGridViewStock.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dataGridViewStock.Location = new System.Drawing.Point(82, 127);
             this.dataGridViewStock.Name = "dataGridViewStock";
+            this.dataGridViewStock.ReadOnly = true;
             this.dataGridViewStock.RowHeadersWidth = 62;
-            this.dataGridViewStock.Size = new System.Drawing.Size(1028, 675);
+            this.dataGridViewStock.Size = new System.Drawing.Size(658, 412);
             this.dataGridViewStock.TabIndex = 3;
             this.dataGridViewStock.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewStock_CellClick);
             // 
             // Stock
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1297, 921);
+            this.ClientSize = new System.Drawing.Size(834, 561);
             this.Controls.Add(this.dataGridViewStock);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Stock";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Stock";

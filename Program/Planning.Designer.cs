@@ -39,20 +39,19 @@ namespace ProjectBovelo
             this.dataGridViewTask.AllowUserToAddRows = false;
             this.dataGridViewTask.AllowUserToDeleteRows = false;
             this.dataGridViewTask.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewTask.Location = new System.Drawing.Point(183, 225);
-            this.dataGridViewTask.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dataGridViewTask.Location = new System.Drawing.Point(122, 146);
             this.dataGridViewTask.Name = "dataGridViewTask";
+            this.dataGridViewTask.ReadOnly = true;
             this.dataGridViewTask.RowHeadersWidth = 62;
-            this.dataGridViewTask.Size = new System.Drawing.Size(796, 435);
+            this.dataGridViewTask.Size = new System.Drawing.Size(531, 283);
             this.dataGridViewTask.TabIndex = 2;
             this.dataGridViewTask.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewTask_CellClick);
             // 
             // buttonEdit
             // 
-            this.buttonEdit.Location = new System.Drawing.Point(1011, 100);
-            this.buttonEdit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonEdit.Location = new System.Drawing.Point(674, 65);
             this.buttonEdit.Name = "buttonEdit";
-            this.buttonEdit.Size = new System.Drawing.Size(112, 35);
+            this.buttonEdit.Size = new System.Drawing.Size(75, 23);
             this.buttonEdit.TabIndex = 3;
             this.buttonEdit.Text = "Edit";
             this.buttonEdit.UseVisualStyleBackColor = true;
@@ -60,12 +59,13 @@ namespace ProjectBovelo
             // 
             // Planning
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1176, 863);
+            this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.buttonEdit);
             this.Controls.Add(this.dataGridViewTask);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Planning";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Planning";

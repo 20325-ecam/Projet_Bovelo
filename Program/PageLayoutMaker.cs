@@ -101,14 +101,14 @@ namespace ProjectBovelo
             fromForm.Controls.Add(buttonReturn);
         }
 
-        /*public static void CreateReturnToStockDetailButton(BoveloBaseForm fromForm)
+        public static void CreateReturnToStockDetailButton(BoveloBaseForm fromForm)
         {
             Button buttonReturn = new Button();
             buttonReturn.Text = "Return";
-            buttonReturn.Location = new Point(700, 470);
+            buttonReturn.Location = new Point(locationReturnX, locationReturnY);
             buttonReturn.Click += new EventHandler(ButtonReturnToStockDetail_Click);
             fromForm.Controls.Add(buttonReturn);
-        }*/
+        }
 
         public static void CreateLogoutUserButton(BoveloBaseForm form)
         {
@@ -168,15 +168,14 @@ namespace ProjectBovelo
             form.Close();
         }
 
-        /*private static void ButtonReturnToStockDetail_Click(object sender, EventArgs e)
+        private static void ButtonReturnToStockDetail_Click(object sender, EventArgs e)
         {
             Control button = (Control)sender;
-            BoveloBaseForm form = (BoveloBaseForm)button.Parent;
-            EditStock editStock = (EditStock);
-            StockDetail stockDetail = new StockDetail(form.user, editStock., form.minimum, form.order);
+            EditStock form = (EditStock)button.Parent;
+            StockDetail stockDetail = new StockDetail(form.user, form.stockInfo);
             stockDetail.Show();
             form.Close();
-        }*/
+        }
 
         private static void ButtonLogoutUser_Click(object sender, EventArgs e)
         {

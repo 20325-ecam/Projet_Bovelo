@@ -165,6 +165,26 @@ namespace ProjectBovelo
                 this.CloseConnection();
             }
         }
+        public void InsertNewPartOrder(int providerId, DateTime orderDate, DateTime deliveryDate, int price, int partId, int quantity)
+        {
+            string queryNewPartOrder = "INSERT INTO ExternalOrder (provider, orderDate, deliveryDate, price, item, qtty)" +
+                           "VALUES('" + providerId + "', '" + orderDate + "', '" + deliveryDate + "', '" + price + "', '" + partId + "', '" + quantity + "')";
+
+
+
+            //open connection
+            if (this.OpenConnection() == true)
+            {
+                //create command and assign the query and connection from the constructor
+                MySqlCommand cmdNewPartOrder = new MySqlCommand(queryNewPartOrder, connection);
+
+                //Execute command
+                cmdNewPartOrder.ExecuteNonQuery();
+
+                //close connection
+                this.CloseConnection();
+            }
+        }
 
         //Modifie task
         public void ModifyTask(int num, int Id, int mechanicId)
@@ -236,9 +256,12 @@ namespace ProjectBovelo
         }
 
         //Update Stock
-        public void UpdateStock()
+        public void UpdateStock(StockInfo stockInfo)
         {
-            string query = "UPDATE Assembly_parts SET ordered=10 WHERE id=11";
+            string query = "UPDATE Assembly_parts " +
+                           "SET stock = " + stockInfo.stock + ", " +
+                           "min_amount = " + stockInfo.minimum + " " +
+                           "WHERE id = " + stockInfo.id + ";";
 
             //Open connection
             if (this.OpenConnection() == true)
@@ -285,6 +308,17 @@ namespace ProjectBovelo
         public void Delete()
         {
             string query = "DELETE FROM tableinfo WHERE name='John Smith'";
+
+            if (this.OpenConnection() == true)
+            {
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.ExecuteNonQuery();
+                this.CloseConnection();
+            }
+        }
+        public void DeleteExternalOrder(int externalOrderId)
+        {
+            string query = "DELETE FROM ExternalOrder WHERE id = "+ externalOrderId;
 
             if (this.OpenConnection() == true)
             {
@@ -502,7 +536,6 @@ namespace ProjectBovelo
 
         public DataTable selectAllOrders()
         {
-            List<Order> orderList = new List<Order>();
             string orderQuery =
                 "SELECT OrderDB.id, Client.name, Client.address, OrderDB.bike_amount, OrderDB.total_price " +
                 "FROM  OrderDB " +
@@ -521,7 +554,7 @@ namespace ProjectBovelo
         public DataTable selectAllAssemblyParts()
         {
             string stockQuery =
-                "SELECT Assembly_parts.id, Assembly_parts.name, Color.color, Size.size, Assembly_parts.stock, Assembly_parts.needed, Assembly_parts.ordered, Assembly_parts.balance, Assembly_parts.min_amount, Assembly_parts.details " +
+                "SELECT Assembly_parts.id, Assembly_parts.name, Color.color, Size.size, Assembly_parts.stock, Assembly_parts.min_amount " +
                 "FROM Assembly_parts " +
                 "INNER JOIN Color " +
                 "ON Assembly_parts.color = Color.id " +
@@ -536,6 +569,60 @@ namespace ProjectBovelo
                 this.CloseConnection();
             }
             return StockDataTable;
+        }
+        public DataTable selectExternalOrder(int partId)
+        {
+            string externalOrderQuery =
+                "SELECT ExternalOrder.id, PartsProvider.name, ExternalOrder.qtty, ExternalOrder.deliveryDate " +
+                "FROM ExternalOrder " +                
+                "INNER JOIN PartsProvider " +
+                "ON ExternalOrder.provider = PartsProvider.id " +
+                "WHERE ExternalOrder.item = " + partId + " " +
+                "ORDER BY ExternalOrder.deliveryDate ASC ";
+
+            DataTable externalOrderDataTable = new DataTable();
+            if (this.OpenConnection() == true)
+            {
+                externalOrderDataTable = CreateDataTable(externalOrderQuery);
+                this.CloseConnection();
+            }
+            return externalOrderDataTable;
+        }
+        public DataTable selectBikePartsCombination(int partId)
+        {
+            string externalOrderQuery =
+                "SELECT Bike_parts_combination.model_variation, Bike_parts_combination.qtty " +
+                "FROM Bike_parts_combination " +
+                "WHERE Bike_parts_combination.part = " + partId;
+
+            DataTable bikePartsCombinationDataTable = new DataTable();
+            if (this.OpenConnection() == true)
+            {
+                bikePartsCombinationDataTable = CreateDataTable(externalOrderQuery);
+                this.CloseConnection();
+            }
+            return bikePartsCombinationDataTable;
+        }
+        public int selectOrderItemCount(int variationId)
+        {
+            string externalOrderQuery =
+                "SELECT COUNT(*) " +
+                "FROM OrderItem " +
+                "INNER JOIN Task " +
+                "ON OrderItem.id = Task.order_item " +
+                "WHERE OrderItem.variation = " + variationId + " " + 
+                "AND Task.state != 3";
+
+            DataTable bikePartsCombinationDataTable = new DataTable();
+            if (this.OpenConnection() == true)
+            {
+                bikePartsCombinationDataTable = CreateDataTable(externalOrderQuery);
+                this.CloseConnection();
+            }
+            int count;
+            count = int.Parse(bikePartsCombinationDataTable.Rows[0].ItemArray[0].ToString());
+            
+            return count;
         }
         public int SelectBikeVariationId(int bikeId, BicycleColor bikeColor, BicycleSize bikeSize)
         {
