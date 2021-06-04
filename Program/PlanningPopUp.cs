@@ -7,7 +7,8 @@ namespace ProjectBovelo
     {
         Task task;
         DataTable userTable;
-        int num;
+        bool canUpdateStock = true;
+        
         public PlanningPopUp(BoveloUser user, Task task)
         {
             this.user = user;
@@ -33,7 +34,12 @@ namespace ProjectBovelo
             }
             else if (task.state == "Done")
             {
+                canUpdateStock = false;
                 radioButtonDone.Checked = true;
+                radioButtonInProduction.Enabled = false;
+                radioButtonDone.Enabled = false;
+                radioButtonDelay.Enabled = false;
+                radioButtonToDo.Enabled = false;
             }
             else if (task.state == "Delay")
             {
@@ -52,22 +58,6 @@ namespace ProjectBovelo
                     comboBoxMechanic.Items.Add(userTable.Rows[i]["userName"]);
                 }
             }
-        }
-
-        private void labelTitleName_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void labelSize_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void labelColor_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void labelDate_Click(object sender, EventArgs e)
-        {
         }
 
         private void radioButtonToDo_CheckedChanged(object sender, EventArgs e)
@@ -93,22 +83,23 @@ namespace ProjectBovelo
         private void buttonReturn_Click(object sender, EventArgs e)
         {
             int mechanic = -1;
+            int state;
             switch (task.state)
             {
                 case "To Do":
-                    num = 1;
+                    state = 1;
                     break;
                 case "In Production":
-                    num = 2;
+                    state = 2;
                     break;
                 case "Done":
-                    num = 3;
+                    state = 3;
                     break;
                 case "Delay":
-                    num = 4;
+                    state = 4;
                     break;
                 default:
-                    num = 1;
+                    state = 1;
                     break;
             }
             for (int i=0; i< userTable.Rows.Count; i++)
@@ -119,18 +110,24 @@ namespace ProjectBovelo
                 }
                 
             }
-            DBConnection.ModifyTask(num, task.id, mechanic);
+            DBConnection.ModifyTask(state, task.id, mechanic);
+            if(state == 3 && canUpdateStock)
+            {
+                EditSockPartsAmount();
+            }
             Planning planning = new Planning(user);
             planning.Show();
             this.Close();
         }
 
-        private void comboBoxMechanic_SelectedIndexChanged(object sender, EventArgs e)
+        private void EditSockPartsAmount()
         {
-        }
-
-        private void labelBikeName_Click(object sender, EventArgs e)
-        {
+            int variationId = DBConnection.SelectBikeModelVariationId(task);
+            DataTable combinationDataTable = DBConnection.selectCombination(variationId);
+            for(int i = 0; i < combinationDataTable.Rows.Count; i++)
+            {
+                DBConnection.UpdateReduceStock((int)combinationDataTable.Rows[i]["part"], (int)combinationDataTable.Rows[i]["qtty"]);
+            }
         }
     }
 }

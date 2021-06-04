@@ -122,6 +122,7 @@
             this.Controls.Add(this.buttonConfirm);
             this.Name = "StockDetailAddOrder";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.StockDetailAddOrder_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownQuantity)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

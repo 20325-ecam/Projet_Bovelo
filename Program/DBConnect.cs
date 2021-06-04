@@ -187,16 +187,16 @@ namespace ProjectBovelo
         }
 
         //Modifie task
-        public void ModifyTask(int num, int Id, int mechanicId)
+        public void ModifyTask(int state, int Id, int mechanicId)
         {
             string queryModifyTask;
             if (mechanicId >= 0)
             {
-                queryModifyTask = "UPDATE Task SET state = '" + num + "', asigned_user= '" + mechanicId + "' WHERE id = '" + Id + "'";
+                queryModifyTask = "UPDATE Task SET state = '" + state + "', asigned_user= '" + mechanicId + "' WHERE id = '" + Id + "'";
             }
             else
             {
-                queryModifyTask = "UPDATE Task SET state = '" + num + "' WHERE id= '" + Id + "'";
+                queryModifyTask = "UPDATE Task SET state = '" + state + "' WHERE id= '" + Id + "'";
             }
             
 
@@ -262,6 +262,30 @@ namespace ProjectBovelo
                            "SET stock = " + stockInfo.stock + ", " +
                            "min_amount = " + stockInfo.minimum + " " +
                            "WHERE id = " + stockInfo.id + ";";
+
+            //Open connection
+            if (this.OpenConnection() == true)
+            {
+                //create mysql command
+                MySqlCommand cmd = new MySqlCommand();
+                //Assign the query using CommandText
+                cmd.CommandText = query;
+                //Assign the connection using Connection
+                cmd.Connection = connection;
+
+                //Execute query
+                cmd.ExecuteNonQuery();
+
+                //close connection
+                this.CloseConnection();
+            }
+        }
+
+        public void UpdateReduceStock(int id, int qtty)
+        {
+            string query = "UPDATE Assembly_parts " +
+                           "SET stock = stock - " + qtty + " " +
+                           "WHERE id = " + id + ";";
 
             //Open connection
             if (this.OpenConnection() == true)
@@ -603,6 +627,21 @@ namespace ProjectBovelo
             }
             return bikePartsCombinationDataTable;
         }
+        public DataTable selectCombination(int variationId)
+        {
+            string externalOrderQuery =
+                "SELECT Bike_parts_combination.part, Bike_parts_combination.qtty " +
+                "FROM Bike_parts_combination " +
+                "WHERE Bike_parts_combination.model_variation = " + variationId;
+
+            DataTable bikePartsCombinationDataTable = new DataTable();
+            if (this.OpenConnection() == true)
+            {
+                bikePartsCombinationDataTable = CreateDataTable(externalOrderQuery);
+                this.CloseConnection();
+            }
+            return bikePartsCombinationDataTable;
+        }
         public int selectOrderItemCount(int variationId)
         {
             string externalOrderQuery =
@@ -678,6 +717,34 @@ namespace ProjectBovelo
                 }
             }
             return info;
+        }
+        public int SelectBikeModelVariationId(Task task)
+        {
+            string bikeModelVariationId =
+                "SELECT variation " +
+                "FROM OrderItem " +
+                "INNER JOIN Task " +
+                "ON OrderItem.id = Task.order_item " +
+                "WHERE Task.id = '" + task.id + "'";
+
+            int id = -1;
+            if (this.OpenConnection() == true)
+            {
+                //Create Command
+                MySqlCommand cmd = new MySqlCommand(bikeModelVariationId, connection);
+                //Create a data reader and Execute the command
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                if (dataReader.HasRows)
+                {
+                    dataReader.Read();
+                    id = (int)dataReader["variation"];
+
+                    dataReader.Close();
+                    this.CloseConnection();
+                }
+            }
+            return id;
         }
         public Bitmap loadImage(int imgID)
         {

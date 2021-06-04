@@ -74,7 +74,7 @@ F:\PC4\Documents\GitHub\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.StockDetai
 F:\PC4\Documents\GitHub\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.EditStock.resources
 F:\PC4\Documents\GitHub\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.BoveloBaseForm.resources
 D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjectBovelo\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.BoveloBaseForm.resources
-D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjectBovelo\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.EditStock.resources
 D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjectBovelo\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.Stock.resources
 D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjectBovelo\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.StockDetail.resources
 D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjectBovelo\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.StockDetailAddOrder.resources
+D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjectBovelo\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.absStock.resources

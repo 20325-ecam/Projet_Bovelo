@@ -10,9 +10,8 @@ using System.Windows.Forms;
 
 namespace ProjectBovelo
 {
-    public partial class StockDetail : BoveloBaseForm
+    public partial class StockDetail : absStock
     {
-        StockInfo stockInfo;
         private DataTable externalOrderDataTable;
         
         public StockDetail(BoveloUser user, StockInfo stockInfo)

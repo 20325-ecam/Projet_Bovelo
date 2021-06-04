@@ -10,10 +10,14 @@ using System.Windows.Forms;
 
 namespace ProjectBovelo
 {
-    public partial class EditStock : BoveloBaseForm
+    public abstract partial class absStock : BoveloBaseForm
     {
         public StockInfo stockInfo;
 
+    }
+
+    public partial class EditStock : absStock
+    {
         public EditStock(BoveloUser user, StockInfo stockInfo)
         {
             this.user = user;

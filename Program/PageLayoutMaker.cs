@@ -171,7 +171,7 @@ namespace ProjectBovelo
         private static void ButtonReturnToStockDetail_Click(object sender, EventArgs e)
         {
             Control button = (Control)sender;
-            EditStock form = (EditStock)button.Parent;
+            absStock form = (absStock)button.Parent;
             StockDetail stockDetail = new StockDetail(form.user, form.stockInfo);
             stockDetail.Show();
             form.Close();

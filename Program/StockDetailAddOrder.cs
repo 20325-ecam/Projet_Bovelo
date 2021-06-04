@@ -10,23 +10,14 @@ using System.Windows.Forms;
 
 namespace ProjectBovelo 
 {
-    public partial class StockDetailAddOrder : BoveloBaseForm
+    public partial class StockDetailAddOrder : absStock
     {
-        public StockInfo stockInfo;
 
         public StockDetailAddOrder(BoveloUser user, StockInfo stockInfo)
         {
             this.user = user;
             this.stockInfo = stockInfo;
             InitializeComponent();
-        }
-
-        private void EditStock_Load(object sender, EventArgs e)
-        {
-            PageLayoutMaker.SetBasePageLayout(this);
-            PageLayoutMaker.CreateQuitButton(this);
-            PageLayoutMaker.CreateReturnToStockDetailButton(this);
-            PageLayoutMaker.CreateHeader(this, DBConnection.loadImage(1), user);
         }
 
         private void buttonConfirm_Click(object sender, EventArgs e)
@@ -38,6 +29,14 @@ namespace ProjectBovelo
             StockDetail stockDetail = new StockDetail(user, stockInfo);
             stockDetail.Show();
             Close();
+        }
+
+        private void StockDetailAddOrder_Load(object sender, EventArgs e)
+        {
+            PageLayoutMaker.SetBasePageLayout(this);
+            PageLayoutMaker.CreateQuitButton(this);
+            PageLayoutMaker.CreateReturnToStockDetailButton(this);
+            PageLayoutMaker.CreateHeader(this, DBConnection.loadImage(1), user);
         }
     }
 }
