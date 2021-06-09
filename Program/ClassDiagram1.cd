@@ -1,196 +1,241 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="ProjectBovelo.BoveloBaseForm" Collapsed="true">
-    <Position X="8.25" Y="0.5" Width="1.5" />
+    <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAABAAAAQA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAIAAABAAAAQA=</HashCode>
       <FileName>BoveloBaseForm.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ProjectBovelo.Cart" Collapsed="true">
-    <Position X="2.75" Y="2" Width="1.5" />
+    <Position X="7.25" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAQAAASAAABAAAACAAAACAAAAAAiAAAAAAAAAAAA=</HashCode>
       <FileName>Cart.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ProjectBovelo.Catalog" Collapsed="true">
-    <Position X="5" Y="2" Width="1.5" />
+    <Position X="2.5" Y="7.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAACAAwBAAAACAAAACAAAAAAAAAAAACAAAACA=</HashCode>
       <FileName>Catalog.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ProjectBovelo.ClientIdentification" Collapsed="true">
-    <Position X="7.25" Y="2" Width="1.5" />
+    <Position X="2.5" Y="9.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAIAACAAAAAAAACAQEACCQAAAAIAAACAAABAAAg=</HashCode>
       <FileName>ClientIdentification.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ProjectBovelo.CommandOverviewPage" Collapsed="true">
-    <Position X="14" Y="2" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAACAAABAAAADAgAACAAgAAAAAAACAAAAAIAA=</HashCode>
-      <FileName>CommandOverviewPage.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="ProjectBovelo.BoveloUser">
-    <Position X="22.75" Y="4.75" Width="1.5" />
+    <Position X="13.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAhAAAAAAAAAAAAAAAAAEAAAAAAAAgAAAgA=</HashCode>
       <FileName>DataBaseItems.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ProjectBovelo.Client">
-    <Position X="20.75" Y="0.75" Width="1.5" />
+    <Position X="15.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAIAAAABAAAAkAAAAiAAAAAIEAAAgAAAIAAAAAgE=</HashCode>
       <FileName>DataBaseItems.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ProjectBovelo.AvailableBicycle">
-    <Position X="24.75" Y="0.75" Width="1.5" />
+    <Position X="17.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAABAAAAAAAAAAAAIAAAAAAAAABEAIAAAAARAABAAgA=</HashCode>
       <FileName>DataBaseItems.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ProjectBovelo.BicycleColor" Collapsed="true">
-    <Position X="29.75" Y="4.25" Width="1.5" />
+  <Class Name="ProjectBovelo.BicycleColor">
+    <Position X="19" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAACAAAAAAAAAAgA=</HashCode>
       <FileName>DataBaseItems.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ProjectBovelo.BicycleSize" Collapsed="true">
-    <Position X="29.5" Y="3.25" Width="1.5" />
+  <Class Name="ProjectBovelo.BicycleSize">
+    <Position X="19" Y="1.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
       <FileName>DataBaseItems.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ProjectBovelo.OrderItem">
-    <Position X="24.75" Y="4.75" Width="1.5" />
+    <Position X="13.75" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>QAAAAAAAAAAgAAAAAIAAAAAAAAAAAACAAAAEAAAAAAA=</HashCode>
+      <HashCode>QAAAAAEAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
       <FileName>DataBaseItems.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ProjectBovelo.WholeBikeOrder" Collapsed="true">
-    <Position X="29.25" Y="0.5" Width="2.75" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAQAAAAAAAAAABAQAAAAAAAgAAAAAAAAAA=</HashCode>
-      <FileName>DataBaseItems.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="ProjectBovelo.DBConnect">
-    <Position X="18.75" Y="0.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AgQAIEAAAAAAEQBAggADEBQAAQEFAADAgAIAAgACAAI=</HashCode>
-      <FileName>DBConnect.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="ProjectBovelo.HomePage" Collapsed="true">
-    <Position X="9.5" Y="2" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAACCAAAAAAACAAAACgAAAAAAAAAABAAAAAAA=</HashCode>
-      <FileName>HomePage.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="ProjectBovelo.MenusSelectionPage" Collapsed="true">
-    <Position X="16.25" Y="2" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAIAAACAIABAAAACABAgCgAAAFAAAAAAAAAAAIAA=</HashCode>
-      <FileName>MenusSelectionPage.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="ProjectBovelo.Order">
-    <Position X="20.75" Y="4.75" Width="1.5" />
+  <Class Name="ProjectBovelo.Order" Collapsed="true">
+    <Position X="13.75" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAABAAQAAgAAAAAAgAABAAAAAAAAAgAAAAAAAAAA=</HashCode>
       <FileName>DataBaseItems.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ProjectBovelo.PageLayoutMaker" Collapsed="true">
-    <Position X="16.25" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAgAAAAAEEAEAQACBAAABAAIIgAAEIAAAAAIAAAA=</HashCode>
-      <FileName>PageLayoutMaker.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="ProjectBovelo.Program" Collapsed="true">
-    <Position X="28.25" Y="1.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
-      <FileName>Program.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="ProjectBovelo.UserLoginPage" Collapsed="true">
-    <Position X="11.75" Y="2" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAABgIBACQAAAAAAACAAAACgAAAAAAAARACAAAAABA=</HashCode>
-      <FileName>UserLoginPage.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="ProjectBovelo.Properties.Resources" Collapsed="true">
-    <Position X="28.25" Y="2.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>CAAAAAAAAAAAggAAAAABEAAAAQAQAAAAAAAAAAABAIA=</HashCode>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="ProjectBovelo.Properties.Settings" Collapsed="true">
-    <Position X="30" Y="1.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
-    </TypeIdentifier>
-  </Class>
   <Class Name="ProjectBovelo.AddNewClient" Collapsed="true">
-    <Position X="15.75" Y="3.5" Width="1.5" />
+    <Position X="23" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAEAAAAAAAAhAEAAAAACgAAAAAAAAAgAAAAAAAIA=</HashCode>
       <FileName>DataBaseItems.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ProjectBovelo.Task">
-    <Position X="22.75" Y="0.75" Width="1.5" />
+    <Position X="19" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAEAAAEABFAAgA=</HashCode>
       <FileName>DataBaseItems.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="ProjectBovelo.StockInfo" Collapsed="true">
+    <Position X="12" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAIEAAAAIAAAEAICAAAAQABAAAgA=</HashCode>
+      <FileName>DataBaseItems.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProjectBovelo.DBConnect">
+    <Position X="17.25" Y="4.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AgQAKHAAAEAAEQhAggIDEFQAiwEFAIDAiAJAAgACAAI=</HashCode>
+      <FileName>DBConnect.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProjectBovelo.absStock" Collapsed="true">
+    <Position X="2.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EditStock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProjectBovelo.EditStock" Collapsed="true">
+    <Position X="5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAJASAAAABAAACAIEACAABIAAoAAAAAAAAAAAA=</HashCode>
+      <FileName>EditStock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Class Name="ProjectBovelo.EmailValide" Collapsed="true">
-    <Position X="30" Y="6.25" Width="1.5" />
+    <Position X="23" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
       <FileName>EmailValide.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="ProjectBovelo.HomePage" Collapsed="true">
+    <Position X="3.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACCAAAAAAACAAAACgAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>HomePage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProjectBovelo.MenusSelectionPage" Collapsed="true">
+    <Position X="2.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAACAIABAAAAGABAgCgAAAFAAAAAAAAAAAIAA=</HashCode>
+      <FileName>MenusSelectionPage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Class Name="ProjectBovelo.Newclient" Collapsed="true">
-    <Position X="5.75" Y="3.25" Width="1.5" />
+    <Position X="2.5" Y="8.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAKAAgBCKAICIAAACCAAIAAAAAAAFIAQgEAg=</HashCode>
       <FileName>Newclient.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ProjectBovelo.OrderPage" Collapsed="true">
-    <Position X="10.25" Y="4.75" Width="1.5" />
+    <Position X="6.75" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAECAAgBAIABCgAEACAAIAAAAAAAAAAAAABAA=</HashCode>
       <FileName>OrderPage.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ProjectBovelo.Planning" Collapsed="true">
-    <Position X="8.25" Y="4.75" Width="1.5" />
+  <Class Name="ProjectBovelo.OrdersOverviewPage" Collapsed="true">
+    <Position X="11.25" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAACAAAAABAACAAAACAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAACAAABAAAADAgAACAAgAAAAAAACAAAAAIAA=</HashCode>
+      <FileName>OrdersOverviewPage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProjectBovelo.PageLayoutMaker" Collapsed="true">
+    <Position X="15.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAgAAAAAEEAEIQACBAABBAAIIgAAEIAAAAIIAAAA=</HashCode>
+      <FileName>PageLayoutMaker.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProjectBovelo.Planning" Collapsed="true">
+    <Position X="2.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAgAACCDAAgABAQDAAAgCAAAAAAQAAAAEAABIAAA=</HashCode>
+      <FileName>Planning.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ProjectBovelo.PlanningPopUp" Collapsed="true">
-    <Position X="4.75" Y="4.5" Width="1.5" />
+    <Position X="2.5" Y="6.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AGAAAmACADAJABAQAACACBAiUAAAIQCQACABAEBAYAI=</HashCode>
+      <HashCode>gGAAAEACADABABAQAACACBACUAAAAQCQACAAAEBAYCA=</HashCode>
       <FileName>PlanningPopUp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProjectBovelo.Program" Collapsed="true">
+    <Position X="23" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProjectBovelo.Stock" Collapsed="true">
+    <Position X="9" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABABAACAEAAAAAgCAABACAABAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Stock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProjectBovelo.StockDetail" Collapsed="true">
+    <Position X="5" Y="6" Width="1.5" />
+    <InheritanceLine Type="ProjectBovelo.absStock" FixedToPoint="true">
+      <Path>
+        <Point X="3.25" Y="5.691" />
+        <Point X="3.25" Y="5.941" />
+        <Point X="4.625" Y="5.941" />
+        <Point X="4.625" Y="6.375" />
+        <Point X="5" Y="6.375" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAECAIAhBCIAABBACACEAAMCAAAAAAgAABAEEAAEAAA=</HashCode>
+      <FileName>StockDetail.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProjectBovelo.StockDetailAddOrder" Collapsed="true">
+    <Position X="5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAABACAACAQAACAAAAAAACAAAAAIABFAA=</HashCode>
+      <FileName>StockDetailAddOrder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProjectBovelo.UserLoginPage" Collapsed="true">
+    <Position X="5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABgIBACQAAAAAAACAAAACgAAAAAAAARACAAAAABA=</HashCode>
+      <FileName>UserLoginPage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProjectBovelo.Properties.Resources" Collapsed="true">
+    <Position X="23" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAggAAAAABEAAAAQAQAAAAAAAAAAABAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProjectBovelo.Properties.Settings" Collapsed="true">
+    <Position X="23" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

@@ -14,7 +14,7 @@ namespace ProjectBovelo
             // 
             // BoveloBaseForm
             // 
-            this.ClientSize = new System.Drawing.Size(278, 244);
+            this.ClientSize = new System.Drawing.Size(784, 561);
             this.Name = "BoveloBaseForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.ResumeLayout(false);
