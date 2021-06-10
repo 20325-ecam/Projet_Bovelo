@@ -78,3 +78,43 @@ D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjectBove
 D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjectBovelo\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.StockDetailAddOrder.resources
 D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjectBovelo\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.EditStock.resources
 D:\Users\andre\OneDrive - ECAM\ECAM\2020-2021\Software Engineering 2\ProjectBovelo\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.StockDetail.resources
+C:\Users\Bartlomiej\Documents\GitHub\Projet_Bovelo\Program\bin\Debug\ProjectBovelo.exe.config
+C:\Users\Bartlomiej\Documents\GitHub\Projet_Bovelo\Program\bin\Debug\ProjectBovelo.exe
+C:\Users\Bartlomiej\Documents\GitHub\Projet_Bovelo\Program\bin\Debug\ProjectBovelo.pdb
+C:\Users\Bartlomiej\Documents\GitHub\Projet_Bovelo\Program\bin\Debug\Google.Protobuf.dll
+C:\Users\Bartlomiej\Documents\GitHub\Projet_Bovelo\Program\bin\Debug\Zstandard.Net.dll
+C:\Users\Bartlomiej\Documents\GitHub\Projet_Bovelo\Program\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\Bartlomiej\Documents\GitHub\Projet_Bovelo\Program\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Bartlomiej\Documents\GitHub\Projet_Bovelo\Program\bin\Debug\Ubiety.Dns.Core.dll
+C:\Users\Bartlomiej\Documents\GitHub\Projet_Bovelo\Program\bin\Debug\Renci.SshNet.dll
+C:\Users\Bartlomiej\Documents\GitHub\Projet_Bovelo\Program\bin\Debug\System.Memory.dll
+C:\Users\Bartlomiej\Documents\GitHub\Projet_Bovelo\Program\bin\Debug\System.Buffers.dll
+C:\Users\Bartlomiej\Documents\GitHub\Projet_Bovelo\Program\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\Bartlomiej\Documents\GitHub\Projet_Bovelo\Program\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\Bartlomiej\Documents\GitHub\Projet_Bovelo\Program\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Bartlomiej\Documents\GitHub\Projet_Bovelo\Program\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Bartlomiej\Documents\GitHub\Projet_Bovelo\Program\bin\Debug\MySql.Data.xml
+C:\Users\Bartlomiej\Documents\GitHub\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.csprojAssemblyReference.cache
+C:\Users\Bartlomiej\Documents\GitHub\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.exe.config
+C:\Users\Bartlomiej\Documents\GitHub\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.BoveloBaseForm.resources
+C:\Users\Bartlomiej\Documents\GitHub\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.Cart.resources
+C:\Users\Bartlomiej\Documents\GitHub\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.Catalog.resources
+C:\Users\Bartlomiej\Documents\GitHub\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.ClientIdentification.resources
+C:\Users\Bartlomiej\Documents\GitHub\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.EditStock.resources
+C:\Users\Bartlomiej\Documents\GitHub\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.StockDetailAddOrder.resources
+C:\Users\Bartlomiej\Documents\GitHub\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.OrdersOverviewPage.resources
+C:\Users\Bartlomiej\Documents\GitHub\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.HomePage.resources
+C:\Users\Bartlomiej\Documents\GitHub\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.Newclient.resources
+C:\Users\Bartlomiej\Documents\GitHub\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.Planning.resources
+C:\Users\Bartlomiej\Documents\GitHub\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.PlanningPopUp.resources
+C:\Users\Bartlomiej\Documents\GitHub\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.Stock.resources
+C:\Users\Bartlomiej\Documents\GitHub\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.StockDetail.resources
+C:\Users\Bartlomiej\Documents\GitHub\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.UserLoginPage.resources
+C:\Users\Bartlomiej\Documents\GitHub\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.OrderPage.resources
+C:\Users\Bartlomiej\Documents\GitHub\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.MenusSelectionPage.resources
+C:\Users\Bartlomiej\Documents\GitHub\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.Properties.Resources.resources
+C:\Users\Bartlomiej\Documents\GitHub\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.csproj.GenerateResource.cache
+C:\Users\Bartlomiej\Documents\GitHub\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.csproj.CoreCompileInputs.cache
+C:\Users\Bartlomiej\Documents\GitHub\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.csproj.CopyComplete
+C:\Users\Bartlomiej\Documents\GitHub\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.exe
+C:\Users\Bartlomiej\Documents\GitHub\Projet_Bovelo\Program\obj\Debug\ProjectBovelo.pdb

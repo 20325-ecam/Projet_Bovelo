@@ -34,6 +34,8 @@
             this.labelDate = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.numericUpDownQuantity = new System.Windows.Forms.NumericUpDown();
+            this.comboBoxProvider = new System.Windows.Forms.ComboBox();
+            this.labelProvider = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownQuantity)).BeginInit();
             this.SuspendLayout();
             // 
@@ -109,11 +111,31 @@
             0,
             0});
             // 
+            // comboBoxProvider
+            // 
+            this.comboBoxProvider.FormattingEnabled = true;
+            this.comboBoxProvider.Location = new System.Drawing.Point(330, 320);
+            this.comboBoxProvider.Name = "comboBoxProvider";
+            this.comboBoxProvider.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxProvider.TabIndex = 6;
+            // 
+            // labelProvider
+            // 
+            this.labelProvider.AutoSize = true;
+            this.labelProvider.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelProvider.Location = new System.Drawing.Point(219, 320);
+            this.labelProvider.Name = "labelProvider";
+            this.labelProvider.Size = new System.Drawing.Size(74, 20);
+            this.labelProvider.TabIndex = 7;
+            this.labelProvider.Text = "Provider :";
+            // 
             // StockDetailAddOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(834, 561);
+            this.Controls.Add(this.labelProvider);
+            this.Controls.Add(this.comboBoxProvider);
             this.Controls.Add(this.numericUpDownQuantity);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.labelDate);
@@ -137,5 +159,7 @@
         private System.Windows.Forms.Label labelDate;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.NumericUpDown numericUpDownQuantity;
+        private System.Windows.Forms.ComboBox comboBoxProvider;
+        private System.Windows.Forms.Label labelProvider;
     }
 }

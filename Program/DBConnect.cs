@@ -557,7 +557,19 @@ namespace ProjectBovelo
             }
             return userDataTable;
         }
+        public DataTable selectAllProvider()
+        {
+            string ProviderQuery =
+                "SELECT id, name FROM PartsProvider";
 
+            DataTable ProviderDataTable = new DataTable();
+            if (this.OpenConnection() == true)
+            {
+                ProviderDataTable = CreateDataTable(ProviderQuery);
+                this.CloseConnection();
+            }
+            return ProviderDataTable;
+        }
         public DataTable selectAllOrders()
         {
             string orderQuery =
