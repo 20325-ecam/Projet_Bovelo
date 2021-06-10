@@ -168,7 +168,7 @@ namespace ProjectBovelo
         public void InsertNewPartOrder(int providerId, DateTime orderDate, DateTime deliveryDate, int price, int partId, int quantity)
         {
             string queryNewPartOrder = "INSERT INTO ExternalOrder (provider, orderDate, deliveryDate, price, item, qtty)" +
-                           "VALUES('" + providerId + "', '" + orderDate + "', '" + deliveryDate + "', '" + price + "', '" + partId + "', '" + quantity + "')";
+                           "VALUES('" + providerId + "', '" + orderDate.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + deliveryDate.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + price + "', '" + partId + "', '" + quantity + "')";
 
 
 
