@@ -50,6 +50,9 @@
     <Compile Include="BoveloBaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="absStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="EditStock.cs">
       <SubType>Form</SubType>
     </Compile>

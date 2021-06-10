@@ -10,28 +10,23 @@ using System.Windows.Forms;
 
 namespace ProjectBovelo
 {
-    public abstract partial class absStock : BoveloBaseForm
-    {
-        public StockInfo stockInfo;
-
-    }
-
     public partial class EditStock : absStock
     {
+        
         public EditStock(BoveloUser user, StockInfo stockInfo)
         {
             this.user = user;
             this.stockInfo = stockInfo;
             InitializeComponent();
         }
-
+        
         private void EditStock_Load(object sender, EventArgs e)
         {
             PageLayoutMaker.SetBasePageLayout(this);
             PageLayoutMaker.CreateQuitButton(this);
             PageLayoutMaker.CreateReturnToStockDetailButton(this);
             PageLayoutMaker.CreateHeader(this, DBConnection.loadImage(1), user);
-            labelCurrentStockValue.Text = stockInfo.stock.ToString();
+            this.labelCurrentStockValue.Text = stockInfo.stock.ToString();
             numericUpDownNewStock.Value = stockInfo.stock;
             labelMinimumRequiredValue.Text = stockInfo.minimum.ToString();
             numericUpDownNewRequirement.Value = stockInfo.minimum;
@@ -46,5 +41,6 @@ namespace ProjectBovelo
             stockInfo.CalculateBalance();
             DBConnection.UpdateStock(stockInfo);
         }
+        
     }
 }
