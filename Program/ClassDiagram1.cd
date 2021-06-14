@@ -57,7 +57,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="ProjectBovelo.BicycleSize">
-    <Position X="19" Y="1.25" Width="1.5" />
+    <Position X="20.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
       <FileName>DataBaseItems.cs</FileName>
@@ -98,15 +98,15 @@
       <FileName>DataBaseItems.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ProjectBovelo.DBConnect">
-    <Position X="17.25" Y="4.5" Width="2.75" />
+  <Class Name="ProjectBovelo.DBConnect" Collapsed="true">
+    <Position X="15.5" Y="5.25" Width="2.75" />
     <TypeIdentifier>
       <HashCode>AgQAKHAAAEAAEQhAggIDEFQAiwEFAIDAiAJAAgACAAI=</HashCode>
       <FileName>DBConnect.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ProjectBovelo.EditStock" Collapsed="true">
-    <Position X="5" Y="6.75" Width="1.5" />
+    <Position X="5" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AgAAAAAJASAAAABAAACAIEACAABIAAoAAAAAAAAAAAA=</HashCode>
       <FileName>EditStock.cs</FileName>
@@ -154,8 +154,8 @@
       <FileName>OrdersOverviewPage.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ProjectBovelo.PageLayoutMaker" Collapsed="true">
-    <Position X="15.5" Y="4.5" Width="1.5" />
+  <Class Name="ProjectBovelo.PageLayoutMaker">
+    <Position X="15.5" Y="4.5" Width="2.75" />
     <TypeIdentifier>
       <HashCode>AAAQAgAAAAAEEAEIQACBAABBAAIIgAAEIAAAAIIAAAA=</HashCode>
       <FileName>PageLayoutMaker.cs</FileName>
@@ -190,7 +190,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="ProjectBovelo.StockDetail" Collapsed="true">
-    <Position X="5" Y="6" Width="1.5" />
+    <Position X="5" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAECAIAhBCIAABBACACEAAMCAAAAAAgAABAEEAAEAAA=</HashCode>
       <FileName>StockDetail.cs</FileName>
@@ -199,7 +199,7 @@
   <Class Name="ProjectBovelo.StockDetailAddOrder" Collapsed="true">
     <Position X="5" Y="7.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAACAAABACAACAQAACAAAAAAACAAAAAIABFAA=</HashCode>
+      <HashCode>AAAAAAAAACAAEBACAACBQAACAAAAAAACACAAAIABFAA=</HashCode>
       <FileName>StockDetailAddOrder.cs</FileName>
     </TypeIdentifier>
   </Class>

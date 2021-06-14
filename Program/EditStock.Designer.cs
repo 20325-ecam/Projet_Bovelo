@@ -85,6 +85,11 @@ namespace ProjectBovelo
             0,
             0,
             0});
+            this.numericUpDownNewStock.Minimum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            -2147483648});
             this.numericUpDownNewStock.Name = "numericUpDownNewStock";
             this.numericUpDownNewStock.Size = new System.Drawing.Size(80, 26);
             this.numericUpDownNewStock.TabIndex = 2;
